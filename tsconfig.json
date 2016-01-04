@@ -2,16 +2,12 @@
     "compilerOptions": {
         "target": "es5",
         "module": "system",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
         "sourceMap": true
     },
-    "filesGlob": [
-        "typings/tsd.d.ts",
-        "src/ts/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "jspm_packages"
+    "files": [
+        "app/list.ts",
+        "app/product.ts",
+        "app/productList.ts",
+        "app/main.ts"
     ]
 }

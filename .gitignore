@@ -53,3 +53,5 @@ node_modules/
 src/**/*.js
 src/**/*.css
 
+app/*.js
+app/*.js.map
