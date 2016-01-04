@@ -4,10 +4,7 @@
         "module": "system",
         "sourceMap": true
     },
-    "files": [
-        "app/list.ts",
-        "app/product.ts",
-        "app/productList.ts",
-        "app/main.ts"
+    "exclude": [
+        "node_modules"
     ]
 }
