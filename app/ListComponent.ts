@@ -1,12 +1,8 @@
-export default class ListComponent {
-    private element;
+import Component from "./Component";
 
+export default class ListComponent extends Component {
     constructor (private components) {
-        this.element = this.createElement();
-    }
-
-    get domElement () {
-        return this.element;
+        super();
     }
 
     createElement () {

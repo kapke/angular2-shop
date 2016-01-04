@@ -1,12 +1,9 @@
-export default class ProductComponent {
-    private element;
+import {Product} from "./Product";
+import Component from './Component';
 
-    constructor (private product) {
-        this.element = this.createElement();
-    }
-
-    get domElement () {
-        return this.element;
+export default class ProductComponent extends Component {
+    constructor (private product : Product) {
+        super();
     }
 
     createElement () {
