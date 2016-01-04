@@ -24,3 +24,4 @@ ProductComponent.prototype._createElement = function () {
     return div;
 };
 
+
