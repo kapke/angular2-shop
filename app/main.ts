@@ -1,5 +1,5 @@
-import ProductListComponent from "./ProductListComponent";
 import {Product} from './Product';
+import {PromotedProductListComponent, ProductListComponent} from "./ProductListComponent";
 
 const promotedProducts : Product[] = [
     {name: 'Latte', price: '$10'},
@@ -12,7 +12,8 @@ const products : Product[] = [
     {name: 'Yerba', price: '$6'}
 ];
 
-[promotedProducts, products].forEach(list => {
-    const productList = new ProductListComponent(list);
-    document.body.appendChild(productList.domElement);
-});
+const promotedProductsList = new PromotedProductListComponent(promotedProducts);
+document.body.appendChild(promotedProductsList.domElement);
+
+const productList = new ProductListComponent(products);
+document.body.appendChild(productList.domElement);
