@@ -1,20 +1,17 @@
-(function () {
-    'use strict';
+import ProductListComponent from "./ProductListComponent";
 
-    var promotedProducts = [
-        {name: 'Latte', price: '$10'},
-        {name: 'Green Tea', price: '$7'}
-    ];
+const promotedProducts = [
+    {name: 'Latte', price: '$10'},
+    {name: 'Green Tea', price: '$7'}
+];
 
-    var products = [
-        {name: 'Coffee', price: '$5'},
-        {name: 'Tea', price: '$4'},
-        {name: 'Yerba', price: '$6'}
-    ];
+const products = [
+    {name: 'Coffee', price: '$5'},
+    {name: 'Tea', price: '$4'},
+    {name: 'Yerba', price: '$6'}
+];
 
-    var promotedProductList = new ProductList(promotedProducts);
-    document.body.appendChild(promotedProductList.getDOMElement());
-
-    var productList = new ProductList(products);
-    document.body.appendChild(productList.getDOMElement());
-})();
+[promotedProducts, products].forEach(list => {
+    const productList = new ProductListComponent(list);
+    document.body.appendChild(productList.domElement);
+});
