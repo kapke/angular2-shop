@@ -1,15 +1,11 @@
 import ProductComponent from "./ProductComponent";
 import ListComponent from "./ListComponent";
+import {Product} from "./Product";
+import Component from "./Component";
 
-export default class ProductListComponent {
-    private element;
-
-    constructor (private products) {
-        this.element = this.createElement();
-    }
-
-    get domElement () {
-        return this.element;
+export default class ProductListComponent extends Component {
+    constructor (private products : Product[]) {
+        super();
     }
 
     createElement () {
