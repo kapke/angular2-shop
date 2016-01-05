@@ -1,22 +1,19 @@
 import {Component} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
+import Product from "../Product/Product";
 
 @Component({
     selector: 'product-list',
-    directives: [COMMON_DIRECTIVES],
+    directives: [COMMON_DIRECTIVES, Product],
+    inputs: ['products'],
     template: `
         <ul>
             <li *ngFor="#product of products">
-                <header>{{ product.name }}</header>
-                <span class="price">{{ product.price }}</span>
+                <s-product [product]="product"></s-product>
             </li>
         </ul>
     `
 })
 export default class ProductList {
-    private products = [
-        {name: 'Coffee', price: '$5'},
-        {name: 'Tea', price: '$4'},
-        {name: 'Yerba', price: '$4'}
-    ];
+    public products = [];
 }
