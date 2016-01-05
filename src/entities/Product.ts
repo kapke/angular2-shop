@@ -1,6 +1,4 @@
-interface Product {
-    name: string;
-    price: string;
+export default class Product {
+    constructor (public name: string, public price: string, public tags: string[] = []) {
+    }
 }
-
-export {Product};

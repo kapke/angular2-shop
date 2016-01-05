@@ -1,7 +1,7 @@
 import {Component, View} from 'angular2/core';
 import ProductListComponent from '../ProductList/ProductList';
 import PromotedProductListComponent from '../ProductList/PromotedProductList';
-import {Product} from "../../entities/Product";
+import Product from "../../entities/Product";
 
 @Component({
     selector: 'my-app',
@@ -11,13 +11,13 @@ import {Product} from "../../entities/Product";
 export default class App {
     public title:string = 'Shop';
     public products : Product[] = [
-        {name: 'Coffee', price: '$5'},
-        {name: 'Tea', price: '$4'},
-        {name: 'Yerba', price: '$4'}
+        new Product('Coffee', '$5'),
+        new Product('Tea', '$4', ['Great', 'Super']),
+        new Product('Yerba', '$4', ['Strong'])
     ];
     public promotedProducts : Product[] = [
-        {name: 'Latte', price: '$10'},
-        {name: 'Green Tea', price: '$7'}
+        new Product('Latte', '$10'),
+        new Product('Green Tea', '$7')
     ];
 
 }
