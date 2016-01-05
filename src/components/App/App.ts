@@ -8,4 +8,9 @@ import ProductList from '../ProductList/ProductList';
 })
 export default class App {
     public title:string = 'Shop';
+    public products = [
+        {name: 'Coffee', price: '$5'},
+        {name: 'Tea', price: '$4'},
+        {name: 'Yerba', price: '$4'}
+    ];
 }
