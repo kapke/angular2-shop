@@ -1,5 +1,8 @@
 <div>
     <h1>{{ title }}</h1>
+    <form>
+        <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
+    </form>
     <promoted-product-list [products]="promotedProducts"></promoted-product-list>
     <product-list [products]="products"></product-list>
 </div>
