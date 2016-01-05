@@ -1,14 +1,15 @@
 import {Component, View} from 'angular2/core';
-import ProductList from '../ProductList/ProductList';
+import ProductListComponent from '../ProductList/ProductList';
+import {Product} from "../../entities/Product";
 
 @Component({
     selector: 'my-app',
-    directives: [ProductList],
+    directives: [ProductListComponent],
     templateUrl: 'dist/components/App/my-app.html'
 })
 export default class App {
     public title:string = 'Shop';
-    public products = [
+    public products : Product[] = [
         {name: 'Coffee', price: '$5'},
         {name: 'Tea', price: '$4'},
         {name: 'Yerba', price: '$4'}
