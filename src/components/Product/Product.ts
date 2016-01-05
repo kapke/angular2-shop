@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {Product} from '../../entities/Product';
 
 @Component({
     selector: 's-product',
@@ -10,6 +11,6 @@ import {Component} from 'angular2/core';
         </div>
     `
 })
-export default class Product {
-    public product;
+export default class ProductComponent {
+    public product : Product;
 }

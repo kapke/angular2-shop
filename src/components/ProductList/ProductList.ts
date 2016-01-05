@@ -1,10 +1,11 @@
 import {Component} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
-import Product from "../Product/Product";
+import ProductComponent from "../Product/Product";
+import {Product} from '../../entities/Product';
 
 @Component({
     selector: 'product-list',
-    directives: [COMMON_DIRECTIVES, Product],
+    directives: [COMMON_DIRECTIVES, ProductComponent],
     inputs: ['products'],
     template: `
         <ul>
@@ -14,6 +15,6 @@ import Product from "../Product/Product";
         </ul>
     `
 })
-export default class ProductList {
-    public products = [];
+export default class ProductListComponent {
+    public products : Product[] = [];
 }
