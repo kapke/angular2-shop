@@ -34,7 +34,10 @@ function compileTs () {
 
     return tsResult.js
         .pipe(sourcemaps.write({includeContent: true}))
-        .pipe(gulp.dest(dest.js));
+        .pipe(gulp.dest(dest.js))
+        .on('end', function () {
+            console.log('TS build finished');
+        });
 }
 
 function compileSass () {
