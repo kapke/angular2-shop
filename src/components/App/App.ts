@@ -14,4 +14,8 @@ export default class App {
         {name: 'Tea', price: '$4'},
         {name: 'Yerba', price: '$4'}
     ];
+    public promotedProducts : Product[] = [
+        {name: 'Latte', price: '$10'},
+        {name: 'Green Tea', price: '$7'}
+    ]
 }
