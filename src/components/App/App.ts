@@ -32,7 +32,7 @@ export default class App {
         if(!this.filter.length) {
             return true;
         } else {
-            return product.name.indexOf(this.filter) != -1;
+            return product.toString().indexOf(this.filter) != -1;
         }
     };
 
