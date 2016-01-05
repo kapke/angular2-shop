@@ -6,7 +6,17 @@ import Product from "../../entities/Product";
 @Component({
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent],
-    templateUrl: 'dist/components/App/my-app.html'
+    templateUrl: 'dist/components/App/my-app.html',
+    styles: [
+        `
+        .sort.ascending::before {
+            content: '^ ';
+        }
+        .sort.descending::before {
+            content: 'v ';
+        }
+        `
+    ]
 })
 export default class App {
     private filter: string = '';
