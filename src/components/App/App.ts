@@ -9,10 +9,10 @@ import Product from "../../entities/Product";
     templateUrl: 'dist/components/App/my-app.html',
     styles: [
         `
-        .sort.ascending::before {
+        .sort.active.ascending::before {
             content: '^ ';
         }
-        .sort.descending::before {
+        .sort.active.descending::before {
             content: 'v ';
         }
         `
@@ -34,8 +34,8 @@ export default class App {
         this.updateProducts();
     }
 
-    public onSortChange () {
-        console.log('sorting');
+    public onSortChange (property) {
+        this.sortingDescriptor.property = property;
         this.sortingDescriptor.direction = this.getNextSortingDirection(this.sortingDescriptor.direction);
         this.updateProducts();
     }
@@ -62,10 +62,14 @@ export default class App {
     };
 
     private compareProducts = (product1: Product, product2: Product) : number => {
-        let output: number;
+        let output: number = 0;
         switch (this.sortingDescriptor.property) {
             case 'price':
                 output = parseFloat(product1.price.replace('$', '')) - parseFloat(product2.price.replace('$', ''));
+                break;
+            case 'name':
+                output = product1.name.localeCompare(product2.name);
+                break;
         }
 
         return output*this.sortingDescriptor.direction;
