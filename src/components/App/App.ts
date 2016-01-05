@@ -1,10 +1,11 @@
 import {Component, View} from 'angular2/core';
 import ProductListComponent from '../ProductList/ProductList';
+import PromotedProductListComponent from '../ProductList/PromotedProductList';
 import {Product} from "../../entities/Product";
 
 @Component({
     selector: 'my-app',
-    directives: [ProductListComponent],
+    directives: [ProductListComponent, PromotedProductListComponent],
     templateUrl: 'dist/components/App/my-app.html'
 })
 export default class App {
@@ -17,5 +18,6 @@ export default class App {
     public promotedProducts : Product[] = [
         {name: 'Latte', price: '$10'},
         {name: 'Green Tea', price: '$7'}
-    ]
+    ];
+
 }
