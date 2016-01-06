@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
-import ProductListComponent from "./ProductList";
-import Product from "../../entities/Product";
+import ProductListComponent from "./ProductListComponent";
+import {Product} from "../product";
 
 @Component({
     selector: 'promoted-product-list',

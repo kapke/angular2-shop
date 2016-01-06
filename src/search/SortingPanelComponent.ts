@@ -1,7 +1,7 @@
 import {Component, EventEmitter} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
-import SortingButton from './SortingButton';
-import {SortingDescriptor, SortingOption} from "./Search";
+import SortingButtonComponent from './SortingButtonComponent';
+import {SortingDescriptor, SortingOption} from "./search";
 
 
 
@@ -9,7 +9,7 @@ import {SortingDescriptor, SortingOption} from "./Search";
     selector: 'sorting-panel',
     inputs: ['descriptor', 'options'],
     outputs: ['sortingChange'],
-    directives: [COMMON_DIRECTIVES, SortingButton],
+    directives: [COMMON_DIRECTIVES, SortingButtonComponent],
     template: `
         <sorting-button *ngFor="#option of options"
                         [descriptor]="descriptor"
@@ -17,7 +17,7 @@ import {SortingDescriptor, SortingOption} from "./Search";
                         (sortingChange)="onSortingChange(option)">{{ option.name }}</sorting-button>
     `
 })
-export default class SortingPanel {
+export default class SortingPanelComponent {
     public descriptor:SortingDescriptor = {direction: 0, property: ''};
     public options: SortingOption[] = [];
     public sortingChange = new EventEmitter();

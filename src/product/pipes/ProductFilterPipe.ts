@@ -1,10 +1,10 @@
 import {Pipe} from 'angular2/core';
-import Product from "../entities/Product";
+import {Product} from "../product";
 
 @Pipe({
     name: 'productFilter'
 })
-export default class ProductFilter {
+export default class ProductFilterPipe {
     public transform (items, [filterText]) {
         return items.filter(this.filterProducts.bind(null, filterText));
     }
