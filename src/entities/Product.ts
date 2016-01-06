@@ -1,5 +1,5 @@
 export default class Product {
-    constructor (public name: string, public price: string, public tags: string[] = []) {
+    constructor (public name: string, public price: number, public tags: string[] = []) {
     }
 
     toString (): string {
@@ -9,7 +9,7 @@ export default class Product {
     static compare (property: string, product1: Product, product2: Product): number {
         switch (property) {
             case 'price':
-                return parseFloat(product1.price.replace('$', '')) - parseFloat(product2.price.replace('$', ''));
+                return product1.price - product2.price;
             case 'name':
                 return product1.name.localeCompare(product2.name);
         }

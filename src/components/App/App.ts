@@ -27,12 +27,12 @@ export default class App {
 
     public onFilterChange (newFilter: string) {
         this.filterText = newFilter;
-        //this.updateProducts();
+        this.updateProducts();
     }
 
     public onSortChange (descriptor) {
         this.sortingDescriptor = descriptor;
-        //this.updateProducts();
+        this.updateProducts();
     }
 
     private updateProducts () {
@@ -42,16 +42,16 @@ export default class App {
 
     private getProducts () {
         return [
-            new Product('Yerba', '$4', ['Strong']),
-            new Product('Coffee', '$5'),
-            new Product('Tea', '$4', ['Great', 'Super'])
+            new Product('Yerba', 4, ['Strong']),
+            new Product('Coffee', 5),
+            new Product('Tea', 4, ['Great', 'Super'])
         ];
     }
 
     private getPromotedProducts () {
         return [
-            new Product('Latte', '$10'),
-            new Product('Green Tea', '$7')
+            new Product('Latte', 10),
+            new Product('Green Tea', 7)
         ];
     }
 }
