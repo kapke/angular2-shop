@@ -1,5 +1,5 @@
 import {Component, View} from 'angular2/core';
-import {Product, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
+import {Product, ProductRepository, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
 
 @Component({
@@ -10,6 +10,8 @@ import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../sea
 })
 export default class App {
     private filterText: string = '';
+    private productRepository:ProductRepository = new ProductRepository();
+
     public title: string = 'Shop';
     public products: Product[] = [];
     public promotedProducts: Product[] = [];
@@ -34,22 +36,7 @@ export default class App {
     }
 
     private updateProducts () {
-        this.products = this.getProducts();
-        this.promotedProducts = this.getPromotedProducts();
-    }
-
-    private getProducts () {
-        return [
-            new Product('Yerba', 4, ['Strong']),
-            new Product('Coffee', 5),
-            new Product('Tea', 4, ['Great', 'Super'])
-        ];
-    }
-
-    private getPromotedProducts () {
-        return [
-            new Product('Latte', 10),
-            new Product('Green Tea', 7)
-        ];
+        this.products = this.productRepository.getProducts();
+        this.promotedProducts = this.productRepository.getPromotedProducts();
     }
 }
