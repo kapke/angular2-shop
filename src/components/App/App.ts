@@ -62,17 +62,7 @@ export default class App {
     };
 
     private compareProducts = (product1: Product, product2: Product) : number => {
-        let output: number = 0;
-        switch (this.sortingDescriptor.property) {
-            case 'price':
-                output = parseFloat(product1.price.replace('$', '')) - parseFloat(product2.price.replace('$', ''));
-                break;
-            case 'name':
-                output = product1.name.localeCompare(product2.name);
-                break;
-        }
-
-        return output*this.sortingDescriptor.direction;
+        return Product.compare(this.sortingDescriptor.property, product1, product2)*this.sortingDescriptor.direction;
     };
 
     private getProducts () {
