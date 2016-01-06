@@ -3,15 +3,14 @@ import {COMMON_DIRECTIVES} from 'angular2/common';
 
 @Component({
     selector: 'sorting-button',
-    inputs: ['sortingDescriptor', 'property'],
+    inputs: ['descriptor', 'property'],
     outputs: ['sortingChange'],
     directives: [COMMON_DIRECTIVES],
     template: `
-        <button [class]="sort"
-                [ngClass]="{
-                    active: sortingDescriptor.property == property,
-                    ascending: sortingDescriptor.direction > 0,
-                    descending: sortingDescriptor.direction < 0}"
+        <button [ngClass]="{
+                    active: descriptor.property == property,
+                    ascending: descriptor.direction > 0,
+                    descending: descriptor.direction < 0}"
                 (click)="onClick()">
             <ng-content></ng-content>
         </button>
@@ -29,7 +28,7 @@ import {COMMON_DIRECTIVES} from 'angular2/common';
 })
 export default class SortingButton {
     public property: string;
-    public sortingDescriptor: {property: string; direction: number};
+    public descriptor: {property: string; direction: number};
     public sortingChange = new EventEmitter();
 
     onClick () {
