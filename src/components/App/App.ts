@@ -27,12 +27,12 @@ export default class App {
 
     public onFilterChange (newFilter: string) {
         this.filterText = newFilter;
-        this.updateProducts();
+        //this.updateProducts();
     }
 
     public onSortChange (descriptor) {
         this.sortingDescriptor = descriptor;
-        this.updateProducts();
+        //this.updateProducts();
     }
 
     private updateProducts () {
