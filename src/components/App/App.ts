@@ -2,21 +2,12 @@ import {Component, View} from 'angular2/core';
 import ProductListComponent from '../ProductList/ProductList';
 import PromotedProductListComponent from '../ProductList/PromotedProductList';
 import Product from "../../entities/Product";
+import SortingButton from '../Sort/SortingButton';
 
 @Component({
     selector: 'my-app',
-    directives: [ProductListComponent, PromotedProductListComponent],
+    directives: [ProductListComponent, PromotedProductListComponent, SortingButton],
     templateUrl: 'dist/components/App/my-app.html',
-    styles: [
-        `
-        .sort.active.ascending::before {
-            content: '^ ';
-        }
-        .sort.active.descending::before {
-            content: 'v ';
-        }
-        `
-    ]
 })
 export default class App {
     private filter: string = '';
@@ -49,8 +40,12 @@ export default class App {
     }
 
     private updateProducts () {
-        this.products = this.getProducts().filter(this.filterProducts).sort(this.compareProducts);
-        this.promotedProducts = this.getPromotedProducts().filter(this.filterProducts).sort(this.compareProducts);
+        this.products = this.getProducts()
+            .filter(this.filterProducts)
+            .sort(this.compareProducts);
+        this.promotedProducts = this.getPromotedProducts()
+            .filter(this.filterProducts)
+            .sort(this.compareProducts);
     }
 
     private filterProducts = (product: Product) => {
