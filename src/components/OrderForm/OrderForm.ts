@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {FormBuilder, ControlGroup, COMMON_DIRECTIVES} from 'angular2/common';
+import {FormBuilder, ControlGroup, COMMON_DIRECTIVES, Validators} from 'angular2/common';
 
 @Component({
     selector: 'order-form',
@@ -17,31 +17,18 @@ import {FormBuilder, ControlGroup, COMMON_DIRECTIVES} from 'angular2/common';
 export default class OrderForm {
     public orderForm: ControlGroup;
 
-    private controls;
-
     constructor(formBuilder: FormBuilder) {
-        this.controls = {
-            name: formBuilder.control(''),
-            surname: formBuilder.control(''),
-            address: formBuilder.control(''),
-            productName: formBuilder.control(''),
-            productCount: formBuilder.control('')
-        };
-        this.orderForm = formBuilder.group(this.controls);
+        this.orderForm = formBuilder.group({
+            name: [''],
+            surname: [''],
+            address: [''],
+            productName: [''],
+            productCount: ['']
+        });
     }
 
     public onFormSubmit () {
-        const order = this.collectOrder();
+        const order = this.orderForm.value;
         console.log(order);
-    }
-
-    private collectOrder () {
-        return {
-            name: this.controls.name.value,
-            surname: this.controls.surname.value,
-            address: this.controls.address.value,
-            productName: this.controls.productName.value,
-            productCount: this.controls.productCount.value
-        }
     }
 }
