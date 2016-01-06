@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {FormBuilder, ControlGroup, COMMON_DIRECTIVES, Validators} from 'angular2/common';
+import {FormBuilder, ControlGroup, Control, COMMON_DIRECTIVES, Validators} from 'angular2/common';
 
 @Component({
     selector: 'order-form',
@@ -25,12 +25,20 @@ export default class OrderForm {
             address: ['', Validators.required],
             email: ['', Validators.required],
             productName: ['', Validators.required],
-            productCount: ['', Validators.required]
+            productCount: ['', Validators.compose([Validators.required, this.integer, this.notZero])]
         });
     }
 
     public onFormSubmit () {
         const order = this.orderForm.value;
         console.log(order);
+    }
+
+    private integer (control: Control) {
+        return Number.isInteger(control.value)?null:{integer: true};
+    }
+
+    private notZero (control: Control) {
+        return (control.value != 0)?null:{notZero: true};
     }
 }
