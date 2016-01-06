@@ -23,7 +23,7 @@ export default class OrderForm {
             name: ['', Validators.required],
             surname: ['', Validators.required],
             address: ['', Validators.required],
-            email: ['', Validators.required],
+            email: ['', Validators.compose([Validators.required, this.email])],
             productName: ['', Validators.required],
             productCount: ['', Validators.compose([Validators.required, this.integer, this.notZero])]
         });
@@ -40,5 +40,9 @@ export default class OrderForm {
 
     private notZero (control: Control) {
         return (control.value != 0)?null:{notZero: true};
+    }
+
+    private email (control: Control) {
+        return (control.value.indexOf('@') != -1)?null:{email: true};
     }
 }
