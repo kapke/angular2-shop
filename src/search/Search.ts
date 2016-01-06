@@ -1,5 +1,6 @@
 import SortingPanel from './SortingPanel';
-import Filter from './ProductFilter';
+import ProductFilter from './ProductFilter';
+import ProductSort from './ProductSort';
 
 interface SortingDescriptor {
     direction: number,
@@ -11,4 +12,4 @@ interface SortingOption {
     name: string;
 }
 
-export {SortingPanel, Filter, SortingDescriptor, SortingOption};
+export {SortingPanel, ProductFilter, SortingDescriptor, SortingOption, ProductSort};
