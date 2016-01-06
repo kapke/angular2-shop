@@ -1,6 +1,9 @@
 import {Component, EventEmitter} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 import SortingButton from './SortingButton';
+import {SortingDescriptor, SortingOption} from "./Sort";
+
+
 
 @Component({
     selector: 'sorting-panel',
@@ -15,8 +18,8 @@ import SortingButton from './SortingButton';
     `
 })
 export default class SortingPanel {
-    public descriptor = {name: '', property: ''};
-    public options: string[] = [];
+    public descriptor:SortingDescriptor = {direction: 0, property: ''};
+    public options: SortingOption[] = [];
     public sortingChange = new EventEmitter();
 
     public onSortingChange (option) {

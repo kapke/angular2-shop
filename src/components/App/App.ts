@@ -2,7 +2,7 @@ import {Component, View} from 'angular2/core';
 import ProductListComponent from '../ProductList/ProductList';
 import PromotedProductListComponent from '../ProductList/PromotedProductList';
 import Product from "../../entities/Product";
-import SortingPanel from "../Sort/SortingPanel";
+import {SortingPanel, SortingOption, SortingDescriptor} from "../Sort/Sort";
 
 @Component({
     selector: 'my-app',
@@ -14,8 +14,8 @@ export default class App {
     public title: string = 'Shop';
     public products: Product[] = [];
     public promotedProducts: Product[] = [];
-    public sortingDescriptor = {property: 'price', direction: 0};
-    public sortingOptions = [
+    public sortingDescriptor:SortingDescriptor = {property: 'price', direction: 0};
+    public sortingOptions:SortingOption[] = [
         {name: 'Price', property: 'price'},
         {name: 'Name', property: 'name'}
     ];
