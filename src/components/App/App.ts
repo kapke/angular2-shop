@@ -2,12 +2,12 @@ import {Component, View} from 'angular2/core';
 import ProductListComponent from '../ProductList/ProductList';
 import PromotedProductListComponent from '../ProductList/PromotedProductList';
 import Product from "../../entities/Product";
-import {SortingPanel, SortingOption, SortingDescriptor, Filter} from "../../search/Search";
+import {SortingPanel, SortingOption, SortingDescriptor, ProductFilter, ProductSort} from "../../search/Search";
 
 @Component({
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingPanel],
-    pipes: [Filter],
+    pipes: [ProductFilter, ProductSort],
     templateUrl: 'dist/components/App/my-app.html',
 })
 export default class App {
@@ -36,15 +36,9 @@ export default class App {
     }
 
     private updateProducts () {
-        this.products = this.getProducts()
-            .sort(this.compareProducts);
-        this.promotedProducts = this.getPromotedProducts()
-            .sort(this.compareProducts);
+        this.products = this.getProducts();
+        this.promotedProducts = this.getPromotedProducts();
     }
-
-    private compareProducts = (product1: Product, product2: Product) : number => {
-        return Product.compare(this.sortingDescriptor.property, product1, product2)*this.sortingDescriptor.direction;
-    };
 
     private getProducts () {
         return [

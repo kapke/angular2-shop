@@ -6,6 +6,6 @@
                        [options]="sortingOptions"
                        (sortingChange)="onSortChange($event)"></sorting-panel>
     </form>
-    <promoted-product-list [products]="promotedProducts | productFilter:filterText"></promoted-product-list>
-    <product-list [products]="products | productFilter:filterText"></product-list>
+    <promoted-product-list [products]="promotedProducts | productFilter:filterText | productSort:sortingDescriptor"></promoted-product-list>
+    <product-list [products]="products | productFilter:filterText | productSort:sortingDescriptor"></product-list>
 </div>
