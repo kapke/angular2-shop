@@ -2,15 +2,16 @@ import {Component, View} from 'angular2/core';
 import ProductListComponent from '../ProductList/ProductList';
 import PromotedProductListComponent from '../ProductList/PromotedProductList';
 import Product from "../../entities/Product";
-import {SortingPanel, SortingOption, SortingDescriptor} from "../Sort/Sort";
+import {SortingPanel, SortingOption, SortingDescriptor, Filter} from "../../search/Search";
 
 @Component({
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingPanel],
+    pipes: [Filter],
     templateUrl: 'dist/components/App/my-app.html',
 })
 export default class App {
-    private filter: string = '';
+    private filterText: string = '';
     public title: string = 'Shop';
     public products: Product[] = [];
     public promotedProducts: Product[] = [];
@@ -25,7 +26,7 @@ export default class App {
     }
 
     public onFilterChange (newFilter: string) {
-        this.filter = newFilter;
+        this.filterText = newFilter;
         this.updateProducts();
     }
 
@@ -36,20 +37,10 @@ export default class App {
 
     private updateProducts () {
         this.products = this.getProducts()
-            .filter(this.filterProducts)
             .sort(this.compareProducts);
         this.promotedProducts = this.getPromotedProducts()
-            .filter(this.filterProducts)
             .sort(this.compareProducts);
     }
-
-    private filterProducts = (product: Product) => {
-        if(!this.filter.length) {
-            return true;
-        } else {
-            return product.toString().toLocaleLowerCase().indexOf(this.filter.toLocaleLowerCase()) != -1;
-        }
-    };
 
     private compareProducts = (product1: Product, product2: Product) : number => {
         return Product.compare(this.sortingDescriptor.property, product1, product2)*this.sortingDescriptor.direction;
