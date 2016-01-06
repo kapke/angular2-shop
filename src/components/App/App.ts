@@ -2,11 +2,11 @@ import {Component, View} from 'angular2/core';
 import ProductListComponent from '../ProductList/ProductList';
 import PromotedProductListComponent from '../ProductList/PromotedProductList';
 import Product from "../../entities/Product";
-import SortingButton from '../Sort/SortingButton';
+import SortingPanel from "../Sort/SortingPanel";
 
 @Component({
     selector: 'my-app',
-    directives: [ProductListComponent, PromotedProductListComponent, SortingButton],
+    directives: [ProductListComponent, PromotedProductListComponent, SortingPanel],
     templateUrl: 'dist/components/App/my-app.html',
 })
 export default class App {
@@ -15,6 +15,10 @@ export default class App {
     public products: Product[] = [];
     public promotedProducts: Product[] = [];
     public sortingDescriptor = {property: 'price', direction: 0};
+    public sortingOptions = [
+        {name: 'Price', property: 'price'},
+        {name: 'Name', property: 'name'}
+    ];
 
     constructor () {
         this.updateProducts();
@@ -25,18 +29,9 @@ export default class App {
         this.updateProducts();
     }
 
-    public onSortChange (property) {
-        this.sortingDescriptor.property = property;
-        this.sortingDescriptor.direction = this.getNextSortingDirection(this.sortingDescriptor.direction);
+    public onSortChange (descriptor) {
+        this.sortingDescriptor = descriptor;
         this.updateProducts();
-    }
-
-    private getNextSortingDirection (sortingDirection: number) {
-        if(sortingDirection == 1) {
-            return -1;
-        } else {
-            return sortingDirection + 1;
-        }
     }
 
     private updateProducts () {
