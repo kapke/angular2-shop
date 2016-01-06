@@ -9,7 +9,7 @@ import Product from '../../entities/Product';
     template: `
         <div>
             <header>{{ product.name }}</header>
-            <span class="price">{{ product.price }}</span>
+            <span class="price">{{ product.price | currency:'USD':true }}</span>
             <div>
                 <span *ngFor="#tag of product.tags">{{ tag }}</span>
             </div>
