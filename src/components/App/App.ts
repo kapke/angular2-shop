@@ -1,11 +1,11 @@
 import {Component, View} from 'angular2/core';
-import {Product, ProductFilterPipe, ProductSortPipe, ProductListComponent, PromotedProductListComponent} from '../../product/product';
+import {Product, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
 
 @Component({
     selector: 'my-app',
-    directives: [ProductListComponent, PromotedProductListComponent, SortingPanelComponent],
-    pipes: [ProductFilterPipe, ProductSortPipe],
+    directives: [PRODUCT_DIRECTIVES, SortingPanelComponent],
+    pipes: [PRODUCT_PIPES],
     templateUrl: 'dist/components/App/my-app.html',
 })
 export default class App {
