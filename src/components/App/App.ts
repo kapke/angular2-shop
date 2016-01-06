@@ -10,7 +10,6 @@ import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../sea
 })
 export default class App {
     private filterText: string = '';
-    private productRepository:ProductRepository = new ProductRepository();
 
     public title: string = 'Shop';
     public products: Product[] = [];
@@ -21,7 +20,7 @@ export default class App {
         {name: 'Name', property: 'name'}
     ];
 
-    constructor () {
+    constructor (private productRepository: ProductRepository) {
         this.updateProducts();
     }
 
