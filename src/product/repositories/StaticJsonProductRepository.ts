@@ -1,8 +1,8 @@
 import {Injectable} from "angular2/core";
 import {Http} from "angular2/http";
 import ProductRepository from "./ProductRepository";
-import {Observable} from "rxjs/Observable";
 import Product from "../entities/Product";
+import {Observable} from "rxjs/Rx";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/retryWhen";
 import "rxjs/add/operator/delay";
