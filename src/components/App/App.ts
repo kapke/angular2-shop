@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component, View, Inject} from 'angular2/core';
 import {Product, ProductRepository, StaticJsonProductRepository, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
 import OrderForm from '../OrderForm/OrderForm';
@@ -21,7 +21,7 @@ export default class App {
 
     private filterText: string = '';
 
-    constructor (private productRepository: ProductRepository) {
+    constructor (@Inject("ProductRepository") private productRepository: ProductRepository) {
         console.log(productRepository);
         this.updateProducts();
     }

@@ -1,6 +1,6 @@
 import {Injectable} from "angular2/core";
 import {Http} from "angular2/http";
-import ProductRepository from "./ProductRepository";
+import {ProductRepository} from "./ProductRepository";
 import Product from "../entities/Product";
 import {Observable} from "rxjs/Rx";
 import "rxjs/add/operator/map";
@@ -9,12 +9,11 @@ import "rxjs/add/operator/delay";
 import "rxjs/add/operator/scan";
 
 @Injectable()
-export default class StaticJsonProductRepository extends ProductRepository {
+export default class StaticJsonProductRepository implements ProductRepository {
     private productsPath = 'data/products.json';
     private promotedProductsPath = 'data/promoted-products.json';
 
     constructor (private http: Http) {
-        super();
         console.log('Static JSON Repository');
     }
 

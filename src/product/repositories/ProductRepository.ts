@@ -1,13 +1,9 @@
 import Product from "../entities/Product";
 import {Observable} from "rxjs/Rx";
 
-abstract class ProductRepository {
-    public abstract getProducts (): Observable<Product[]>;
-    public abstract getPromotedProducts (): Observable<Product[]>;
-
-    constructor () {
-        console.log('abstract constructor');
-    }
+interface ProductRepository {
+    getProducts (): Observable<Product[]>;
+    getPromotedProducts (): Observable<Product[]>;
 }
 
-export default ProductRepository;
+export {ProductRepository};
