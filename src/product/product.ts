@@ -1,3 +1,5 @@
+import {provide} from "angular2/core";
+
 import Product from './entities/Product';
 import ProductRepository from './repositories/ProductRepository';
 import StaticJsonProductRepository from './repositories/StaticJsonProductRepository';
@@ -10,7 +12,10 @@ import ProductSortPipe from './pipes/ProductSortPipe';
 
 const PRODUCT_PIPES = [ProductFilterPipe, ProductSortPipe];
 const PRODUCT_DIRECTIVES = [ProductComponent, ProductListComponent, PromotedProductListComponent];
-const PRODUCT_PROVIDERS = [ProductRepository, StaticJsonProductRepository, InMemoryProductRepository];
+const PRODUCT_PROVIDERS = [
+    provide(ProductRepository, {useClass: StaticJsonProductRepository}),
+    StaticJsonProductRepository,
+    InMemoryProductRepository];
 
 export {Product, ProductRepository, StaticJsonProductRepository, InMemoryProductRepository,
         ProductComponent, ProductListComponent, PromotedProductListComponent,
