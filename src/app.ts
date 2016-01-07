@@ -1,8 +1,8 @@
 import {bootstrap} from 'angular2/bootstrap';
 import {FORM_PROVIDERS} from 'angular2/common';
-
-import {ProductRepository} from './product/product';
+import {HTTP_PROVIDERS} from 'angular2/http';
 
 import App from './components/App/App';
+import StaticJsonProductRepository from "./product/repositories/StaticJsonProductRepository";
 
-bootstrap(App, [FORM_PROVIDERS, ProductRepository]);
+bootstrap(App, [FORM_PROVIDERS, HTTP_PROVIDERS, StaticJsonProductRepository]);
