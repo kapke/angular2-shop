@@ -4,7 +4,8 @@ import ProductRepository from "./ProductRepository";
 import {Observable} from "rxjs/Observable";
 import Product from "../entities/Product";
 import "rxjs/add/operator/map";
-import "rxjs/add/operator/retry";
+import "rxjs/add/operator/retryWhen";
+import "rxjs/add/operator/delay";
 
 @Injectable()
 export default class StaticJsonProductRepository {
@@ -18,7 +19,10 @@ export default class StaticJsonProductRepository {
         return this.http.get(path)
             .map(res => res.json())
             .map(data => data.map(Product.fromObject))
-            .retry(5);
+            .retryWhen((errors) => {
+                console.log(errors);
+                return errors.delay(1000);
+            });
     }
 
     getPromotedProducts () {
