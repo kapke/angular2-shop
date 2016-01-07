@@ -1,25 +1,13 @@
 import Product from "../entities/Product";
 import {Observable} from "rxjs/Rx";
 
-export default class ProductRepository {
-    public getProducts (): Observable<Product[]> {
-        return Observable.create((observer) => {
-            observer.next([
-                new Product('Yerba', 4, ['Strong']),
-                new Product('Coffee', 5),
-                new Product('Tea', 4, ['Great', 'Super'])
-            ]);
-            observer.complete();
-        });
-    }
+abstract class ProductRepository {
+    public abstract getProducts (): Observable<Product[]>;
+    public abstract getPromotedProducts (): Observable<Product[]>;
 
-    public getPromotedProducts (): Observable<Product[]> {
-        return Observable.create((observer) => {
-            observer.next([
-                new Product('Latte', 10),
-                new Product('Green Tea', 7)
-            ]);
-            observer.complete();
-        });
+    constructor () {
+        console.log('abstract constructor');
     }
 }
+
+export default ProductRepository;

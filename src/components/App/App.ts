@@ -21,14 +21,9 @@ export default class App {
 
     private filterText: string = '';
 
-    constructor (private staticJsonProductRepository: StaticJsonProductRepository, private productRepository: ProductRepository) {
+    constructor (private productRepository: ProductRepository) {
+        console.log(productRepository);
         this.updateProducts();
-        this.staticJsonProductRepository.getFailingProducts()
-            .subscribe(
-                data => console.log('data', data),
-                error => console.log('error', error),
-                () => {console.log('end')}
-            );
     }
 
     public onFilterChange (newFilter: string) {

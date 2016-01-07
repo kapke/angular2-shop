@@ -9,11 +9,13 @@ import "rxjs/add/operator/delay";
 import "rxjs/add/operator/scan";
 
 @Injectable()
-export default class StaticJsonProductRepository {
+export default class StaticJsonProductRepository extends ProductRepository {
     private productsPath = 'data/products.json';
     private promotedProductsPath = 'data/promoted-products.json';
 
     constructor (private http: Http) {
+        super();
+        console.log('Static JSON Repository');
     }
 
     getProducts (path = this.productsPath): Observable<Product[]> {

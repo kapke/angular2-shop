@@ -1,6 +1,7 @@
 import Product from './entities/Product';
 import ProductRepository from './repositories/ProductRepository';
 import StaticJsonProductRepository from './repositories/StaticJsonProductRepository';
+import InMemoryProductRepository from './repositories/InMemoryProductRepository';
 import ProductComponent from './components/ProductComponent';
 import ProductListComponent from './components/ProductListComponent';
 import PromotedProductListComponent from './components/PromotedProductListComponent';
@@ -9,9 +10,9 @@ import ProductSortPipe from './pipes/ProductSortPipe';
 
 const PRODUCT_PIPES = [ProductFilterPipe, ProductSortPipe];
 const PRODUCT_DIRECTIVES = [ProductComponent, ProductListComponent, PromotedProductListComponent];
-const PRODUCT_PROVIDERS = [ProductRepository, StaticJsonProductRepository];
+const PRODUCT_PROVIDERS = [ProductRepository, StaticJsonProductRepository, InMemoryProductRepository];
 
-export {Product, ProductRepository, StaticJsonProductRepository,
+export {Product, ProductRepository, StaticJsonProductRepository, InMemoryProductRepository,
         ProductComponent, ProductListComponent, PromotedProductListComponent,
         ProductFilterPipe, ProductSortPipe,
         PRODUCT_DIRECTIVES, PRODUCT_PIPES, PRODUCT_PROVIDERS};
