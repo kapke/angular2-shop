@@ -1,8 +1,7 @@
 import {Component, View} from 'angular2/core';
-import {Product, ProductRepository, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
+import {Product, ProductRepository, StaticJsonProductRepository, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
 import OrderForm from '../OrderForm/OrderForm';
-import StaticJsonProductRepository from "../../product/repositories/StaticJsonProductRepository";
 
 @Component({
     selector: 'my-app',
@@ -22,7 +21,7 @@ export default class App {
 
     private filterText: string = '';
 
-    constructor (private staticJsonProductRepository: StaticJsonProductRepository) {
+    constructor (private staticJsonProductRepository: StaticJsonProductRepository, private productRepository: ProductRepository) {
         this.updateProducts();
         this.staticJsonProductRepository.getFailingProducts()
             .subscribe(
@@ -43,13 +42,13 @@ export default class App {
     }
 
     private updateProducts () {
-        this.staticJsonProductRepository.getProducts()
+        this.productRepository.getProducts()
             .subscribe(
                 products => this.products = products,
                 error => console.log('error', error),
                 () => {console.log('end')}
             );
-        this.staticJsonProductRepository.getPromotedProducts()
+        this.productRepository.getPromotedProducts()
             .subscribe(
                 promotedProducts => this.promotedProducts = promotedProducts,
                 error => console.log('error', error),
