@@ -39,22 +39,14 @@ export default class App {
     private updateProducts () {
         this.staticJsonProductRepository.getProducts()
             .subscribe(
-                response => {
-                    console.log('response', response);
-                    const data = response.json();
-                    this.products =  data.map(item => new Product(item.name, item.price, item.tags))
-                },
-                data => console.log('error', data),
+                products => this.products = products,
+                error => console.log('error', error),
                 () => {console.log('end')}
             );
         this.staticJsonProductRepository.getPromotedProducts()
             .subscribe(
-                response => {
-                    console.log('response', response);
-                    const data = response.json();
-                    this.promotedProducts =  data.map(item => new Product(item.name, item.price, item.tags))
-                },
-                data => console.log('error', data),
+                promotedProducts => this.promotedProducts = promotedProducts,
+                error => console.log('error', error),
                 () => {console.log('end')}
             );
     }

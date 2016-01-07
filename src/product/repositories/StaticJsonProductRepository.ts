@@ -3,17 +3,23 @@ import {Http} from "angular2/http";
 import ProductRepository from "./ProductRepository";
 import {Observable} from "rxjs/Observable";
 import Product from "../entities/Product";
+import "rxjs/add/operator/map";
 
 @Injectable()
 export default class StaticJsonProductRepository {
+    private productsPath = 'data/products.json';
+    private promotedProductsPath = 'data/promoted-products.json';
+
     constructor (private http: Http) {
     }
 
-    getProducts () {
-        return this.http.get('data/products.json');
+    getProducts (path = this.productsPath): Observable<Product[]> {
+        return this.http.get(path)
+            .map(res => res.json())
+            .map(data => data.map(Product.fromObject));
     }
 
     getPromotedProducts () {
-        return this.http.get('data/promoted-products.json');
+        return this.getProducts(this.promotedProductsPath);
     }
 }

@@ -14,4 +14,8 @@ export default class Product {
                 return product1.name.localeCompare(product2.name);
         }
     }
+
+    static fromObject ({name, price, tags}: {name: string, price: number, tags: string[]}) {
+        return new Product(name, price, tags);
+    }
 }
