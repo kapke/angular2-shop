@@ -6,6 +6,7 @@ import Product from "../entities/Product";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/retryWhen";
 import "rxjs/add/operator/delay";
+import "rxjs/add/operator/scan";
 
 @Injectable()
 export default class StaticJsonProductRepository {
@@ -20,8 +21,14 @@ export default class StaticJsonProductRepository {
             .map(res => res.json())
             .map(data => data.map(Product.fromObject))
             .retryWhen((errors) => {
-                console.log(errors);
-                return errors.delay(1000);
+                return errors.scan((errorsCount: number, err) => {
+                        if (errorsCount >= 5) {
+                            throw err;
+                        } else {
+                            return errorsCount + 1;
+                        }
+                    }, 0)
+                    .delay(500);
             });
     }
 
