@@ -2,6 +2,7 @@ import {Component, View} from 'angular2/core';
 import {Product, ProductRepository, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
 import OrderForm from '../OrderForm/OrderForm';
+import StaticJsonProductRepository from "../../product/repositories/StaticJsonProductRepository";
 
 @Component({
     selector: 'my-app',
@@ -21,7 +22,7 @@ export default class App {
 
     private filterText: string = '';
 
-    constructor (private productRepository: ProductRepository) {
+    constructor (private staticJsonProductRepository: StaticJsonProductRepository) {
         this.updateProducts();
     }
 
@@ -36,7 +37,25 @@ export default class App {
     }
 
     private updateProducts () {
-        this.products = this.productRepository.getProducts();
-        this.promotedProducts = this.productRepository.getPromotedProducts();
+        this.staticJsonProductRepository.getProducts()
+            .subscribe(
+                response => {
+                    console.log('response', response);
+                    const data = response.json();
+                    this.products =  data.map(item => new Product(item.name, item.price, item.tags))
+                },
+                data => console.log('error', data),
+                () => {console.log('end')}
+            );
+        this.staticJsonProductRepository.getPromotedProducts()
+            .subscribe(
+                response => {
+                    console.log('response', response);
+                    const data = response.json();
+                    this.promotedProducts =  data.map(item => new Product(item.name, item.price, item.tags))
+                },
+                data => console.log('error', data),
+                () => {console.log('end')}
+            );
     }
 }
