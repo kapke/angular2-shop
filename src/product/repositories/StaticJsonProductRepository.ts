@@ -4,6 +4,7 @@ import ProductRepository from "./ProductRepository";
 import {Observable} from "rxjs/Observable";
 import Product from "../entities/Product";
 import "rxjs/add/operator/map";
+import "rxjs/add/operator/retry";
 
 @Injectable()
 export default class StaticJsonProductRepository {
@@ -16,10 +17,15 @@ export default class StaticJsonProductRepository {
     getProducts (path = this.productsPath): Observable<Product[]> {
         return this.http.get(path)
             .map(res => res.json())
-            .map(data => data.map(Product.fromObject));
+            .map(data => data.map(Product.fromObject))
+            .retry(5);
     }
 
     getPromotedProducts () {
         return this.getProducts(this.promotedProductsPath);
+    }
+
+    getFailingProducts () {
+        return this.getProducts('non-existing-path');
     }
 }
