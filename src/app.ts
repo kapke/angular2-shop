@@ -5,5 +5,6 @@ import {ROUTER_PROVIDERS} from 'angular2/router';
 
 import App from './components/App/AppComponent';
 import {PRODUCT_PROVIDERS} from './product/product';
+import ExchangeService from "./exchange-rates/ExchangeService";
 
-bootstrap(App, [FORM_PROVIDERS, HTTP_PROVIDERS, ROUTER_PROVIDERS, PRODUCT_PROVIDERS]);
+bootstrap(App, [FORM_PROVIDERS, HTTP_PROVIDERS, ROUTER_PROVIDERS, PRODUCT_PROVIDERS, ExchangeService]);
