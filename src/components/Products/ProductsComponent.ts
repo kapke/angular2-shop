@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
-import {ProductComponent, ProductListWithSearchingComponent} from "../../product/product";
+import {RoutableProductComponent, ProductListWithSearchingComponent} from "../../product/product";
 
 @Component({
     selector: 's-products',
@@ -9,7 +9,7 @@ import {ProductComponent, ProductListWithSearchingComponent} from "../../product
 })
 @RouteConfig([
     {path: '/', name: 'ProductList', component: ProductListWithSearchingComponent, useAsDefault: true},
-    {path: '/:slug', name: 'Product', component: ProductComponent}
+    {path: '/:slug', name: 'Product', component: RoutableProductComponent}
 ])
 export default class ProductsComponent {
 }
