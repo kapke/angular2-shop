@@ -1,0 +1,22 @@
+import {Component} from 'angular2/core';
+import {ROUTER_DIRECTIVES} from 'angular2/router';
+
+@Component({
+    selector: 'top-menu',
+    directives: [ROUTER_DIRECTIVES],
+    template: `
+        <nav>
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a [routerLink]="['Products']">Products</a></li>
+                <li role="presentation"><a [routerLink]="['OrderForm']">Order form</a></li>
+            </ul>
+        </nav>
+    `,
+    styles: [
+        `ul {
+            margin-bottom: 1em;
+        }`
+    ]
+})
+export default class TopMenuComponent {
+}

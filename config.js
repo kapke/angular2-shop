@@ -4,6 +4,7 @@ System.config({
     transpiler: "none",
     map: {
         "angular2": "node_modules/angular2",
-        "rxjs": "node_modules/rxjs"
+        "rxjs": "node_modules/rxjs",
+        "bootstrap": "node_modules/bootstrap"
     }
 });
