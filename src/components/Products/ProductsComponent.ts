@@ -20,7 +20,6 @@ export default class ProductsComponent {
     private filterText: string = '';
 
     constructor (@Inject("ProductRepository") private productRepository: ProductRepository) {
-        console.log(productRepository);
         this.updateProducts();
     }
 

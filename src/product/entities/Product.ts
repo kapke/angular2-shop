@@ -1,8 +1,12 @@
 export default class Product {
+    get slug (): string {
+        return this.name.toLowerCase().replace(/\s/g, '-');
+    }
+
     constructor (public name: string, public price: number, public tags: string[] = []) {
     }
 
-    toString (): string {
+    public toString (): string {
         return `${this.name} ${this.price} ${this.tags.join(' ')}`;
     }
 

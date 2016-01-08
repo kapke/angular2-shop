@@ -1,8 +1,8 @@
 import Product from "../entities/Product";
 import {Observable} from "rxjs/Rx";
-import {ProductRepository} from "./ProductRepository";
+import {AbstractProductRepository} from "./ProductRepository";
 
-export default class InMemoryProductRepository implements ProductRepository {
+export default class InMemoryProductRepository extends AbstractProductRepository {
     constructor () {
         console.log('In memory Repository');
     }
