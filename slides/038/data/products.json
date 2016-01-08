@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Yerba",
+        "price": 5,
+        "tags": [
+            "Strong"
+        ]
+    },
+    {
+        "name": "Coffee",
+        "price": 5
+    },
+    {
+        "name": "Tea",
+        "price": 4,
+        "tags": [
+            "Great",
+            "super"
+        ]
+    }
+]

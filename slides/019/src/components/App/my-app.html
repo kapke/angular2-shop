@@ -1,0 +1,11 @@
+<div>
+    <h1>{{ title }}</h1>
+    <form>
+        <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
+        <button class="sort"
+                [ngClass]="{ascending: sortingDescriptor.direction == 1, descending: sortingDescriptor.direction == -1}"
+                (click)="onSortChange()">Price</button>
+    </form>
+    <promoted-product-list [products]="promotedProducts"></promoted-product-list>
+    <product-list [products]="products"></product-list>
+</div>
