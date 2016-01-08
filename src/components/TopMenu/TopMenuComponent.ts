@@ -1,14 +1,17 @@
 import {Component} from 'angular2/core';
+import {COMMON_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 
 @Component({
     selector: 'top-menu',
-    directives: [ROUTER_DIRECTIVES],
+    inputs: ['items'],
+    directives: [ROUTER_DIRECTIVES, COMMON_DIRECTIVES],
     template: `
         <nav>
             <ul class="nav nav-tabs">
-                <li role="presentation"><a [routerLink]="['Products']">Products</a></li>
-                <li role="presentation"><a [routerLink]="['OrderForm']">Order form</a></li>
+                <li *ngFor="#item of items">
+                    <a [routerLink]="[item.link]">{{ item.title }}</a>
+                </li>
             </ul>
         </nav>
     `,
@@ -19,4 +22,5 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     ]
 })
 export default class TopMenuComponent {
+    public items:{link: string; title: string}[] = []
 }

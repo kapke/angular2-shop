@@ -15,4 +15,8 @@ import TopMenuComponent from "../TopMenu/TopMenuComponent";
 ])
 export default class App {
     public title: string = 'Shop';
+    public menuItems = [
+        {link: 'Products', title: 'Products'},
+        {link: 'OrderForm', title: 'Order Form'}
+    ]
 }
