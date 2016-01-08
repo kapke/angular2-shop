@@ -14,7 +14,7 @@ export default class StaticJsonProductRepository extends AbstractProductReposito
     private promotedProductsPath = 'data/promoted-products.json';
 
     constructor (private http: Http) {
-        console.log('Static JSON Repository');
+        super();
     }
 
     getProducts (path = this.productsPath): Observable<Product[]> {

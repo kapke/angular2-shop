@@ -8,6 +8,9 @@ interface ProductRepository {
 }
 
 abstract class AbstractProductRepository implements ProductRepository {
+    abstract getProducts():Observable<Product[]>;
+    abstract getPromotedProducts():Observable<Product[]>;
+
     public getBySlug (slug: string): Observable<Product> {
         return Observable
             .concat(this.getProducts(), this.getPromotedProducts())
