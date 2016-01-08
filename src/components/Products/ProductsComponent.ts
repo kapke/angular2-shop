@@ -1,16 +1,14 @@
-import {Component, View, Inject} from 'angular2/core';
+import {Component, Inject} from 'angular2/core';
 import {Product, ProductRepository, StaticJsonProductRepository, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
-import OrderForm from '../OrderForm/OrderForm';
 
 @Component({
-    selector: 'my-app',
-    directives: [PRODUCT_DIRECTIVES, SortingPanelComponent, OrderForm],
+    selector: 's-products',
+    directives: [PRODUCT_DIRECTIVES, SortingPanelComponent],
     pipes: [PRODUCT_PIPES],
-    templateUrl: 'dist/components/App/my-app.html',
+    templateUrl: 'dist/components/Products/products.html',
 })
-export default class App {
-    public title: string = 'Shop';
+export default class ProductsComponent {
     public products: Product[] = [];
     public promotedProducts: Product[] = [];
     public sortingDescriptor:SortingDescriptor = {property: 'price', direction: 0};

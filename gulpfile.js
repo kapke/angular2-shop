@@ -23,7 +23,8 @@ function serve () {
             host: '0.0.0.0',
             livereload: true,
             directoryListing: false,
-            open: true
+            open: true,
+            fallback: 'index.html'
         }));
 }
 
