@@ -10,7 +10,7 @@ import TopMenuComponent from "../TopMenu/TopMenuComponent";
     templateUrl: 'dist/components/App/my-app.html'
 })
 @RouteConfig([
-    {path: '/products', name: 'Products', component: ProductsComponent, useAsDefault: true},
+    {path: '/products/...', name: 'Products', component: ProductsComponent, useAsDefault: true},
     {path: '/order-form', name: 'OrderForm', component: OrderFormComponent}
 ])
 export default class App {

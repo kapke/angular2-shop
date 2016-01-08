@@ -1,50 +1,15 @@
-import {Component, Inject} from 'angular2/core';
-import {Product, ProductRepository, StaticJsonProductRepository, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
-import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
+import {Component} from 'angular2/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {ProductComponent, ProductListWithSearchingComponent} from "../../product/product";
 
 @Component({
     selector: 's-products',
-    directives: [PRODUCT_DIRECTIVES, SortingPanelComponent],
-    pipes: [PRODUCT_PIPES],
-    templateUrl: 'dist/components/Products/products.html',
+    directives: [ROUTER_DIRECTIVES],
+    template: '<router-outlet></router-outlet>'
 })
+@RouteConfig([
+    {path: '/', name: 'ProductList', component: ProductListWithSearchingComponent, useAsDefault: true},
+    {path: '/:slug', name: 'Product', component: ProductComponent}
+])
 export default class ProductsComponent {
-    public products: Product[] = [];
-    public promotedProducts: Product[] = [];
-    public sortingDescriptor:SortingDescriptor = {property: 'price', direction: 0};
-    public sortingOptions:SortingOption[] = [
-        {name: 'Price', property: 'price'},
-        {name: 'Name', property: 'name'}
-    ];
-
-    private filterText: string = '';
-
-    constructor (@Inject("ProductRepository") private productRepository: ProductRepository) {
-        this.updateProducts();
-    }
-
-    public onFilterChange (newFilter: string) {
-        this.filterText = newFilter;
-        this.updateProducts();
-    }
-
-    public onSortChange (descriptor) {
-        this.sortingDescriptor = descriptor;
-        this.updateProducts();
-    }
-
-    private updateProducts () {
-        this.productRepository.getProducts()
-            .subscribe(
-                products => this.products = products,
-                error => console.log('error', error),
-                () => {console.log('end')}
-            );
-        this.productRepository.getPromotedProducts()
-            .subscribe(
-                promotedProducts => this.promotedProducts = promotedProducts,
-                error => console.log('error', error),
-                () => {console.log('end')}
-            );
-    }
 }
