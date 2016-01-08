@@ -8,12 +8,17 @@ import {Product} from './../product';
     directives: [COMMON_DIRECTIVES, ProductComponent],
     inputs: ['products'],
     template: `
-        <ul>
-            <li *ngFor="#product of products">
+        <ul class="container-fluid">
+            <li *ngFor="#product of products" class="col col-sm-2">
                 <s-product [product]="product"></s-product>
             </li>
         </ul>
-    `
+    `,
+    styles: [
+        `li {
+            list-style-type: none;
+        }`
+    ]
 })
 export default class ProductListComponent {
     public products : Product[] = [];

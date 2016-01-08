@@ -7,11 +7,15 @@ import {Product} from './../product';
     inputs: ['product'],
     directives: [COMMON_DIRECTIVES],
     template: `
-        <div>
-            <header>{{ product.name }}</header>
-            <span class="price">{{ product.price | currency:'USD':true }}</span>
-            <div>
-                <span *ngFor="#tag of product.tags">{{ tag }}</span>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <header class="panel-title">{{ product.name }}</header>
+            </div>
+            <div class="panel-body">
+                <span class="price">{{ product.price | currency:'USD':true }}</span>
+                <div>
+                    <span *ngFor="#tag of product.tags">{{ tag }}</span>
+                </div>
             </div>
         </div>
     `

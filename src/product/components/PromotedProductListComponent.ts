@@ -8,8 +8,8 @@ import {Product} from "../product";
     directives: [ProductListComponent],
     template: `
         <section class="promoted">
-            <header>Promoted products</header>
-            <button (click)="togglePromoted()">Toggle promoted products</button>
+            <header><h3>Promoted products</h3></header>
+            <button (click)="togglePromoted()" class="btn btn-default">Toggle promoted products</button>
             <product-list *ngIf="showPromoted" [products]="products"></product-list>
         </section>
     `
