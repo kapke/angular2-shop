@@ -11,15 +11,25 @@ import ProductFilterPipe from './pipes/ProductFilterPipe';
 import ProductSortPipe from './pipes/ProductSortPipe';
 import ProductListWithSearchingComponent from "./components/ProductListWithSearchingComponent";
 import RoutableProductComponent from './components/RoutableProductComponent';
+import PromotedDirective from "./directives/PromotedDirective";
 
 const PRODUCT_PIPES = [ProductFilterPipe, ProductSortPipe];
-const PRODUCT_DIRECTIVES = [ProductComponent, ProductListComponent, PromotedProductListComponent, ProductListWithSearchingComponent, RoutableProductComponent];
+const PRODUCT_DIRECTIVES = [
+    ProductComponent,
+    ProductListComponent,
+    PromotedProductListComponent,
+    ProductListWithSearchingComponent,
+    RoutableProductComponent,
+    PromotedDirective
+];
 const PRODUCT_PROVIDERS = [
     provide("ProductRepository", {useClass: StaticJsonProductRepository}),
     StaticJsonProductRepository,
-    InMemoryProductRepository];
+    InMemoryProductRepository
+];
 
 export {Product, ProductRepository, StaticJsonProductRepository, InMemoryProductRepository,
         ProductComponent, RoutableProductComponent, ProductListComponent, PromotedProductListComponent, ProductListWithSearchingComponent,
+        PromotedDirective,
         ProductFilterPipe, ProductSortPipe,
         PRODUCT_DIRECTIVES, PRODUCT_PIPES, PRODUCT_PROVIDERS};

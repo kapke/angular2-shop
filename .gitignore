@@ -50,5 +50,7 @@ crashlytics-build.properties
 typings/
 node_modules/
 dist/
+built/
+spec/spec.ts
 npm-debug.log
 

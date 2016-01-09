@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "./node_modules/.bin/gulp serve",
-    "build": "./node_modules/.bin/gulp build"
+    "build": "./node_modules/.bin/gulp build",
+    "test": "./node_modules/.bin/gulp test"
   },
   "repository": {
     "type": "git",
@@ -29,11 +30,13 @@
     "zone.js": "^0.5.10"
   },
   "devDependencies": {
+    "glob": "^6.0.4",
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.10",
     "gulp-webserver": "^0.9.1",
-    "merge2": "^0.3.6"
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1"
   }
 }
