@@ -25,7 +25,7 @@ import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
     ]
 })
 export default class TopMenuComponent {
-    public items:{link: string; title: string}[] = []
+    public items:{link: string; title: string}[] = [];
 
     constructor(private router: Router) {
     }
