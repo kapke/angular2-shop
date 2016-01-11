@@ -1,11 +1,11 @@
-import App from "../../../app/components/App/App";
+import AppComponent from "../../../app/components/App/AppComponent";
 
 describe('AppComponent', function () {
     beforeEach(function () {
-        this.app = new App();
+        this.app = new AppComponent();
     });
 
     it('should have title', function () {
-        expect(this.app.hello).toEqual(jasmine.any(String));
+        expect(this.app.title).toEqual(jasmine.any(String));
     });
 });
