@@ -1,0 +1,10 @@
+<div>
+    <h1>{{ title }}</h1>
+    <form>
+        <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
+        <sorting-button [property]="'price'" [sortingDescriptor]="sortingDescriptor" (sortingChange)="onSortChange('price')">Price</sorting-button>
+        <sorting-button [property]="'name'" [sortingDescriptor]="sortingDescriptor" (sortingChange)="onSortChange('name')">Name</sorting-button>
+    </form>
+    <promoted-product-list [products]="promotedProducts"></promoted-product-list>
+    <product-list [products]="products"></product-list>
+</div>

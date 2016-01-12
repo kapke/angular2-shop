@@ -1,0 +1,15 @@
+{
+    "name": "angular2-shop",
+    "version": "0.0.1",
+    "description": "Example process of learning Angular2",
+    "main": "index.html",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^1.7.5"
+    }
+}

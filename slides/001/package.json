@@ -1,0 +1,41 @@
+{
+  "name": "angular2-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "bash scripts/install.sh",
+    "install-globals": "bash scripts/install-globals.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapke/angular2-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kapke/angular2-starter/issues"
+  },
+  "homepage": "https://github.com/kapke/angular2-starter#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.44"
+  },
+  "jspm": {
+    "dependencies": {
+      "es6-shim": "github:es-shims/es6-shim@^0.33.8",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "valid-url": "npm:valid-url@^1.0.9"
+    },
+    "devDependencies": {}
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.9.2",
+    "gulp-webserver": "^0.9.1",
+    "jspm": "^0.16.13",
+    "merge2": "^0.3.6"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "angular2-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "./node_modules/.bin/gulp serve",
+    "build": "./node_modules/.bin/gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapke/angular2-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kapke/angular2-starter/issues"
+  },
+  "homepage": "https://github.com/kapke/angular2-starter#readme",
+  "dependencies": {
+    "angular2": "^2.0.0-beta.0",
+    "bootstrap": "^3.3.6",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.13",
+    "jquery": "^2.2.0",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-alpha.14",
+    "systemjs": "^0.19.6",
+    "zone.js": "^0.5.10"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.10",
+    "gulp-webserver": "^0.9.1",
+    "merge2": "^0.3.6"
+  }
+}

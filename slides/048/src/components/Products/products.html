@@ -1,0 +1,10 @@
+<div>
+    <form>
+        <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
+        <sorting-panel [descriptor]="sortingDescriptor"
+                       [options]="sortingOptions"
+                       (sortingChange)="onSortChange($event)"></sorting-panel>
+    </form>
+    <promoted-product-list [products]="promotedProducts | productFilter:filterText | productSort:sortingDescriptor"></promoted-product-list>
+    <product-list [products]="products | productFilter:filterText | productSort:sortingDescriptor"></product-list>
+</div>
