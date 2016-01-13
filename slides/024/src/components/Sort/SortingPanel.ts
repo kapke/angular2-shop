@@ -15,7 +15,7 @@ import SortingButton from './SortingButton';
     `
 })
 export default class SortingPanel {
-    public descriptor = {name: '', property: ''};
+    public descriptor = {property: '', direction: 0};
     public options: string[] = [];
     public sortingChange = new EventEmitter();
 
