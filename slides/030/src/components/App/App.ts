@@ -6,7 +6,7 @@ import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../sea
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingPanelComponent],
     pipes: [ProductFilterPipe, ProductSortPipe],
-    templateUrl: 'dist/components/App/my-app.html',
+    templateUrl: 'src/components/App/my-app.html',
 })
 export default class App {
     private filterText: string = '';

@@ -6,7 +6,7 @@ import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../sea
     selector: 's-products',
     directives: [PRODUCT_DIRECTIVES, SortingPanelComponent],
     pipes: [PRODUCT_PIPES],
-    templateUrl: 'dist/components/Products/products.html',
+    templateUrl: 'src/components/Products/products.html',
 })
 export default class ProductsComponent {
     public products: Product[] = [];

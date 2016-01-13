@@ -8,7 +8,7 @@ import {SortingPanel, SortingOption, SortingDescriptor, Filter} from "../../sear
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingPanel],
     pipes: [Filter],
-    templateUrl: 'dist/components/App/my-app.html',
+    templateUrl: 'src/components/App/my-app.html',
 })
 export default class App {
     private filterText: string = '';

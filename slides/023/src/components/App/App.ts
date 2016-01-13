@@ -7,7 +7,7 @@ import SortingButton from '../Sort/SortingButton';
 @Component({
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingButton],
-    templateUrl: 'dist/components/App/my-app.html',
+    templateUrl: 'src/components/App/my-app.html',
 })
 export default class App {
     private filter: string = '';

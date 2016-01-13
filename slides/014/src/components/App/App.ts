@@ -6,7 +6,7 @@ import {Product} from "../../entities/Product";
 @Component({
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent],
-    templateUrl: 'dist/components/App/my-app.html'
+    templateUrl: 'src/components/App/my-app.html'
 })
 export default class App {
     public title:string = 'Shop';

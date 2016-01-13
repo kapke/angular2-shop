@@ -8,7 +8,7 @@ import StaticJsonProductRepository from "../../product/repositories/StaticJsonPr
     selector: 'my-app',
     directives: [PRODUCT_DIRECTIVES, SortingPanelComponent, OrderForm],
     pipes: [PRODUCT_PIPES],
-    templateUrl: 'dist/components/App/my-app.html',
+    templateUrl: 'src/components/App/my-app.html',
 })
 export default class App {
     public title: string = 'Shop';

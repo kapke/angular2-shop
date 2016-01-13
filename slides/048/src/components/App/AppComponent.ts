@@ -6,7 +6,7 @@ import ProductsComponent from "../Products/ProductsComponent";
 @Component({
     selector: 'my-app',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'dist/components/App/my-app.html'
+    templateUrl: 'src/components/App/my-app.html'
 })
 @RouteConfig([
     {path: '/products', name: 'Products', component: ProductsComponent, useAsDefault: true},
