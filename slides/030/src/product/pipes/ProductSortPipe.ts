@@ -1,5 +1,5 @@
 import {Pipe} from 'angular2/core';
-import {Product} from "../product";
+import Product from "../entities/Product";
 
 @Pipe({
     name: 'productSort'

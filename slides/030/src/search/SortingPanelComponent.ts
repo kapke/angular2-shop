@@ -1,7 +1,7 @@
 import {Component, EventEmitter} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 import SortingButtonComponent from './SortingButtonComponent';
-import {SortingDescriptor, SortingOption} from "./search";
+import {SortingDescriptor, SortingOption} from "./SearchTypes";
 
 
 
