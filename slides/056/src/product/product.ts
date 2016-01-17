@@ -15,7 +15,7 @@ import RoutableProductComponent from './components/RoutableProductComponent';
 const PRODUCT_PIPES = [ProductFilterPipe, ProductSortPipe];
 const PRODUCT_DIRECTIVES = [ProductComponent, ProductListComponent, PromotedProductListComponent, ProductListWithSearchingComponent, RoutableProductComponent];
 const PRODUCT_PROVIDERS = [
-    provide("ProductRepository", {useClass: StaticJsonProductRepository}),
+    provide("ProductRepository", {useClass: InMemoryProductRepository}),
     StaticJsonProductRepository,
     InMemoryProductRepository];
 

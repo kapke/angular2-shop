@@ -4,6 +4,7 @@ import {AbstractProductRepository} from "./ProductRepository";
 
 export default class InMemoryProductRepository extends AbstractProductRepository {
     constructor () {
+        super();
         console.log('In memory Repository');
     }
 

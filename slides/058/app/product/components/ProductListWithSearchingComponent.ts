@@ -11,7 +11,7 @@ import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../sea
     selector: 'product-list-with-searching',
     directives: [ProductListComponent, PromotedProductListComponent, SortingPanelComponent],
     pipes: [ProductFilterPipe, ProductSortPipe],
-    templateUrl: 'src/product/components/product-list-with-searching.html',
+    templateUrl: 'app/product/components/product-list-with-searching.html',
 })
 export default class ProductListWithSearchingComponent {
     public products: Product[] = [];

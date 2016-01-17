@@ -23,7 +23,7 @@ const PRODUCT_DIRECTIVES = [
     PromotedDirective
 ];
 const PRODUCT_PROVIDERS = [
-    provide("ProductRepository", {useClass: StaticJsonProductRepository}),
+    provide("ProductRepository", {useClass: InMemoryProductRepository}),
     StaticJsonProductRepository,
     InMemoryProductRepository
 ];

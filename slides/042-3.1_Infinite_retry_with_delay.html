@@ -1,28 +1,69 @@
-
-    <!DOCTYPE html>
-    <html xp-run-server-url="http://xpla.org">
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>[3.1] Infinite retry with delay</title>
-        <link type="text/css" rel="stylesheet" media="all" href="http://xpla.org/static/css/slide.3.0.0.css" />
-      </head>
-      <body class="xp-slide">
-        <div class="xp-column">
-          <xp-editor active="src/product/repositories/StaticJsonProductRepository.ts">
-            	<script id="src/product/repositories/StaticJsonProductRepository.ts" highlight="4-11,19-28" type="application/octetstream" src="042/src/product/repositories/StaticJsonProductRepository.ts"></script>
-	<script id="README.md" type="application/octetstream" src="009/README.md"></script>
-	<script id="config.js" type="application/octetstream" src="009/config.js"></script>
-	<script id="gulpfile.js" type="application/octetstream" src="019/gulpfile.js"></script>
-	<script id="index.html" type="application/octetstream" src="039/index.html"></script>
-	<script id="package.json" type="application/octetstream" src="034/package.json"></script>
-	<script id="tsconfig.json" type="application/octetstream" src="009/tsconfig.json"></script>
-	<script id="tsd.json" type="application/octetstream" src="001/tsd.json"></script>
-          </xp-editor><xp-editor style="display: none;">             <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js"                     type="application/octetstream"></script>             <script id="node_modules/rxjs/Subject.js" src="node_modules/rxjs/Subject.js"                     type="application/octetstream"></script>             <script id="node_modules/rxjs/Observable.js" src="node_modules/rxjs/Observable.js"                     type="application/octetstream"></script>             <script id="node_modules/rxjs/operator/toPromise.js" src="node_modules/rxjs/operator/toPromise.js"                     type="application/octetstream"></script>         </xp-editor>
-        </div>
-        <div class="xp-column">
-          <xp-preview runner="html-ts"></xp-preview>
-        </div>
-        <script src="http://xpla.org/static/js/slide.3.0.0.js"></script>
-      </body>
-    </html>
+<!DOCTYPE html>
+<html xp-run-server-url="http://xpla.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>[3.1] Infinite retry with delay</title>
+    <link type="text/css" rel="stylesheet" media="all" href="http://xpla.org/static/css/slide.3.0.0.css"/>
+</head>
+<body class="xp-slide">
+<div class="xp-column">
+    <xp-editor active="src/product/repositories/StaticJsonProductRepository.ts">
+        <script id="data/products.json" type="application/octetstream"
+                src="039/data/products.json"></script>
+        <script id="data/promoted-products.json" type="application/octetstream"
+                src="039/data/promoted-products.json"></script>
+        <script id="src/product/entities/Product.ts" type="application/octetstream"
+                src="040/src/product/entities/Product.ts"></script>
+        <script id="src/product/repositories/ProductRepository.ts" type="application/octetstream"
+                src="032/src/product/repositories/ProductRepository.ts"></script>
+        <script id="src/product/repositories/StaticJsonProductRepository.ts" highlight="4-11,19-28"
+                type="application/octetstream"
+                src="042/src/product/repositories/StaticJsonProductRepository.ts"></script>
+        <script id="src/product/components/ProductComponent.ts" type="application/octetstream"
+                src="030/src/product/components/ProductComponent.ts"></script>
+        <script id="src/product/components/ProductListComponent.ts" type="application/octetstream"
+                src="030/src/product/components/ProductListComponent.ts"></script>
+        <script id="src/product/components/PromotedProductListComponent.ts"
+                type="application/octetstream"
+                src="030/src/product/components/PromotedProductListComponent.ts"></script>
+        <script id="src/product/pipes/ProductFilterPipe.ts" type="application/octetstream"
+                src="030/src/product/pipes/ProductFilterPipe.ts"></script>
+        <script id="src/product/pipes/ProductSortPipe.ts" type="application/octetstream"
+                src="030/src/product/pipes/ProductSortPipe.ts"></script>
+        <script id="src/product/product.ts" type="application/octetstream"
+                src="032/src/product/product.ts"></script>
+        <script id="src/search/SearchTypes.ts" type="application/octetstream"
+                src="030/src/search/SearchTypes.ts"></script>
+        <script id="src/search/SortingButtonComponent.ts" type="application/octetstream"
+                src="030/src/search/SortingButtonComponent.ts"></script>
+        <script id="src/search/SortingPanelComponent.ts" type="application/octetstream"
+                src="030/src/search/SortingPanelComponent.ts"></script>
+        <script id="src/search/search.ts" type="application/octetstream"
+                src="030/src/search/search.ts"></script>
+        <script id="src/components/OrderForm/OrderForm.ts" type="application/octetstream"
+                src="038/src/components/OrderForm/OrderForm.ts"></script>
+        <script id="src/components/App/my-app.html" type="application/octetstream"
+                src="034/src/components/App/my-app.html"></script>
+        <script id="src/components/App/App.ts" type="application/octetstream"
+                src="041/src/components/App/App.ts"></script>
+        <script id="src/app.ts" type="application/octetstream" src="039/src/app.ts"></script>
+        <script id="README.md" type="application/octetstream" src="009/README.md"></script>
+        <script id="config.js" type="application/octetstream" src="009/config.js"></script>
+        <script id="gulpfile.js" type="application/octetstream" src="019/gulpfile.js"></script>
+        <script id="index.html" type="application/octetstream" src="039/index.html"></script>
+        <script id="package.json" type="application/octetstream" src="034/package.json"></script>
+        <script id="tsconfig.json" type="application/octetstream" src="009/tsconfig.json"></script>
+        <script id="tsd.json" type="application/octetstream" src="001/tsd.json"></script>
+    </xp-editor>
+    <xp-editor style="display: none;">
+        <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js"
+                type="application/octetstream"></script>
+    </xp-editor>
+</div>
+<div class="xp-column">
+    <xp-preview runner="html-ts"></xp-preview>
+</div>
+<script src="http://xpla.org/static/js/slide.3.0.0.js"></script>
+</body>
+</html>

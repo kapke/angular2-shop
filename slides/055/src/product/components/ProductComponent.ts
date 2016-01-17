@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 import {ROUTER_DIRECTIVES} from "angular2/router";
-import {Product} from './../product';
+import Product from '../entities/Product';
 
 @Component({
     selector: 's-product',

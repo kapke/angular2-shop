@@ -14,6 +14,7 @@ export default class StaticJsonProductRepository extends AbstractProductReposito
     private promotedProductsPath = 'data/promoted-products.json';
 
     constructor (private http: Http) {
+        super();
         console.log('Static JSON Repository');
     }
 
