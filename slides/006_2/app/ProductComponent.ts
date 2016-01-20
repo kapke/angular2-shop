@@ -1,4 +1,4 @@
-class ProductComponent {
+export default class ProductComponent {
     private element;
 
     constructor (private product) {

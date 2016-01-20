@@ -1,4 +1,7 @@
-class ProductListComponent {
+import ProductComponent from "./ProductComponent";
+import ListComponent from "./ListComponent";
+
+export default class ProductListComponent {
     private element;
 
     constructor (private products) {

@@ -8,22 +8,33 @@
 </head>
 <body class="xp-slide">
     <div class="xp-column">
-        <xp-editor active="app/ProductListComponent.ts">
-            <script id="app/Component.ts" type="application/octetstream" src="007/app/Component.ts"></script>
-            <script id="app/Product.ts" type="application/octetstream" src="007/app/Product.ts"></script>
-            <script id="app/ListComponent.ts" type="application/octetstream" src="007/app/ListComponent.ts"></script>
-            <script id="app/ProductComponent.ts" type="application/octetstream" src="007/app/ProductComponent.ts"></script>
-            <script id="app/ProductListComponent.ts" highlight="3-9,15-43" type="application/octetstream"
-                    src="008/app/ProductListComponent.ts"></script>
-            <script id="app/main.ts" highlight="1-5,12-19" type="application/octetstream" src="008/app/main.ts"></script>
-            <script id="index.html" highlight="3-13" type="application/octetstream" src="008/index.html"></script>
-            <script id="package.json" type="application/octetstream" src="006/package.json"></script>
-            <script id="system.config.js" type="application/octetstream" src="006/system.config.js"></script>
-            <script id="tsconfig.json" type="application/octetstream" src="006/tsconfig.json"></script>
-        </xp-editor>
+        <div class="xp-row">
+            <xp-editor active="app/ProductListComponent.ts">
+                <script id="app/Component.ts" type="application/octetstream" src="007/app/Component.ts"></script>
+                <script id="app/Product.ts" type="application/octetstream" src="007/app/Product.ts"></script>
+                <script id="app/ListComponent.ts" type="application/octetstream" src="007/app/ListComponent.ts"></script>
+                <script id="app/ProductComponent.ts" type="application/octetstream" src="007/app/ProductComponent.ts"></script>
+                <script id="app/ProductListComponent.ts" highlight="3-9,15-43" type="application/octetstream" src="008/app/ProductListComponent.ts"></script>
+            </xp-editor>
+        </div>
+        <div class="xp-row">
+            <xp-editor>
+                <script id="app/main.ts" highlight="1-5,12-19" type="application/octetstream" src="008/app/main.ts"></script>
+            </xp-editor>
+        </div>
     </div>
     <div class="xp-column">
-        <xp-preview runner="html-ts"></xp-preview>
+        <div class="xp-row">
+            <xp-preview runner="html-ts"></xp-preview>
+        </div>
+        <div class="xp-row">
+            <xp-editor active="index.html">
+                <script id="index.html" highlight="3-13" type="application/octetstream" src="008/index.html"></script>
+                <script id="package.json" type="application/octetstream" src="006/package.json"></script>
+                <script id="system.config.js" type="application/octetstream" src="006/system.config.js"></script>
+                <script id="tsconfig.json" type="application/octetstream" src="006/tsconfig.json"></script>
+            </xp-editor>
+        </div>
     </div>
 </body>
 </html>

@@ -1,3 +1,5 @@
+import ProductListComponent from "./ProductListComponent";
+
 const promotedProducts = [
     {name: 'Latte', price: '$10'},
     {name: 'Green Tea', price: '$7'}

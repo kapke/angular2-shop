@@ -1,4 +1,4 @@
-class ListComponent {
+export default class ListComponent {
     private element;
 
     constructor (private components) {

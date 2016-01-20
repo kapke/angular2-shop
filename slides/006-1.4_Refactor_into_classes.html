@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xp-run-server-url="http://xpla.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>[1.4] Refactor into classes</title>
+    <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+</head>
+<body class="xp-slide">
+    <div class="xp-row with-comments">
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-editor active="app/ListComponent.ts">
+                    <script id="app/ListComponent.ts" highlight="1-24" type="application/octetstream" src="006/app/ListComponent.ts"></script>
+                    <script id="app/ProductComponent.ts" highlight="1-29" type="application/octetstream" src="006/app/ProductComponent.ts"></script>
+                </xp-editor>
+            </div>
+            <div class="xp-row">
+                <xp-editor active="app/ProductListComponent.ts">
+                    <script id="app/ProductListComponent.ts" highlight="1-21" type="application/octetstream" src="006/app/ProductListComponent.ts"></script>
+                </xp-editor>
+            </div>
+        </div>
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-preview runner="html-ts"></xp-preview>
+            </div>
+            <div class="xp-row">
+                <xp-editor active="app/main.ts">
+                    <script id="app/main.ts" highlight="1-17" type="application/octetstream" src="006/app/main.ts"></script>
+                    <script id="index.html" highlight="3-16" type="application/octetstream" src="006/index.html"></script>
+                </xp-editor>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

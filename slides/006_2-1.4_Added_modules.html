@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xp-run-server-url="http://xpla.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>[1.4] Added modules</title>
+    <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+</head>
+<body class="xp-slide">
+    <div class="xp-row with-comments">
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-editor>
+                    <script id="app/ListComponent.ts" highlight="1-1" type="application/octetstream" src="006_2/app/ListComponent.ts"></script>
+                </xp-editor>
+            </div>
+            <div class="xp-row">
+                <xp-editor>
+                    <script id="app/main.ts" highlight="1-1" type="application/octetstream" src="006_2/app/main.ts"></script>
+                </xp-editor>
+            </div>
+        </div>
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-preview runner="html-ts"></xp-preview>
+            </div>
+            <div class="xp-row">
+                <xp-editor active="app/ProductListComponent.ts">
+                    <script id="app/ProductComponent.ts" highlight="1-1" type="application/octetstream" src="006_2/app/ProductComponent.ts"></script>
+                    <script id="app/ProductListComponent.ts" highlight="1-2" type="application/octetstream" src="006_2/app/ProductListComponent.ts"></script>
+                    <script id="index.html" type="application/octetstream" src="006/index.html"></script>
+                </xp-editor>
+            </div>
+        </div>
+    </div>
+    <div class="xp-row comments">
+        Ups, <code>System is not defined</code>
+    </div>
+</body>
+</html>
