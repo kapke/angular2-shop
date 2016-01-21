@@ -5,6 +5,7 @@ import Product from "../Product/Product";
 @Component({
     selector: 'product-list',
     directives: [COMMON_DIRECTIVES, Product],
+    inputs: ['products'],
     template: `
         <ul>
             <li *ngFor="#product of products">
@@ -14,9 +15,5 @@ import Product from "../Product/Product";
     `
 })
 export default class ProductList {
-    public products = [
-        {name: 'Coffee', price: '$5'},
-        {name: 'Tea', price: '$4'},
-        {name: 'Yerba', price: '$4'}
-    ];
+    public products = [];
 }
