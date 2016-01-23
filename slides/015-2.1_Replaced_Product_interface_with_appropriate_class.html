@@ -3,23 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>[2.2] Filtering on any field</title>
+    <title>[2.1] Replaced Product interface with appropriate class</title>
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
 </head>
 <body class="xp-slide">
     <div class="xp-column">
         <div class="xp-row">
             <xp-editor>
-                <script id="src/entities/Product.ts" highlight="1-8" type="application/octetstream" src="017/src/entities/Product.ts"></script>
+                <script id="src/entities/Product.ts" highlight="1-4" type="application/octetstream" src="015/src/entities/Product.ts"></script>
             </xp-editor>
+        </div>
+        <div class="xp-row">
+            <xp-editor active="src/components/ProductList/ProductList.ts">
+                <script id="src/components/App/App.ts" highlight="1-7,11-23" type="application/octetstream" src="015/src/components/App/App.ts"></script>
+            </xp-editor>
+        </div>
+        <xp-editor style="display: none;">
+            <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
+
+        </xp-editor>
+    </div>
+    <div class="xp-column">
+        <div class="xp-row">
+            <xp-preview runner="html-ts"></xp-preview>
         </div>
         <div class="xp-row">
             <xp-editor active="src/components/App/App.ts">
                 <script id="src/components/Product/Product.ts" type="application/octetstream" src="015/src/components/Product/Product.ts"></script>
-                <script id="src/components/ProductList/ProductList.ts" type="application/octetstream" src="015/src/components/ProductList/ProductList.ts"></script>
                 <script id="src/components/ProductList/PromotedProductList.ts" type="application/octetstream" src="015/src/components/ProductList/PromotedProductList.ts"></script>
-                <script id="src/components/App/App.ts" highlight="32-38" type="application/octetstream" src="017/src/components/App/App.ts"></script>
-                <script id="src/components/App/my-app.html" type="application/octetstream" src="016/src/components/App/my-app.html"></script>
+                <script id="src/components/ProductList/ProductList.ts" highlight="1-4" type="application/octetstream" src="015/src/components/ProductList/ProductList.ts"></script>
+                <script id="src/components/App/my-app.html" type="application/octetstream" src="014/src/components/App/my-app.html"></script>
                 <script id="src/app.ts" type="application/octetstream" src="009/src/app.ts"></script>
                 <script id="README.md" type="application/octetstream" src="009/README.md"></script>
                 <script id="config.js" type="application/octetstream" src="009/config.js"></script>
@@ -30,12 +43,6 @@
                 <script id="tsd.json" type="application/octetstream" src="001/tsd.json"></script>
             </xp-editor>
         </div>
-        <xp-editor style="display: none;">
-            <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
-        </xp-editor>
-    </div>
-    <div class="xp-column">
-        <xp-preview runner="html-ts"></xp-preview>
     </div>
 </body>
 </html>
