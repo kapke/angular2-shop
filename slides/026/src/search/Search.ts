@@ -1,6 +1,6 @@
 import SortingPanel from './SortingPanel';
-import Filter from './ProductFilter';
+import ProductFilter from './ProductFilter';
 
 export * from './SearchTypes';
 
-export {SortingPanel, Filter};
+export {SortingPanel, ProductFilter};

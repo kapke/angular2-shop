@@ -3,18 +3,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>[3.2] Switch from abstract class into interface</title>
+    <title>[3.2] Provided abstraction but it's not working... #2</title>
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
 </head>
 <body class="xp-slide">
-<div class="xp-column">
-    <div class="xp-row">
-        <xp-editor active="src/product/repositories/ProductRepository.ts">
+<div class="xp-row with-comments">
+    <div class="xp-column">
+        <div class="xp-row">
+            <xp-editor>
+                <script id="src/product/repositories/InMemoryProductRepository.ts" highlight="1-31" type="application/octetstream" src="045/src/product/repositories/InMemoryProductRepository.ts"></script>
+            </xp-editor>
+        </div>
+        <div class="xp-row">
+            <xp-editor>
+                <script id="src/product/repositories/StaticJsonProductRepository.ts" highlight="9-21" type="application/octetstream" src="045/src/product/repositories/StaticJsonProductRepository.ts"></script>
+            </xp-editor>
+        </div>
+        <xp-editor style="display: none;">
+            <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
             <script id="data/products.json" type="application/octetstream" src="039/data/products.json"></script>
             <script id="data/promoted-products.json" type="application/octetstream" src="039/data/promoted-products.json"></script>
             <script id="src/product/entities/Product.ts" type="application/octetstream" src="040/src/product/entities/Product.ts"></script>
-            <script id="src/product/repositories/ProductRepository.ts" highlight="1-9" type="application/octetstream" src="047/src/product/repositories/ProductRepository.ts"></script>
-            <script id="src/product/repositories/StaticJsonProductRepository.ts" type="application/octetstream" src="047/src/product/repositories/StaticJsonProductRepository.ts"></script>
+            <script id="src/product/repositories/ProductRepository.ts" highlight="1-13" type="application/octetstream" src="045/src/product/repositories/ProductRepository.ts"></script>
+            <script id="src/components/App/App.ts" highlight="21-29" type="application/octetstream" src="045/src/components/App/App.ts"></script>
             <script id="src/product/components/ProductComponent.ts" type="application/octetstream" src="030/src/product/components/ProductComponent.ts"></script>
             <script id="src/product/components/ProductListComponent.ts" type="application/octetstream" src="030/src/product/components/ProductListComponent.ts"></script>
             <script id="src/product/components/PromotedProductListComponent.ts" type="application/octetstream" src="030/src/product/components/PromotedProductListComponent.ts"></script>
@@ -26,8 +37,7 @@
             <script id="src/search/search.ts" type="application/octetstream" src="030/src/search/search.ts"></script>
             <script id="src/components/OrderForm/OrderForm.ts" type="application/octetstream" src="038/src/components/OrderForm/OrderForm.ts"></script>
             <script id="src/components/App/my-app.html" type="application/octetstream" src="034/src/components/App/my-app.html"></script>
-            <script id="src/product/product.ts" type="application/octetstream" src="047/src/product/product.ts"></script>
-            <script id="src/components/App/App.ts" type="application/octetstream" src="047/src/components/App/App.ts"></script>
+            <script id="src/product/product.ts" highlight="1-7,10-18" type="application/octetstream" src="045/src/product/product.ts"></script>
             <script id="src/app.ts" type="application/octetstream" src="044/src/app.ts"></script>
             <script id="README.md" type="application/octetstream" src="009/README.md"></script>
             <script id="config.js" type="application/octetstream" src="009/config.js"></script>
@@ -38,17 +48,12 @@
             <script id="tsd.json" type="application/octetstream" src="001/tsd.json"></script>
         </xp-editor>
     </div>
-    <div class="xp-row">
-        <xp-editor>
-            <script id="src/product/repositories/InMemoryProductRepository.ts" highlight="5-5" type="application/octetstream" src="047/src/product/repositories/InMemoryProductRepository.ts"></script>
-        </xp-editor>
+    <div class="xp-column">
+        <xp-preview runner="html-ts"></xp-preview>
     </div>
-    <xp-editor style="display: none;">
-        <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
-    </xp-editor>
 </div>
-<div class="xp-column">
-    <xp-preview runner="html-ts"></xp-preview>
+<div class="xp-row comments">
+    And implemented it
 </div>
 </body>
 </html>

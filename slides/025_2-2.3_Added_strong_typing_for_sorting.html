@@ -3,25 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>[2.4] Pipes drawback - run only when source changes. Sorting not working</title>
+    <title>[2.3] Added strong typing for sorting #2</title>
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
 </head>
 <body class="xp-slide">
-<div class="xp-row with-comments">
-    <div class="xp-column">
+<div class="xp-column">
+    <div class="xp-row">
+        <xp-editor>
+            <script id="src/components/Sort/Sort.ts" highlight="1-13" type="application/octetstream" src="025/src/components/Sort/Sort.ts"></script>
+        </xp-editor>
+    </div>
+    <div class="xp-row">
         <xp-editor active="src/components/App/App.ts">
             <script id="src/entities/Product.ts" type="application/octetstream" src="022/src/entities/Product.ts"></script>
             <script id="src/components/Product/Product.ts" type="application/octetstream" src="015/src/components/Product/Product.ts"></script>
             <script id="src/components/ProductList/ProductList.ts" type="application/octetstream" src="015/src/components/ProductList/ProductList.ts"></script>
             <script id="src/components/ProductList/PromotedProductList.ts" type="application/octetstream" src="015/src/components/ProductList/PromotedProductList.ts"></script>
-            <script id="src/components/App/my-app.html" type="application/octetstream" src="027/src/components/App/my-app.html"></script>
-            <script id="src/search/ProductFilter.ts" type="application/octetstream" src="026/src/search/ProductFilter.ts"></script>
-            <script id="src/search/SearchTypes.ts" type="application/octetstream" src="026/src/search/SearchTypes.ts"></script>
-            <script id="src/search/SortingButton.ts" type="application/octetstream" src="026/src/search/SortingButton.ts"></script>
-            <script id="src/search/SortingPanel.ts" type="application/octetstream" src="026/src/search/SortingPanel.ts"></script>
-            <script id="src/search/ProductSort.ts" type="application/octetstream" src="027/src/search/ProductSort.ts"></script>
-            <script id="src/search/Search.ts" type="application/octetstream" src="027/src/search/Search.ts"></script>
-            <script id="src/components/App/App.ts" highlight="27-38" type="application/octetstream" src="028/src/components/App/App.ts"></script>
+            <script id="src/components/Sort/SortTypes.ts" highlight="1-13" type="application/octetstream" src="025/src/components/Sort/SortTypes.ts"></script>
+            <script id="src/components/Sort/SortingButton.ts" highlight="1-6,29-35" type="application/octetstream" src="025/src/components/Sort/SortingButton.ts"></script>
+            <script id="src/components/Sort/SortingPanel.ts" highlight="1-9,18-25" type="application/octetstream" src="025/src/components/Sort/SortingPanel.ts"></script>
+            <script id="src/components/App/App.ts" highlight="2-8,14-21" type="application/octetstream" src="025/src/components/App/App.ts"></script>
+            <script id="src/components/App/my-app.html" type="application/octetstream" src="024/src/components/App/my-app.html"></script>
             <script id="src/app.ts" type="application/octetstream" src="009/src/app.ts"></script>
             <script id="README.md" type="application/octetstream" src="009/README.md"></script>
             <script id="config.js" type="application/octetstream" src="009/config.js"></script>
@@ -31,17 +33,14 @@
             <script id="tsconfig.json" type="application/octetstream" src="009/tsconfig.json"></script>
             <script id="tsd.json" type="application/octetstream" src="001/tsd.json"></script>
         </xp-editor>
-        <xp-editor style="display: none;">
-            <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
+    </div>
+    <xp-editor style="display: none;">
+        <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
 
-        </xp-editor>
-    </div>
-    <div class="xp-column">
-        <xp-preview runner="html-ts"></xp-preview>
-    </div>
+    </xp-editor>
 </div>
-<div class="xp-row comments">
-    Sorting doesn't work because data source doesn't change
+<div class="xp-column">
+    <xp-preview runner="html-ts"></xp-preview>
 </div>
 </body>
 </html>
