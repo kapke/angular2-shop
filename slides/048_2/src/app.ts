@@ -7,11 +7,9 @@ import {provide} from "angular2/core";
 import App from './components/App/AppComponent';
 import {PRODUCT_PROVIDERS} from './product/product';
 
-//alternative way to provide base href
 bootstrap(App, [
     FORM_PROVIDERS,
     HTTP_PROVIDERS,
     ROUTER_PROVIDERS,
-    PRODUCT_PROVIDERS,
-    provide(APP_BASE_HREF, {useValue: '/'})
+    PRODUCT_PROVIDERS
 ]);
