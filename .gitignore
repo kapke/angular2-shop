@@ -48,7 +48,7 @@ crashlytics.properties
 crashlytics-build.properties
 
 typings/
-node_modules/
+node_modules
 dist/
 built/
 spec/spec.ts

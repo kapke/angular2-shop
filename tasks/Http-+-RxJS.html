@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Zadania</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <style>
+      body {
+          padding-bottom: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1><a href="index.html">Zadania</a></h1>
+      <section>
+        <header>
+          <h2>Http + RxJS</h2>
+        </header>
+        <ol>
+          <li>Utwórz pliki <code>.json</code> z danymi produktów. Utwórz nowy serwis repozytorium produktów korzystający z modułu <code>Http</code> do ściągnięcia danych z utworzonych plików. Przepnij ściąganie danych o produktach na nowy serwis.</li>
+          <li>Utwórz interfejs repozytorium produktów. Zarówno stare repozytorium (z zapisanymi na stałe informacjami) jak i nowe (korzystające z plików <code>.json</code>) powinny implementować ten interfejs. W komponentach, w których korzystasz z repozutoriów, zmień typ z konkretnej implementacji na interfejs. Kilkukrotnie zmień używaną implementację interfejsu by upewnić się, że można zmienić używaną implementację dokładnie jedną zmianą.</li>
+          <li>Dodaj do interfejsu metodę zwracającą produkty objęte promocją. Metoda ta w implementacji w pamięci powinna zwrócić pustą tablicę. Natomiast implementacja oparta o <code>Http</code> powinna ponowić żądanie 5 razy.</li>
+          <li>Zmień strategię ponawiania tak, by ponowienie odbywało się z sekundowym opóźnieniem.</li>
+          <li>Dokonaj refaktoryzacji: uprość kod.</li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>

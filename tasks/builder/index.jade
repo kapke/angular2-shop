@@ -1,0 +1,25 @@
+mixin taskSection(name)
+    section
+        header
+            h2= name
+        block
+
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title Zadania
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+        style.
+            body {
+                padding-bottom: 2em;
+            }
+    body
+        main.container
+            h1
+                a(href="index.html") Zadania
+            block tasks
+                ol
+                    each module in modules
+                        li
+                            a(href=module.filename)= module.name

@@ -1,0 +1,7 @@
+extends index
+
+block tasks
+    +taskSection(name)
+        ol
+            each task in tasks
+                li !{task}
