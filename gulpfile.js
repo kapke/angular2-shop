@@ -11,7 +11,7 @@ var specRoot = './spec/spec.ts';
 var src = {
         specTs: ['./spec/**/*Spec.ts'],
         appTs: ['./app/**/*.ts'],
-        allTs: ['./**/*.ts', '!./node_modules/**/*.ts'],
+        allTs: ['./**/*.ts', '!./node_modules/**/*.ts', '!./slides/**/*.ts'],
         templates: ['./app/*.html', './app/**/*.html'],
         sass: ['./app/style/style.scss', './app/style/*.scss']
     },
