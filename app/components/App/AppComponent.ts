@@ -7,7 +7,7 @@ import TopMenuComponent from "../TopMenu/TopMenuComponent";
 @Component({
     selector: 'my-app',
     directives: [ROUTER_DIRECTIVES, TopMenuComponent],
-    templateUrl: 'dist/components/App/my-app.html'
+    templateUrl: 'built/app/components/App/my-app.html'
 })
 @RouteConfig([
     {path: '/products/...', name: 'Products', component: ProductsComponent, useAsDefault: true},
