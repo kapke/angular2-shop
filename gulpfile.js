@@ -55,7 +55,7 @@ function compileTs (src, dest) {
 }
 
 function compileAppTs () {
-    return compileTs(src.ts, dest.js);
+    return compileTs(src.appTs, dest.js);
 }
 
 function compileSpecTs () {
@@ -106,7 +106,7 @@ function generateSpecRoot (callback) {
 
 function startWatchers () {
     gulp.watch(src.spec, compileSpecTs);
-    gulp.watch(src.ts, compileAppTs);
+    gulp.watch(src.appTs, compileAppTs);
     gulp.watch(src.sass, compileSass);
     gulp.watch(src.templates, copyHtml);
 }

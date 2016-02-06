@@ -1,6 +1,6 @@
 <div>
     <form>
-        <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
+        <label class="form-group">Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" class="form-control" /></label>
         <sorting-panel [descriptor]="sortingDescriptor"
                        [options]="sortingOptions"
                        (sortingChange)="onSortChange($event)"></sorting-panel>

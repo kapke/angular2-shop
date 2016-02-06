@@ -13,7 +13,15 @@ import PromotedDirective from "../directives/PromotedDirective";
             <button (click)="togglePromoted()" class="btn btn-default">Toggle promoted products</button>
             <product-list *ngIf="showPromoted" [products]="products" sPromoted></product-list>
         </section>
-    `
+    `,
+    styles: [
+        `button {
+            margin-bottom: 1em;
+        }`,
+        `product-list {
+            margin-top: 1em;
+        }`
+    ]
 })
 export default class PromotedProductListComponent {
     public products: Product[] = [];

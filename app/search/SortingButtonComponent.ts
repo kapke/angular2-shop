@@ -8,7 +8,8 @@ import {SortingDescriptor} from "./search";
     outputs: ['sortingChange'],
     directives: [COMMON_DIRECTIVES],
     template: `
-        <button [ngClass]="{
+        <button class="btn btn-default"
+                [ngClass]="{
                     active: descriptor.property == property,
                     ascending: descriptor.direction > 0,
                     descending: descriptor.direction < 0}"

@@ -8,13 +8,21 @@ import {Product} from './../product';
     directives: [COMMON_DIRECTIVES, ProductComponent],
     inputs: ['products'],
     template: `
-        <ul class="container-fluid">
-            <li *ngFor="#product of products" class="col col-sm-2">
-                <s-product [product]="product"></s-product>
-            </li>
-        </ul>
+        <div class="clearfix">
+            <ul clas="row">
+                <li *ngFor="#product of products" class="col col-sm-3">
+                    <s-product [product]="product"></s-product>
+                </li>
+            </ul>
+        </div>
     `,
     styles: [
+        `div {
+            margin: 15px -15px;
+        }`,
+        `ul {
+            padding: 0
+        }`,
         `li {
             list-style-type: none;
         }`
