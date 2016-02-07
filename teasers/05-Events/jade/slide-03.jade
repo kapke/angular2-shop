@@ -1,0 +1,16 @@
+extends ../../template/slide
+
+block title
+    | Events as observable
+
+block layout
+    - var index = '03';
+    .xp-column: xp-editor
+        +includeFile(index, 'app.ts', '10,19,22')
+        +includeFile('', 'index.html')
+        +includeFile('', 'config.js')
+    .xp-column
+        +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

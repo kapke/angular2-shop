@@ -1,0 +1,23 @@
+extends ../../template/slide
+
+block title
+    | Provide function for interface typings
+
+block layout
+    - var index = '02';
+        .xp-row.with-comments
+            .xp-column
+                .xp-row: xp-editor
+                    +includeFile(index, 'app.ts', '4,17,22')
+                    +includeFile('', 'Todo.ts')
+                    +includeFile('', 'index.html')
+                    +includeFile('', 'config.js')
+                .xp-row: xp-editor
+                    +includeFile(index, 'TodoRepository.ts')
+            .xp-column
+                .xp-row
+                    +previewTs
+        .xp-row.comments There are no dependencies, so @Injectable is optional
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

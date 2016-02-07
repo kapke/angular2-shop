@@ -1,0 +1,20 @@
+extends ../../template/slide
+
+block title
+    | Passing data to component
+
+block layout
+    - var index = '01';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'app.ts', '3,7,9')
+        .xp-row: xp-editor
+            +includeFile(index, 'Todo.ts', '5,8,14')
+            +includeFile('', 'index.html')
+            +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

@@ -1,0 +1,27 @@
+extends ./base
+
+mixin includeFile(slide, filename, highlight)
+    if highlight
+        script(id=filename, src='code/'+(slide||'.')+'/'+filename, type='application/octetstream', highlight=highlight)
+    else
+        script(id=filename, src='code/'+(slide||'.')+'/'+filename, type='application/octetstream')
+
+mixin invisibleEditor(slide, files)
+    xp-editor(style={display: 'none'})
+        each file in files
+            +includeFile(slide, file)
+
+mixin previewTs
+    xp-preview(runner='html-ts')
+
+mixin previewHtml
+    xp-preview(runner='html')
+
+block append head
+    title
+        block title
+    script(src='http://xpla.org/static/js/slide_loader.3.0.0.js')
+
+block body
+    body.xp-slide
+        block layout

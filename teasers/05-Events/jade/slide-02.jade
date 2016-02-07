@@ -1,0 +1,19 @@
+extends ../../template/slide
+
+block title
+    | Custom events
+
+block layout
+    - var index = '02';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'app.ts', '11, 21')
+            +includeFile('', 'index.html')
+            +includeFile('', 'config.js')
+        .xp-row: xp-editor
+            +includeFile(index, 'Timer.ts', '11,17')
+    .xp-column
+        +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

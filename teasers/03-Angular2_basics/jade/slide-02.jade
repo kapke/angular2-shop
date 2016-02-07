@@ -1,0 +1,17 @@
+extends ../../template/slide
+
+block title
+    | Using directives
+
+block layout
+    - var index = '02';
+    .xp-column: xp-editor
+        +includeFile(index, 'app.ts', '3,7,9')
+        +includeFile('', 'index.html')
+        +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

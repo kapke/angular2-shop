@@ -1,0 +1,16 @@
+extends ../../template/slide
+
+block title
+    | TS configuration
+
+block layout
+    - var index = '01';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'tsconfig.json')
+        .xp-row: xp-editor
+            +includeFile('', 'index.html')
+            +includeFile(index, 'main.ts')
+    .xp-column
+        .xp-row
+            +previewTs

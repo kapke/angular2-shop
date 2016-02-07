@@ -1,0 +1,17 @@
+extends ../../template/slide
+
+block title
+    | Simple, native event
+
+block layout
+    - var index = '01';
+    .xp-column: xp-editor
+        +includeFile(index, 'app.ts', '10,20-23')
+        +includeFile('', 'index.html')
+        +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

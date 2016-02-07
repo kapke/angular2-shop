@@ -1,0 +1,18 @@
+extends ../../template/slide
+
+block title
+    | Very simple form
+
+block layout
+    - var index = '01';
+    .xp-column: xp-editor
+        +includeFile(index, 'app.ts', '11-16,25-29,32')
+        +includeFile('', 'Todo.ts')
+        +includeFile('', 'index.html')
+        +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

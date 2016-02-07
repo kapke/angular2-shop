@@ -1,0 +1,19 @@
+extends ../../template/slide
+
+block title
+    | The simplest Ng2 App
+
+block layout
+    - var index = '01';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'app.ts')
+        .xp-row: xp-editor
+            +includeFile('', 'index.html')
+            +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

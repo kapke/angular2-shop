@@ -1,0 +1,17 @@
+extends ../../template/slide
+
+block title
+    | Built-in pipe usage
+
+block layout
+    - var index = '01';
+    .xp-column: xp-editor
+        +includeFile(index, 'app.ts', '8')
+        +includeFile('', 'index.html')
+        +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

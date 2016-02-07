@@ -1,0 +1,15 @@
+extends ../../template/slide
+
+block title
+    | Simple DOM component
+
+block layout
+    - var index = '';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'main.js')
+        .xp-row: xp-editor
+            +includeFile(index, 'index.html')
+    .xp-column
+        .xp-row
+            +previewHtml

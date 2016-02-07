@@ -1,0 +1,16 @@
+extends ../../template/slide
+
+block title
+    | Classes and modules
+
+block layout
+    - var index = '02';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'main.ts')
+        .xp-row: xp-editor
+            +includeFile(index, 'TodoComponent.ts')
+            +includeFile('', 'index.html')
+    .xp-column
+        .xp-row
+            +previewTs

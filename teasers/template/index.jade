@@ -1,0 +1,14 @@
+extends ./base
+
+mixin slide(number)
+    link(async, rel='import', href='slide-'+number+'.html')
+
+block append head
+    title= title
+    link(type='text/css', rel='stylesheet', media='all', href='http://xpla.org/static/css/deck.3.0.0.css')
+    script(defer, src='http://xpla.org/static/js/deck.3.0.0.js')
+
+block body
+    body: xp-deck
+        each slide in slides
+            +slide(slide)

@@ -1,0 +1,17 @@
+extends ../../template/slide
+
+block title
+    | Stateful pipe
+
+block layout
+    - var index = '03';
+    .xp-column: xp-editor
+        +includeFile(index, 'app.ts', '5-21,28')
+        +includeFile('', 'index.html')
+        +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])

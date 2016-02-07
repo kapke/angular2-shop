@@ -1,0 +1,19 @@
+<!-- index.html -->
+<html>
+<head>
+    <title>Angular 2 Quickstart</title>
+    <script src="/cdn/systemjs/0.19.9/dist/system.js" defer></script>
+    <script src="config.js" defer></script>
+    <script src="/cdn/angular.js/2.0.0-beta.0/angular2-polyfills.js" defer></script>
+    <script src="/cdn/angular.js/2.0.0-beta.0/angular2.dev.js" defer></script>
+    <script src="/cdn/angular.js/2.0.0-beta.0/Rx.js" defer></script>
+</head>
+<body>
+<my-app></my-app>
+<script>
+    window.addEventListener('load', function () {
+        System.import('app');
+    });
+</script>
+</body>
+</html>
