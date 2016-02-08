@@ -1,0 +1,15 @@
+extends ../../template/slide
+
+block title
+    | Simple spec
+
+block layout
+    - var index = '01';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'App.ts')
+            +includeFile('', 'index.html')
+            +includeFile('', 'config.js')
+        .xp-row: xp-editor
+            +includeFile(index, 'spec.ts', '1-11')
+    .xp-column: +previewTs

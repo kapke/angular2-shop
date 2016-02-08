@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xp-run-server-url="http://xpla.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Simple spec</title>
+    <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+  </head>
+  <body class="xp-slide">
+    <div class="xp-column">
+      <div class="xp-row">
+        <xp-editor>
+          <script id="App.ts" src="code/01/App.ts" type="application/octetstream"></script>
+          <script id="index.html" src="code/./index.html" type="application/octetstream"></script>
+          <script id="config.js" src="code/./config.js" type="application/octetstream"></script>
+        </xp-editor>
+      </div>
+      <div class="xp-row">
+        <xp-editor>
+          <script id="spec.ts" src="code/01/spec.ts" type="application/octetstream" highlight="1-11"></script>
+        </xp-editor>
+      </div>
+    </div>
+    <div class="xp-column">
+      <xp-preview runner="html-ts"></xp-preview>
+    </div>
+  </body>
+</html>

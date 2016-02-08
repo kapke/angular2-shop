@@ -1,0 +1,21 @@
+extends ../../template/slide
+
+block title
+    | Simple Http fetch
+
+block layout
+    - var index = '01';
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile(index, 'app.ts', '4,7, 21-25,28')
+            +includeFile('', 'Todo.ts')
+            +includeFile('', 'index.html')
+            +includeFile('', 'config.js')
+        .xp-row: xp-editor
+            +includeFile('', 'todos.json')
+    .xp-column
+        .xp-row
+            +previewTs
+    +invisibleEditor('', [
+        'node_modules/angular2/bootstrap.js'
+    ])
