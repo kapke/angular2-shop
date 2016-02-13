@@ -32,6 +32,7 @@ export default class App {
         if(!this.filter.length) {
             return true;
         } else {
+            // Case insensitive filtering can be performed by making both strings lowercased
             return product.toString().toLocaleLowerCase().indexOf(this.filter.toLocaleLowerCase()) != -1;
         }
     };

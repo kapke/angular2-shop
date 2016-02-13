@@ -11,6 +11,7 @@ import Product from "../../entities/Product";
 export default class App {
     public title:string = 'Shop';
     public products : Product[] = [
+        // ...but very often needs replacement from object literal into constructor call
         new Product('Coffee', '$5'),
         new Product('Tea', '$4', ['Great', 'Super']),
         new Product('Yerba', '$4', ['Strong'])

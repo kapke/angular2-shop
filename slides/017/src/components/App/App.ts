@@ -28,6 +28,7 @@ export default class App {
         this.promotedProducts = this.getPromotedProducts().filter(this.filterProducts);
     }
 
+    //7/ And helper method for deciding if given product matches criteria
     private filterProducts = (product: Product) => {
         if(!this.filter.length) {
             return true;

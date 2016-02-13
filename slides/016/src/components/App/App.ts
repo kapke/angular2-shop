@@ -9,6 +9,7 @@ import Product from "../../entities/Product";
     templateUrl: 'src/components/App/my-app.html'
 })
 export default class App {
+    // 2. And text we will use as criteria
     private filter: string = '';
     public title: string = 'Shop';
     public products: Product[] = [];
@@ -18,11 +19,13 @@ export default class App {
         this.updateProducts();
     }
 
+    //4/ 4. Finally filtering is working on TypeScript side
     public onFilterChange (newFilter: string) {
         this.filter = newFilter;
         this.updateProducts();
     }
 
+    //4/ 3. Then we create a method for updating products available in template
     private updateProducts () {
         this.products = this.getProducts().filter(this.filterProducts);
         this.promotedProducts = this.getPromotedProducts().filter(this.filterProducts);
@@ -36,6 +39,7 @@ export default class App {
         }
     };
 
+    //7/ 1. To perform filtering we need to have some source of data...
     private getProducts () {
         return [
             new Product('Coffee', '$5'),

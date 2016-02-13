@@ -7,32 +7,36 @@
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
 </head>
 <body class="xp-slide">
-    <div class="xp-column">
-        <div class="xp-row">
-            <xp-editor active="src/entities/Product.ts">
-                <script id="src/entities/Product.ts" type="application/octetstream" src="012/src/entities/Product.ts"></script>
-                <script id="src/components/Product/Product.ts" type="application/octetstream" src="012/src/components/Product/Product.ts"></script>
-                <script id="src/components/ProductList/ProductList.ts" type="application/octetstream" src="012/src/components/ProductList/ProductList.ts"></script>
-                <script id="src/components/App/my-app.html" type="application/octetstream" src="011_2/src/components/App/my-app.html"></script>
+    <div class="xp-row with-comments">
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-editor active="src/entities/Product.ts">
+                    <script id="src/entities/Product.ts" type="application/octetstream" src="012/src/entities/Product.ts"></script>
+                    <script id="src/components/Product/Product.ts" type="application/octetstream" src="012/src/components/Product/Product.ts"></script>
+                    <script id="src/components/ProductList/ProductList.ts" type="application/octetstream" src="012/src/components/ProductList/ProductList.ts"></script>
+                    <script id="src/components/App/my-app.html" type="application/octetstream" src="011_2/src/components/App/my-app.html"></script>
+                </xp-editor>
+            </div>
+            <div class="xp-resize-row"></div>
+            <div class="xp-row">
+                <xp-editor active="src/components/App/App.ts">
+                    <script id="src/components/App/App.ts" type="application/octetstream" src="012/src/components/App/App.ts"></script>
+                    <script id="src/app.ts" type="application/octetstream" src="009/src/app.ts"></script>
+                    <script id="config.js" type="application/octetstream" src="009/config.js"></script>
+                    <script id="index.html" type="application/octetstream" src="010/index.html"></script>
+                </xp-editor>
+            </div>
+            <xp-editor style="display: none;">
+                <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
             </xp-editor>
         </div>
-        <div class="xp-resize-row"></div>
-        <div class="xp-row">
-            <xp-editor active="src/components/App/App.ts">
-                <script id="src/components/App/App.ts" type="application/octetstream" src="012/src/components/App/App.ts"></script>
-                <script id="src/app.ts" type="application/octetstream" src="009/src/app.ts"></script>
-                <script id="config.js" type="application/octetstream" src="009/config.js"></script>
-                <script id="index.html" type="application/octetstream" src="010/index.html"></script>
-            </xp-editor>
+        <div class="xp-resize-column"></div>
+        <div class="xp-column">
+            <xp-preview runner="html-ts"></xp-preview>
         </div>
-        <xp-editor style="display: none;">
-            <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
-
-        </xp-editor>
     </div>
-    <div class="xp-resize-column"></div>
-    <div class="xp-column">
-        <xp-preview runner="html-ts"></xp-preview>
+    <div class="xp-row comments">
+        We create an interface for product and propagate it everywhere it is needed.
     </div>
 </body>
 </html>

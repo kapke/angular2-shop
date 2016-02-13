@@ -1,6 +1,7 @@
 <div>
     <h1>{{ title }}</h1>
     <form>
+        <!-- Last step is to provide input allowing user to enter text -->
         <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
     </form>
     <promoted-product-list [products]="promotedProducts"></promoted-product-list>
