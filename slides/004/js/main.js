@@ -12,6 +12,7 @@
         {name: 'Yerba', price: '$6'}
     ];
 
+    //5/ Finally we can render 2 lists of products in simple way
     var promotedProductList = new ProductList(promotedProducts);
     document.body.appendChild(promotedProductList.getDOMElement());
 

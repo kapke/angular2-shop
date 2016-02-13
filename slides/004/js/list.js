@@ -1,5 +1,6 @@
 'use strict';
 
+//4/ As we need to render two lists - we have a special component for that
 function ListComponent (components) {
     this._components = components;
     this._element = this._createElement();

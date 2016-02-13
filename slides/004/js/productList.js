@@ -1,5 +1,6 @@
 'use strict';
 
+//4/ We also provided wrapper for list of products
 function ProductList (products) {
     this._products = products;
     this._element = this._createElement();

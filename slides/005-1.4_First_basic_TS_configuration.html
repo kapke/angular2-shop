@@ -3,38 +3,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>[1.4] First, basic TS configuration</title>
+    <title>First, basic TS configuration</title>
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
 </head>
 <body class="xp-slide">
-    <div class="xp-column">
-        <div class="xp-row">
-            <xp-editor active="app/list.ts">
-                <script id="tsconfig.json" type="application/octetstream" src="005/tsconfig.json"></script>
-            </xp-editor>
-        </div>
-        <div class="xp-resize-row"></div>
-        <div class="xp-row">
-            <xp-editor active="app/list.ts">
-                <script id="package.json" type="application/octetstream" src="005/package.json"></script>
-            </xp-editor>
-        </div>
+    <div class="xp-row with-comments">
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-editor active="app/list.ts">
+                    <script id="tsconfig.json" type="application/octetstream" src="005/tsconfig.json"></script>
+                </xp-editor>
+            </div>
+            <div class="xp-resize-row"></div>
+            <div class="xp-row">
+                <xp-editor active="app/list.ts">
+                    <script id="package.json" type="application/octetstream" src="005/package.json"></script>
+                </xp-editor>
+            </div>
 
+        </div>
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-preview runner="html-ts"></xp-preview>
+            </div>
+            <div class="xp-resize-row"></div>
+            <div class="xp-row">
+                <xp-editor active="index.html" tree>
+                    <script id="app/list.ts" type="application/octetstream" src="005/app/list.ts"></script>
+                    <script id="app/main.ts" type="application/octetstream" src="005/app/main.ts"></script>
+                    <script id="app/product.ts" type="application/octetstream" src="005/app/product.ts"></script>
+                    <script id="app/productList.ts" type="application/octetstream" src="005/app/productList.ts"></script>
+                    <script id="index.html" type="application/octetstream" src="005/index.html"></script>
+                </xp-editor>
+            </div>
+        </div>
     </div>
-    <div class="xp-column">
-        <div class="xp-row">
-            <xp-preview runner="html-ts"></xp-preview>
-        </div>
-        <div class="xp-resize-row"></div>
-        <div class="xp-row">
-            <xp-editor active="index.html">
-                <script id="app/list.ts" type="application/octetstream" src="005/app/list.ts"></script>
-                <script id="app/main.ts" type="application/octetstream" src="005/app/main.ts"></script>
-                <script id="app/product.ts" type="application/octetstream" src="005/app/product.ts"></script>
-                <script id="app/productList.ts" type="application/octetstream" src="005/app/productList.ts"></script>
-                <script id="index.html" type="application/octetstream" src="005/index.html"></script>
-            </xp-editor>
-        </div>
+    <div class="xp-row comments">
+        <xp-annotations>
+            <header><h1>We need to prepare TypeScript configuration and change file names</h1></header>
+        </xp-annotations>
     </div>
 </body>
 </html>
