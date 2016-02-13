@@ -1,6 +1,7 @@
 import ProductListComponent from "./ProductListComponent";
 import {Product} from './Product';
 
+//4/ We can use `Product` interface in creation phase.
 const promotedProducts : Product[] = [
     {name: 'Latte', price: '$10'},
     {name: 'Green Tea', price: '$7'}

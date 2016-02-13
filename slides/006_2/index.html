@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Shop</title>
+    <!--2/ First of all - we need to load System.js and it's config -->
     <script src="/cdn/systemjs/0.19.9/dist/system.js" defer></script>
     <script src="system.config.js" defer></script>
+    <!--5/ Then we can use System.js to load our application -->
     <script>
         window.addEventListener('load', function () {
             System.import('app/main.js');

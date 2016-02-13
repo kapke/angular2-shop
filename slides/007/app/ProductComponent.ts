@@ -2,6 +2,7 @@ import {Product} from "./Product";
 import Component from './Component';
 
 export default class ProductComponent extends Component {
+    // We can use `Product` interface to assure as that we always get the `Product`
     constructor (private product : Product) {
         super();
     }

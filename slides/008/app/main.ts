@@ -12,6 +12,7 @@ const products : Product[] = [
     {name: 'Yerba', price: '$6'}
 ];
 
+//5/ We need to render both lists independently
 const promotedProductsList = new PromotedProductListComponent(promotedProducts);
 document.body.appendChild(promotedProductsList.domElement);
 

@@ -1,3 +1,4 @@
+// As we exported ProductListComponent, we can import it here
 import ProductListComponent from "./ProductListComponent";
 
 const promotedProducts = [

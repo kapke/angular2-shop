@@ -1,3 +1,4 @@
+// In order to import something we need to export that
 export default class ListComponent {
     private element;
 
