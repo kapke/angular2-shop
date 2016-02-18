@@ -37,6 +37,7 @@ export default class App {
     }
 
     private updateProducts () {
+        //10/ As Http doesn't return data but Observable, we need to subscribe for data
         this.staticJsonProductRepository.getProducts()
             .subscribe(
                 response => {

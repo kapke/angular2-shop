@@ -6,6 +6,7 @@ import Product from '../../entities/Product';
     selector: 's-product',
     inputs: ['product'],
     directives: [COMMON_DIRECTIVES],
+    //4/ And formatting price in any currency is much simpler when using specialized pipe
     template: `
         <div>
             <header>{{ product.name }}</header>

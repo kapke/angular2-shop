@@ -21,6 +21,7 @@ export default class App {
 
     private filterText: string = '';
 
+    //4/ But there are problems because productRepository doesn't have implementation...
     constructor (private productRepository: ProductRepository) {
         console.log(productRepository);
         this.updateProducts();

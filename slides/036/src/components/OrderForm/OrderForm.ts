@@ -4,6 +4,7 @@ import {FormBuilder, ControlGroup, COMMON_DIRECTIVES, Validators} from 'angular2
 @Component({
     selector: 'order-form',
     directives: [COMMON_DIRECTIVES],
+    //10/ 2. Important thing is that Angular allows send form which is not valid, so we need to check it manually.
     template: `
         <form [ngFormModel]="orderForm" (submit)="onFormSubmit()">
             <label>Name: <input type="text" [ngControl]="'name'" class="form-control" /></label>
@@ -18,6 +19,7 @@ import {FormBuilder, ControlGroup, COMMON_DIRECTIVES, Validators} from 'angular2
 export default class OrderForm {
     public orderForm: ControlGroup;
 
+    //10/ 1. Validator is simple function taking control as argument and returning object.
     constructor(formBuilder: FormBuilder) {
         this.orderForm = formBuilder.group({
             name: ['', Validators.required],

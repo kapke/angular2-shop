@@ -19,6 +19,7 @@ export default class StaticJsonProductRepository {
         return this.http.get(path)
             .map(res => res.json())
             .map(data => data.map(Product.fromObject))
+            //4/ `retryWhen` allows us to completely take control over retrying process
             .retryWhen((errors) => {
                 console.log(errors);
                 return errors.delay(1000);

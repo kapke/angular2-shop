@@ -15,6 +15,10 @@ import Product from '../entities/Product';
         </ul>
     `,
     styles: [
+        `ul {
+            padding: 0;
+            margin: 15px -15px;
+        }`,
         `li {
             list-style-type: none;
         }`

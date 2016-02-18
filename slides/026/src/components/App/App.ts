@@ -7,6 +7,7 @@ import {SortingPanel, SortingOption, SortingDescriptor, ProductFilter} from "../
 @Component({
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingPanel],
+    // To use a pipe which is not build in Angular we need to declare it
     pipes: [ProductFilter],
     templateUrl: 'src/components/App/my-app.html',
 })

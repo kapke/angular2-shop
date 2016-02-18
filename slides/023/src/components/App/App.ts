@@ -6,6 +6,7 @@ import SortingButton from '../Sort/SortingButton';
 
 @Component({
     selector: 'my-app',
+    // The only change we made for use that button was to add it's class to directives list
     directives: [ProductListComponent, PromotedProductListComponent, SortingButton],
     templateUrl: 'src/components/App/my-app.html',
 })

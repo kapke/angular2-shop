@@ -9,6 +9,7 @@ import TopMenuComponent from "../TopMenu/TopMenuComponent";
     directives: [ROUTER_DIRECTIVES, TopMenuComponent],
     templateUrl: 'src/components/App/my-app.html'
 })
+//4/ But we need to use ellipsis (...) to mark that ProductsComponent has it's own routing
 @RouteConfig([
     {path: '/products/...', name: 'Products', component: ProductsComponent, useAsDefault: true},
     {path: '/order-form', name: 'OrderForm', component: OrderFormComponent}

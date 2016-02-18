@@ -4,6 +4,7 @@ import {FormBuilder, ControlGroup, COMMON_DIRECTIVES} from 'angular2/common';
 @Component({
     selector: 'order-form',
     directives: [COMMON_DIRECTIVES],
+    //9/ 2. Then we represent form model in template
     template: `
         <form [ngFormModel]="orderForm" (submit)="onFormSubmit()">
             <label>Name: <input type="text" [ngControl]="'name'" class="form-control" /></label>
@@ -19,6 +20,7 @@ export default class OrderForm {
 
     private controls;
 
+    //10/ 1. Firstly we build our form model
     constructor(formBuilder: FormBuilder) {
         this.controls = {
             name: formBuilder.control(''),
@@ -30,6 +32,7 @@ export default class OrderForm {
         this.orderForm = formBuilder.group(this.controls);
     }
 
+    //4/ 3. Finally we can submit our form
     public onFormSubmit () {
         const order = this.collectOrder();
         console.log(order);

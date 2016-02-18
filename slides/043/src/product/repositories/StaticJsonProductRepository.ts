@@ -20,6 +20,7 @@ export default class StaticJsonProductRepository {
         return this.http.get(path)
             .map(res => res.json())
             .map(data => data.map(Product.fromObject))
+            //10/ It even allows us to make 5 delayed retries
             .retryWhen((errors) => {
                 return errors.scan((errorsCount: number, err) => {
                         if (errorsCount >= 5) {

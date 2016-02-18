@@ -1,7 +1,9 @@
 import {Component, View} from 'angular2/core';
+// It is easier to import that
 import {Product, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";
 
+//6/ And declare component dependencies
 @Component({
     selector: 'my-app',
     directives: [PRODUCT_DIRECTIVES, SortingPanelComponent],

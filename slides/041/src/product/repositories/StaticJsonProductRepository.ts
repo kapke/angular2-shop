@@ -18,6 +18,7 @@ export default class StaticJsonProductRepository {
         return this.http.get(path)
             .map(res => res.json())
             .map(data => data.map(Product.fromObject))
+            // Retrying failing request 5 times with Rx.js is as simple as this call
             .retry(5);
     }
 

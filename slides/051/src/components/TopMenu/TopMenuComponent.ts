@@ -18,18 +18,17 @@ import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
     styles: [
         `ul {
             margin-bottom: 1em;
-        },
-        .router-link-active {
-
-        }`
+        }
+        `
     ]
 })
 export default class TopMenuComponent {
-    public items:{link: string; title: string}[] = []
+    public items:{link: string; title: string}[] = [];
 
     constructor(private router: Router) {
     }
 
+    //3/ Using router we can determine if route is active
     public isLinkActive (link: string) {
         return this.router.isRouteActive(this.router.generate([link]));
     }

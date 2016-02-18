@@ -8,6 +8,7 @@ import ProductsComponent from "../Products/ProductsComponent";
     directives: [ROUTER_DIRECTIVES],
     templateUrl: 'src/components/App/my-app.html'
 })
+//4/ To configure router we provide @RouteConfig annotation on component
 @RouteConfig([
     {path: '/products', name: 'Products', component: ProductsComponent, useAsDefault: true},
     {path: '/order', name: 'Order', component: OrderFormComponent}

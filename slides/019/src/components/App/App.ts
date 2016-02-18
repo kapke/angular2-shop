@@ -13,6 +13,7 @@ export default class App {
     public title: string = 'Shop';
     public products: Product[] = [];
     public promotedProducts: Product[] = [];
+    // 1. To achieve working sorting we need a field describing how to sort our products
     public sortingDescriptor = {property: 'price', direction: 0};
 
     constructor () {
@@ -24,12 +25,13 @@ export default class App {
         this.updateProducts();
     }
 
+    //4/ 2. Then we create a method for update that field and product list
     public onSortChange () {
-        console.log('sorting');
         this.sortingDescriptor.direction = this.getNextSortingDirection(this.sortingDescriptor.direction);
         this.updateProducts();
     }
 
+    //7/ 4. Then we create a helper method for getting next sorting direction
     private getNextSortingDirection (sortingDirection: number) {
         if(sortingDirection == 1) {
             return -1;
@@ -38,6 +40,7 @@ export default class App {
         }
     }
 
+    //4/ 3. Then we update `updateProducts` with sort part.
     private updateProducts () {
         this.products = this.getProducts().filter(this.filterProducts).sort(this.compareProducts);
         this.promotedProducts = this.getPromotedProducts().filter(this.filterProducts).sort(this.compareProducts);
@@ -51,6 +54,7 @@ export default class App {
         }
     };
 
+    //9/ 5. At the end we create a method for comparing 2 products
     private compareProducts = (product1: Product, product2: Product) : number => {
         let output: number;
         switch (this.sortingDescriptor.property) {

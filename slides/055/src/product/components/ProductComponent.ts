@@ -7,6 +7,7 @@ import Product from '../entities/Product';
     selector: 's-product',
     inputs: ['product'],
     directives: [COMMON_DIRECTIVES, ROUTER_DIRECTIVES],
+    //4/ To create links with parameters we add an object as second item in array
     template: `
         <div class="panel panel-default">
             <div class="panel-heading">

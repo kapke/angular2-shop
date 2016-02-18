@@ -12,6 +12,7 @@ import Product from "../entities/Product";
         <s-product *ngIf="product" [product]="product"></s-product>
     `
 })
+//9/ This component is simple wrapper for ProductComponent which knows how to get product using data from router
 export default class RoutableProductComponent {
     public product: Product;
 

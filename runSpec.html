@@ -14,9 +14,16 @@
 <body>
 <script>
     window.addEventListener('load', function () {
-        System.import('built/spec/spec').then(function () {
-            jasmine.getEnv().execute();
-        });
+        System.import('built/spec/spec')
+            .then(function () {
+                ['.jasmine-run-options', '.jasmine-bar'].forEach(function (selector) {
+                    var element = document.querySelector(selector);
+                    element.parentNode.removeChild(element);
+                });
+            })
+            .then(function () {
+                jasmine.getEnv().execute();
+            });
     });
 </script>
 </body>

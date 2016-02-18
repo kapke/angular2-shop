@@ -15,6 +15,7 @@ export default class Product {
         }
     }
 
+    //3/ That method gives us ability to simple creation of new products
     static fromObject ({name, price, tags}: {name: string, price: number, tags: string[]}) {
         return new Product(name, price, tags);
     }

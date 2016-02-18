@@ -2,6 +2,7 @@ import Product from "../entities/Product";
 import {Observable} from "rxjs/Rx";
 import {AbstractProductRepository} from "./ProductRepository";
 
+//The only change in implementations is switch back into `extends` keyword
 export default class InMemoryProductRepository extends AbstractProductRepository {
     constructor () {
         super();

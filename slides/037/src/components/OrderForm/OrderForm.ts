@@ -25,6 +25,7 @@ export default class OrderForm {
             address: ['', Validators.required],
             email: ['', Validators.required],
             productName: ['', Validators.required],
+            // Validators.compose is function which reduces other validators
             productCount: ['', Validators.compose([Validators.required, this.integer, this.notZero])]
         });
     }
@@ -34,10 +35,12 @@ export default class OrderForm {
         console.log(order);
     }
 
+    //3/ First proof that own validators are simple
     private integer (control: Control) {
         return Number.isInteger(control.value)?null:{integer: true};
     }
 
+    //3/ And second
     private notZero (control: Control) {
         return (control.value != 0)?null:{notZero: true};
     }

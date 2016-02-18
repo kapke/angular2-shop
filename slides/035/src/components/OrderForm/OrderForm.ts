@@ -17,6 +17,7 @@ import {FormBuilder, ControlGroup, COMMON_DIRECTIVES, Validators} from 'angular2
 export default class OrderForm {
     public orderForm: ControlGroup;
 
+    //9/ First improvement we can make is to simplify form model configuration object
     constructor(formBuilder: FormBuilder) {
         this.orderForm = formBuilder.group({
             name: [''],
@@ -27,6 +28,7 @@ export default class OrderForm {
         });
     }
 
+    //4/ The second we can make is to take value directly from form model instead of building it manually
     public onFormSubmit () {
         const order = this.orderForm.value;
         console.log(order);

@@ -34,6 +34,7 @@ export default class App {
         this.updateProducts();
     }
 
+    //5/ To add sorting on name we extend onSortChange method to update property
     public onSortChange (property) {
         this.sortingDescriptor.property = property;
         this.sortingDescriptor.direction = this.getNextSortingDirection(this.sortingDescriptor.direction);
@@ -61,6 +62,7 @@ export default class App {
         }
     };
 
+    //13/ And we add new condition in comparing method
     private compareProducts = (product1: Product, product2: Product) : number => {
         let output: number = 0;
         switch (this.sortingDescriptor.property) {

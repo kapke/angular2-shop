@@ -13,6 +13,7 @@ export default class StaticJsonProductRepository {
     constructor (private http: Http) {
     }
 
+    //5/ There we moved code from App component to hide details of extracting data from response.
     getProducts (path = this.productsPath): Observable<Product[]> {
         return this.http.get(path)
             .map(res => res.json())

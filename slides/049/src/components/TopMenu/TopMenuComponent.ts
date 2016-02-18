@@ -4,6 +4,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
 @Component({
     selector: 'top-menu',
     directives: [ROUTER_DIRECTIVES],
+    //8/ routerLink is directive used to create links
     template: `
         <nav>
             <ul class="nav nav-tabs">

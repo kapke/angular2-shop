@@ -1,4 +1,5 @@
 export default class Product {
+    //3/ We need some kind of url-friendly identifier, so we created that getter
     get slug (): string {
         return this.name.toLowerCase().replace(/\s/g, '-');
     }

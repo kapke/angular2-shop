@@ -4,6 +4,7 @@
         <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
         <sorting-panel [descriptor]="sortingDescriptor" [options]="sortingOptions" (sortingChange)="onSortChange($event)"></sorting-panel>
     </form>
+    <!--2/ Finally we can use our pipe! -->
     <promoted-product-list [products]="promotedProducts | productFilter:filterText"></promoted-product-list>
     <product-list [products]="products | productFilter:filterText"></product-list>
 </div>

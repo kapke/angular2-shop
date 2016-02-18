@@ -9,6 +9,7 @@ import ExchangePipe from "../../exchange-rates/ExchangePipe";
     inputs: ['product'],
     directives: [COMMON_DIRECTIVES, ROUTER_DIRECTIVES],
     pipes: [ExchangePipe],
+    //7/ Usage looks the same as for any other directive
     template: `
         <div class="panel panel-default">
             <div class="panel-heading">

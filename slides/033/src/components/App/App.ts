@@ -20,6 +20,7 @@ export default class App {
         {name: 'Name', property: 'name'}
     ];
 
+    //3/ There we declare that this class needs ProductRepository, type hinting is required for that!
     constructor (private productRepository: ProductRepository) {
         this.updateProducts();
     }

@@ -23,6 +23,7 @@ export default class OrderForm {
             name: ['', Validators.required],
             surname: ['', Validators.required],
             address: ['', Validators.required],
+            //As you can see there - composing validators is simple and readable
             email: ['', Validators.compose([Validators.required, this.email])],
             productName: ['', Validators.required],
             productCount: ['', Validators.compose([Validators.required, this.integer, this.notZero])]

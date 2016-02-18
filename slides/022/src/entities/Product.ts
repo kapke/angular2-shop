@@ -6,6 +6,7 @@ export default class Product {
         return `${this.name} ${this.price} ${this.tags.join(' ')}`;
     }
 
+    //8/ As product comparing is thing we do on products, we moved that operation closer to products
     static compare (property: string, product1: Product, product2: Product): number {
         switch (property) {
             case 'price':

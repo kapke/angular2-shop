@@ -2,6 +2,7 @@
     <h1>{{ title }}</h1>
     <form>
         <label>Filter: <input #input type="text" (keyup)="onFilterChange(input.value)" /></label>
+        <!-- Sorting panel makes whole sorting much simpler for final user -->
         <sorting-panel [descriptor]="sortingDescriptor" [options]="sortingOptions" (sortingChange)="onSortChange($event)"></sorting-panel>
     </form>
     <promoted-product-list [products]="promotedProducts"></promoted-product-list>

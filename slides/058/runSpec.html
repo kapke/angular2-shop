@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Tests</title>
+    <!--5/ These lines are for bootstraping jasmine -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine-html.js"></script>
@@ -14,11 +15,19 @@
     <script src="/cdn/angular.js/2.0.0-beta.0/Rx.js" defer></script>
 </head>
 <body>
+<!--14/ We need to import specs, make some clean-up due to asynchronous load and run specs-->
 <script>
     window.addEventListener('load', function () {
-        System.import('spec/spec').then(function () {
-            jasmine.getEnv().execute();
-        });
+        System.import('spec/spec')
+            .then(function () {
+                ['.jasmine-run-options', '.jasmine-bar'].forEach(function (selector) {
+                    var element = document.querySelector(selector);
+                    element.parentNode.removeChild(element);
+                });
+            })
+            .then(function () {
+                jasmine.getEnv().execute();
+            });
     });
 </script>
 </body>

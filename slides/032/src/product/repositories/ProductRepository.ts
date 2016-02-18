@@ -1,5 +1,6 @@
 import Product from "../entities/Product";
 
+//16/ The only responsibility of repository is to provide data
 export default class ProductRepository {
     public getProducts (): Product[] {
         return [

@@ -4,9 +4,12 @@ import SortingButton from './SortingButton';
 
 @Component({
     selector: 'sorting-panel',
+    // Our sorting panel gets sorting descriptor and list of properties to sort
     inputs: ['descriptor', 'options'],
+    // It emits event every time sorting descriptor changes
     outputs: ['sortingChange'],
     directives: [COMMON_DIRECTIVES, SortingButton],
+    //6/ And displays list of buttons used for sorting
     template: `
         <sorting-button *ngFor="#option of options"
                         [descriptor]="descriptor"
@@ -19,6 +22,7 @@ export default class SortingPanel {
     public options: string[] = [];
     public sortingChange = new EventEmitter();
 
+    //9/ It also knows how to work with several buttons
     public onSortingChange (option) {
         if(this.descriptor.property != option.property) {
             this.descriptor.property = option.property;
@@ -29,6 +33,7 @@ export default class SortingPanel {
         this.sortingChange.emit(this.descriptor);
     }
 
+    //7/ And how to modify direction we sort
     private getNextSortingDirection (sortingDirection: number) {
         if(sortingDirection == 1) {
             return -1;

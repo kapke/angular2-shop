@@ -6,6 +6,7 @@ import SortingPanel from "../Sort/SortingPanel";
 
 @Component({
     selector: 'my-app',
+    // We've replaced SortingButton with SortingPanel here
     directives: [ProductListComponent, PromotedProductListComponent, SortingPanel],
     templateUrl: 'src/components/App/my-app.html',
 })
@@ -15,6 +16,7 @@ export default class App {
     public products: Product[] = [];
     public promotedProducts: Product[] = [];
     public sortingDescriptor = {property: 'price', direction: 0};
+    //4/ And added list of sorting options for panel
     public sortingOptions = [
         {name: 'Price', property: 'price'},
         {name: 'Name', property: 'name'}
@@ -29,6 +31,7 @@ export default class App {
         this.updateProducts();
     }
 
+    //4/ Addition of panel simplified also reaction for descriptor changes
     public onSortChange (descriptor) {
         this.sortingDescriptor = descriptor;
         this.updateProducts();

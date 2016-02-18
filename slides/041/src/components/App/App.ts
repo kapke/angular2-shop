@@ -24,6 +24,7 @@ export default class App {
 
     constructor (private staticJsonProductRepository: StaticJsonProductRepository) {
         this.updateProducts();
+        // To make us able to use retry we've prepared method which always fail
         this.staticJsonProductRepository.getFailingProducts()
             .subscribe(
                 data => console.log('data', data),

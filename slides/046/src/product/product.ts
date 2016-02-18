@@ -13,6 +13,7 @@ import ProductSortPipe from './pipes/ProductSortPipe';
 const PRODUCT_PIPES = [ProductFilterPipe, ProductSortPipe];
 const PRODUCT_DIRECTIVES = [ProductComponent, ProductListComponent, PromotedProductListComponent];
 const PRODUCT_PROVIDERS = [
+    // Usage of `provide` function makes abstraction working properly
     provide(ProductRepository, {useClass: StaticJsonProductRepository}),
     StaticJsonProductRepository,
     InMemoryProductRepository];

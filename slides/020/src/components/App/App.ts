@@ -7,6 +7,7 @@ import Product from "../../entities/Product";
     selector: 'my-app',
     directives: [ProductListComponent, PromotedProductListComponent],
     templateUrl: 'src/components/App/my-app.html',
+    //9/ To add sorting indicator we need to provide styles...
     styles: [
         `
         .sort.ascending::before {

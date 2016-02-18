@@ -61,6 +61,7 @@ export default class App {
         }
     };
 
+    //3/ Now product comparing looks much simpler on component side
     private compareProducts = (product1: Product, product2: Product) : number => {
         return Product.compare(this.sortingDescriptor.property, product1, product2)*this.sortingDescriptor.direction;
     };

@@ -9,6 +9,7 @@ import {RoutableProductComponent, ProductListWithSearchingComponent} from "../..
 })
 @RouteConfig([
     {path: '/', name: 'ProductList', component: ProductListWithSearchingComponent, useAsDefault: true},
+    // We change that route into component which knows how to use router
     {path: '/:slug', name: 'Product', component: RoutableProductComponent}
 ])
 export default class ProductsComponent {

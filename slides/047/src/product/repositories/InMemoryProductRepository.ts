@@ -2,6 +2,7 @@ import Product from "../entities/Product";
 import {Observable} from "rxjs/Rx";
 import {ProductRepository} from "./ProductRepository";
 
+//4/ There the only change was to replace `extends` with `implements` and remove `super` call
 export default class InMemoryProductRepository implements ProductRepository {
     constructor () {
         console.log('In memory Repository');

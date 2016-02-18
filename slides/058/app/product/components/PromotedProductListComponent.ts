@@ -7,6 +7,7 @@ import PromotedDirective from "../directives/PromotedDirective";
     selector: 'promoted-product-list',
     inputs: ['products'],
     directives: [ProductListComponent, PromotedDirective],
+    //5/ we can use it by making element matching declared selector
     template: `
         <section class="promoted">
             <header><h3>Promoted products</h3></header>

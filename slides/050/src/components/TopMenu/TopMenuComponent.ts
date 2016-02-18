@@ -6,6 +6,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router';
     selector: 'top-menu',
     inputs: ['items'],
     directives: [ROUTER_DIRECTIVES, COMMON_DIRECTIVES],
+    //9/ Of course we can build links programmatically
     template: `
         <nav>
             <ul class="nav nav-tabs">

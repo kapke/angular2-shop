@@ -8,6 +8,7 @@ interface ProductRepository {
 }
 
 abstract class AbstractProductRepository implements ProductRepository {
+    //2/ TypeScript requires method inherited from interface to be marked as `abstract` if we don't plan to implement them
     abstract getProducts():Observable<Product[]>;
     abstract getPromotedProducts():Observable<Product[]>;
 

@@ -36,6 +36,7 @@ export default class App {
         this.updateProducts();
     }
 
+    //7/ Changes above give us ability to simplify subscription code
     private updateProducts () {
         this.staticJsonProductRepository.getProducts()
             .subscribe(

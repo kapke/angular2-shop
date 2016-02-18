@@ -7,41 +7,50 @@
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
 </head>
 <body class="xp-slide">
-<div class="xp-column">
-    <div class="xp-row">
-        <xp-editor>
-            <script id="src/components/Sort/SortTypes.ts" type="application/octetstream" src="025/src/components/Sort/SortTypes.ts"></script>
-        </xp-editor>
+    <div class="xp-row with-comments">
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-editor>
+                    <script id="src/components/Sort/SortTypes.ts" type="application/octetstream" src="025/src/components/Sort/SortTypes.ts" highlight></script>
+                </xp-editor>
+            </div>
+            <div class="xp-resize-row"></div>
+            <div class="xp-row">
+                <xp-editor>
+                    <script id="src/components/Sort/SortingButton.ts" type="application/octetstream" src="025/src/components/Sort/SortingButton.ts"></script>
+                </xp-editor>
+            </div>
+            <xp-editor style="display: none;">
+                <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
+                <script id="src/entities/Product.ts" type="application/octetstream" src="022/src/entities/Product.ts"></script>
+                <script id="src/components/Product/Product.ts" type="application/octetstream" src="015/src/components/Product/Product.ts"></script>
+                <script id="src/components/ProductList/ProductList.ts" type="application/octetstream" src="015/src/components/ProductList/ProductList.ts"></script>
+                <script id="src/components/ProductList/PromotedProductList.ts" type="application/octetstream" src="015/src/components/ProductList/PromotedProductList.ts"></script>
+                <script id="src/components/Sort/Sort.ts" type="application/octetstream" src="025/src/components/Sort/Sort.ts"></script>
+                <script id="src/components/App/App.ts" type="application/octetstream" src="025/src/components/App/App.ts"></script>
+                <script id="src/components/App/my-app.html" type="application/octetstream" src="024/src/components/App/my-app.html"></script>
+                <script id="src/app.ts" type="application/octetstream" src="009/src/app.ts"></script>
+                <script id="config.js" type="application/octetstream" src="009/config.js"></script>t>
+                <script id="index.html" type="application/octetstream" src="010/index.html"></script>
+            </xp-editor>
+        </div>
+        <div class="xp-resize-column"></div>
+        <div class="xp-column">
+            <div class="xp-row">
+                <xp-preview runner="html-ts"></xp-preview>
+            </div>
+            <div class="xp-resize-row"></div>
+            <div class="xp-row">
+                <xp-editor>
+                    <script id="src/components/Sort/SortingPanel.ts" type="application/octetstream" src="025/src/components/Sort/SortingPanel.ts"></script>
+                </xp-editor>
+            </div>
+        </div>
     </div>
-    <div class="xp-resize-row"></div>
-    <div class="xp-row">
-        <xp-editor><script id="src/components/Sort/SortingButton.ts" type="application/octetstream" src="025/src/components/Sort/SortingButton.ts"></script></xp-editor>
+    <div class="xp-row comments">
+        <xp-annotations>
+            <header>We create interfaces for objects we have in code and propagate them where needed</header>
+        </xp-annotations>
     </div>
-    <xp-editor style="display: none;">
-        <script id="node_modules/angular2/bootstrap.js" src="node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
-        <script id="src/entities/Product.ts" type="application/octetstream" src="022/src/entities/Product.ts"></script>
-        <script id="src/components/Product/Product.ts" type="application/octetstream" src="015/src/components/Product/Product.ts"></script>
-        <script id="src/components/ProductList/ProductList.ts" type="application/octetstream" src="015/src/components/ProductList/ProductList.ts"></script>
-        <script id="src/components/ProductList/PromotedProductList.ts" type="application/octetstream" src="015/src/components/ProductList/PromotedProductList.ts"></script>
-        <script id="src/components/Sort/Sort.ts" type="application/octetstream" src="025/src/components/Sort/Sort.ts"></script>
-        <script id="src/components/App/App.ts" type="application/octetstream" src="025/src/components/App/App.ts"></script>
-        <script id="src/components/App/my-app.html" type="application/octetstream" src="024/src/components/App/my-app.html"></script>
-        <script id="src/app.ts" type="application/octetstream" src="009/src/app.ts"></script>
-        <script id="config.js" type="application/octetstream" src="009/config.js"></script>t>
-        <script id="index.html" type="application/octetstream" src="010/index.html"></script>
-    </xp-editor>
-</div>
-<div class="xp-resize-column"></div>
-<div class="xp-column">
-    <div class="xp-row">
-        <xp-preview runner="html-ts"></xp-preview>
-    </div>
-    <div class="xp-resize-row"></div>
-    <div class="xp-row">
-        <xp-editor>
-            <script id="src/components/Sort/SortingPanel.ts" type="application/octetstream" src="025/src/components/Sort/SortingPanel.ts"></script>
-        </xp-editor>
-    </div>
-</div>
 </body>
 </html>

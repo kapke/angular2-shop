@@ -10,6 +10,7 @@ import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../sea
 })
 export default class App {
     private filterText: string = '';
+    // 2. But really want we to create an instance by hand?
     private productRepository:ProductRepository = new ProductRepository();
 
     public title: string = 'Shop';
@@ -35,6 +36,7 @@ export default class App {
         this.updateProducts();
     }
 
+    //4/ 1. Introduction of repository simplified our component a way more
     private updateProducts () {
         this.products = this.productRepository.getProducts();
         this.promotedProducts = this.productRepository.getPromotedProducts();

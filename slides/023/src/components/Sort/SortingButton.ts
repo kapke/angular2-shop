@@ -4,6 +4,7 @@ import {COMMON_DIRECTIVES} from 'angular2/common';
 @Component({
     selector: 'sorting-button',
     inputs: ['sortingDescriptor', 'property'],
+    // To create own events you have to mark field as an `output`
     outputs: ['sortingChange'],
     directives: [COMMON_DIRECTIVES],
     template: `
@@ -30,8 +31,10 @@ import {COMMON_DIRECTIVES} from 'angular2/common';
 export default class SortingButton {
     public property: string;
     public sortingDescriptor: {property: string; direction: number};
+    // Then create an EventEmitter instance here
     public sortingChange = new EventEmitter();
 
+    //3/ And finally you can emit your events using `emit` method
     onClick () {
         this.sortingChange.emit(null);
     }
