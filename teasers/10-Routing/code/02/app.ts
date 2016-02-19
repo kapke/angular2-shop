@@ -14,6 +14,7 @@ class InfoComponent {}
     directives: [ROUTER_DIRECTIVES],
     template: `<router-outlet></router-outlet>`
 })
+//4/ 2. Then we can use that component for routing children
 @RouteConfig([
     {path: '/:id', as: 'Todo', component: Todo}
 ])
@@ -22,6 +23,7 @@ class TodosComp {}
 @Component({
     selector: 'my-app',
     directives: [ROUTER_DIRECTIVES],
+    //5/ 3. Passing array as argument for routerLink simplifies link building and passing params
     template: `
         <div>
             <nav>
@@ -34,6 +36,7 @@ class TodosComp {}
 })
 @RouteConfig([
     {path: '/info', as: 'Info', component: InfoComponent, useAsDefault: true},
+    // 1. To nest routes we need mark it on route in parent component and mount here component with defined routing
     {path: '/todos/...', as: 'Todos', component: TodosComp}
 ])
 class App {}

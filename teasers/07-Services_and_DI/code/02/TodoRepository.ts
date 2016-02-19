@@ -3,6 +3,7 @@ export interface Todo {
     title: string;
 }
 
+//3/ It is very useful to make our type hints against interface(or general - abstraction) instead of implementation
 export interface TodoRepository {
     getTodos(): Todo[];
 }

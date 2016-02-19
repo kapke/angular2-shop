@@ -14,6 +14,7 @@ import {RouteParams} from "angular2/router";
 export class Todo {
     public todo;
 
+    //6/ routeParams allow us to extract data from current route
     constructor(routeParams: RouteParams) {
         this.todo = {
             title: `Todo #${routeParams.get('id')}`,

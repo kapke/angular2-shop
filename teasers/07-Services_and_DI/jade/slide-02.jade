@@ -8,12 +8,12 @@ block layout
         .xp-row.with-comments
             .xp-column
                 .xp-row: xp-editor
-                    +includeFile(index, 'app.ts', '4,17,22')
+                    +includeFile(index, 'TodoRepository.ts', true)
+                .xp-row: xp-editor
+                    +includeFile(index, 'app.ts', true)
                     +includeFile('', 'Todo.ts')
                     +includeFile('', 'index.html')
                     +includeFile('', 'config.js')
-                .xp-row: xp-editor
-                    +includeFile(index, 'TodoRepository.ts')
             .xp-column
                 .xp-row
                     +previewTs

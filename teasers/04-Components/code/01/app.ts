@@ -5,6 +5,7 @@ import {Todo} from "./Todo";
 @Component({
     selector: 'my-app',
     directives: [Todo],
+    //3/ To pass data we use square brackets
     template: `
         <my-todo *ngFor="#todo of todos" [todo]="todo"></my-todo>
     `

@@ -7,6 +7,7 @@ import {Validator} from "angular2/common";
 @Component({
     selector: 'my-app',
     directives: [Todo],
+    //7/ 2. We need to remember to check form state before submitting it
     template: `
         <div>
             <form [ngFormModel]="todoForm">
@@ -25,6 +26,7 @@ class App {
 
     constructor (fb: FormBuilder) {
         this.todoForm = fb.group({
+            // 1. Validation can be done using simple function passed as second argument. There are several built-in Angular
             title: fb.control('', Validators.required)
         });
     }

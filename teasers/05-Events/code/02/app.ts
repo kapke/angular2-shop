@@ -6,6 +6,7 @@ import {Timer} from './Timer';
 @Component({
     selector: 'my-app',
     directives: [COMMON_DIRECTIVES, Timer],
+    //3/ Usage of custom events looks the same as native ones. Data coming with event are available as `$event` variable
     template: `
         <div>
             <my-timer (tick)="onTick($event)"></my-timer>

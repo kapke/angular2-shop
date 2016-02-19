@@ -14,9 +14,11 @@ import {TodoRepository, InMemoryTodoRepository, Todo} from './TodoRepository';
 class App {
     public todos: Todo[] = [];
 
+    // 2. But then we need to use @Inject() decorator on constructor argument
     constructor (@Inject('TodoRepository') todoRepository: TodoRepository) {
         this.todos = todoRepository.getTodos();
     }
 }
 
+// 1. For configuration values, interface typings, etc. we can use provide function
 bootstrap(App, [provide('TodoRepository', {useClass: InMemoryTodoRepository})]);

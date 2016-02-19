@@ -6,7 +6,7 @@ block title
 block layout
     - var index = '01';
     .xp-column: xp-editor
-        +includeFile(index, 'app.ts', '3,19,23-24,26,30-33')
+        +includeFile(index, 'app.ts', true)
         +includeFile('', 'index.html')
         +includeFile('', 'config.js')
     .xp-column: +previewTs

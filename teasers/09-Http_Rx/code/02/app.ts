@@ -2,7 +2,7 @@ import {bootstrap} from 'angular2/bootstrap';
 import {Component} from 'angular2/core';
 import {COMMON_DIRECTIVES, FORM_PROVIDERS} from "angular2/common";
 import {HTTP_PROVIDERS, Http} from 'angular2/http';
-import {Todo} from "./../../../10-Routing/code/02/Todo";
+import {Todo} from "./Todo";
 
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/retry";
@@ -22,9 +22,11 @@ class App {
     public messages: string[] = [];
 
     constructor (http: Http) {
+        //2/ If request fails - we can use `retry` operator
         http.get('todosaaaa.json')
             .retry(5)
             .map(res => res.json())
+            //5/ There are 3 types of action we can subscribe to: next item, error, done
             .subscribe(
                 (todos) => this.todos = todos,
                 (err) => this.messages.push(err.text()),

@@ -2,7 +2,7 @@ extends ./base
 
 mixin includeFile(slide, filename, highlight)
     if highlight
-        script(id=filename, src='code/'+(slide||'.')+'/'+filename, type='application/octetstream', highlight=highlight)
+        script(id=filename, src='code/'+(slide||'.')+'/'+filename, type='application/octetstream', highlight)
     else
         script(id=filename, src='code/'+(slide||'.')+'/'+filename, type='application/octetstream')
 
@@ -25,3 +25,5 @@ block append head
 block body
     body.xp-slide
         block layout
+        block annotations
+            xp-annotations

@@ -6,13 +6,13 @@ block title
 block layout
     - var index = '02';
     .xp-column: xp-editor
-        +includeFile(index, 'app.ts', '12-20,29,37')
+        +includeFile(index, 'app.ts', true)
         +includeFile('', 'index.html')
         +includeFile('', 'config.js')
     .xp-column
         .xp-row: +previewTs
         .xp-row: xp-editor
-            +includeFile(index, 'Todo.ts', '17-22')
+            +includeFile(index, 'Todo.ts', true)
     +invisibleEditor('', [
         'node_modules/angular2/bootstrap.js'
     ])

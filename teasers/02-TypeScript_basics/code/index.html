@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="main.js" defer></script>
+    <script src="/cdn/systemjs/0.19.9/dist/system.js" defer></script>
+    <script src="config.js" defer></script>
 </head>
 <body>
+<script>
+    window.addEventListener('load', function () {
+        System.import('main');
+    });
+</script>
 </body>
 </html>

@@ -7,10 +7,11 @@ block layout
     - var index = '02';
     .xp-column
         .xp-row: xp-editor
-            +includeFile(index, 'main.ts')
+            +includeFile(index, 'main.ts', true)
         .xp-row: xp-editor
-            +includeFile(index, 'TodoComponent.ts')
+            +includeFile(index, 'TodoComponent.ts', true)
             +includeFile('', 'index.html')
+            +includeFile('', 'config.js')
     .xp-column
         .xp-row
             +previewTs

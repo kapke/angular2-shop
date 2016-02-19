@@ -7,9 +7,9 @@ block layout
     - var index = '01';
     .xp-column
         .xp-row: xp-editor
-            +includeFile(index, 'app.ts')
+            +includeFile(index, 'app.ts', true)
         .xp-row: xp-editor
-            +includeFile('', 'index.html')
+            +includeFile('', 'index.html', true)
             +includeFile('', 'config.js')
     .xp-column
         .xp-row

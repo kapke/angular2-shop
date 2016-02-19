@@ -23,15 +23,18 @@ class App {
     public todos: Array<Object> = [];
     public todoForm: ControlGroup;
 
+    //3/ 2. So we extracted that into method and called in constructor.
     constructor (private formBuilder: FormBuilder) {
-        this.updateForm()
+        this.updateForm();
     }
 
+    //4/ 3. And in `addTodo`
     addTodo () {
         this.todos.push({title: this.todoForm.value.title, done: false});
         this.updateForm();
     }
 
+    //6/ 1. The easiest way to clear form after submit is to re-create it.
     updateForm () {
         const fb = this.formBuilder;
         this.todoForm = fb.group({

@@ -2,10 +2,12 @@ import {bootstrap} from 'angular2/bootstrap';
 import {Component, Pipe} from 'angular2/core';
 import {COMMON_DIRECTIVES} from "angular2/common";
 
+//4/ To create a stateful pipe, mark it as _not pure_
 @Pipe({
     name: 'timer',
     pure: false
 })
+//13/ Then `transform` method will be called every time anything changes in parent component to provide state update
 class TimerPipe {
     private timestamp = new Date();
 
