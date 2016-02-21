@@ -7,6 +7,6 @@ import {Renderer} from "angular2/core";
 })
 export default class PromotedDirective {
     constructor (el: ElementRef, renderer: Renderer) {
-        renderer.setElementClass(el, 'text-primary', true);
+        renderer.setElementClass(el.nativeElement, 'text-primary', true);
     }
 }
