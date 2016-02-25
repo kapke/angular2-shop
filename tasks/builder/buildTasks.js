@@ -15,7 +15,15 @@ function compileModule (module) {
     const {name, filename, slug, tasks} = module;
     let html;
     if(tasks instanceof Array) {
-        html = generateList({name, tasks})
+        html = generateList({
+            name,
+            tasks: tasks.map(text => {
+                return {
+                    isAdditional: text[text.length-1] == '*',
+                    text: text.replace('*', '')
+                }
+            })
+        })
     } else if (typeof tasks == 'string') {
         html = generateParagraph({name, task: tasks})
     }

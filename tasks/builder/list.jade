@@ -4,4 +4,7 @@ block tasks
     +taskSection(name)
         ol
             each task in tasks
-                li !{task}
+                li
+                    if task.isAdditional
+                        span.label.label-warning Dodatkowe
+                    | !{task.text}

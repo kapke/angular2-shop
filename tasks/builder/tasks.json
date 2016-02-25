@@ -16,29 +16,29 @@
         "Rozpocznij nowy projekt korzystając z podanego <a href=\"https://github.com/kapke/angular2-starter\">startera</a>",
         "Wyświetl jeden produkt.",
         "Wyświetl listę produktów.",
-        "Przed listą produktów wyświetl kilka produktów promowanych."
+        "Przed listą produktów wyświetl kilka produktów promowanych.*"
     ],
     "Komponenty": [
         "Utwórz komponent pojedynczego produktu.",
         "Utwórz komponent listy produktów.",
-        "Utwórz komponent listy produktów promowanych.",
-        "Do produktu dodaj tagi.",
-        "Dokonaj refaktoryzacji: uprość kod, zwiększ jego czytelność. Dodaj deklaracje typów w niezbędnych miejscach."
+        "Utwórz komponent listy produktów promowanych.*",
+        "Do produktu dodaj tagi.*",
+        "Dokonaj refaktoryzacji: uprość kod, zwiększ jego czytelność. Dodaj deklaracje typów w niezbędnych miejscach.*"
     ],
     "Zdarzenia": [
         "Dodaj filtrowanie produktów po nazwie. ",
         "Zmień mechanizm filtrowania w taki spobób, by brane były pod uwagę wszystkie właściwości produktu",
         "Zmień mechanizm filtrowania w taki sposób, by był niewrażliwy na wielkość liter.",
-        "Dodaj sortowanie produktów po cenie za pomocą przycisku. Pierwsze kliknięcie - sortowanie rosnąco, drugie kliknięcie - sortowanie malejąco, trzecie kliknięcie - brak sortowania.",
-        "Dodaj na przycisk wskaźnik kierunku sortowania",
-        "Dodaj sortowanie po nazwie. W momencie kiedy użytkownik włącza sortowanie po nazwie, sortowanie po cenie powinno się stać nieaktywne i odwrotnie.",
-        "Dokonaj refaktoryzacji: wydziel komponenty, uprość kod i usuń powtórzenia."
+        "Dodaj sortowanie produktów po cenie za pomocą przycisku. Pierwsze kliknięcie - sortowanie rosnąco, drugie kliknięcie - sortowanie malejąco, trzecie kliknięcie - brak sortowania.*",
+        "Dodaj na przycisk wskaźnik kierunku sortowania*",
+        "Dodaj sortowanie po nazwie. W momencie kiedy użytkownik włącza sortowanie po nazwie, sortowanie po cenie powinno się stać nieaktywne i odwrotnie.*",
+        "Dokonaj refaktoryzacji: wydziel komponenty, uprość kod i usuń powtórzenia.*"
     ],
     "Pipe'y": [
         "Użyj pipe'a <code>currency</code> do wyświetlenia ceny wraz z walutą",
-        "Przenieś filtrowanie do pipe'a",
-        "Przenieś sortowanie do pipe'a",
-        "Dokonaj refaktoryzacji"
+        "Przenieś filtrowanie do pipe'a*",
+        "Przenieś sortowanie do pipe'a*",
+        "Dokonaj refaktoryzacji*"
     ],
     "Serwisy i wstrzykiwanie zależności": [
         "Przenieś informacje o produktach do repozytorium produktów.",
@@ -47,26 +47,26 @@
     "Formularze": [
         "Utwórz prosty formularz zamówienia (imię, nazwisko, e-mail, adres, nazwa produktu, liczba produktów). Na zdarzenie <code>submit</code> zaloguj dane do konsoli.",
         "Dodaj do formularza walidację - każde pole jest wymagane.",
-        "Dodaj walidację liczby produktów - powinna to być liczba całkowita większa od zera.",
-        "Dodaj prostą walidację adresu e-mail.",
-        "Dokonaj refaktoryzacji: uprość kod, wydziel komponenty"
+        "Dodaj walidację liczby produktów - powinna to być liczba całkowita większa od zera.*",
+        "Dodaj prostą walidację adresu e-mail.*",
+        "Dokonaj refaktoryzacji: uprość kod, wydziel komponenty*"
     ],
     "Http + RxJS": [
         "Utwórz pliki <code>.json</code> z danymi produktów. Utwórz nowy serwis repozytorium produktów korzystający z modułu <code>Http</code> do ściągnięcia danych z utworzonych plików. Przepnij ściąganie danych o produktach na nowy serwis.",
-        "Utwórz interfejs repozytorium produktów. Zarówno stare repozytorium (z zapisanymi na stałe informacjami) jak i nowe (korzystające z plików <code>.json</code>) powinny implementować ten interfejs. W komponentach, w których korzystasz z repozutoriów, zmień typ z konkretnej implementacji na interfejs. Kilkukrotnie zmień używaną implementację interfejsu by upewnić się, że można zmienić używaną implementację dokładnie jedną zmianą.",
-        "Dodaj do interfejsu metodę zwracającą produkty objęte promocją. Metoda ta w implementacji w pamięci powinna zwrócić pustą tablicę. Natomiast implementacja oparta o <code>Http</code> powinna wykonać błędne zapytanie i ponowić żądanie 5 razy.",
-        "Zmień strategię ponawiania tak, by ponowienie odbywało się z sekundowym opóźnieniem.",
-        "Dokonaj refaktoryzacji: uprość kod."
+        "Utwórz interfejs repozytorium produktów. Zarówno stare repozytorium (z zapisanymi na stałe informacjami) jak i nowe (korzystające z plików <code>.json</code>) powinny implementować ten interfejs. W komponentach, w których korzystasz z repozutoriów, zmień typ z konkretnej implementacji na interfejs. Kilkukrotnie zmień używaną implementację interfejsu by upewnić się, że można zmienić używaną implementację dokładnie jedną zmianą.*",
+        "Dodaj do interfejsu metodę zwracającą produkty objęte promocją. Metoda ta w implementacji w pamięci powinna zwrócić pustą tablicę. Natomiast implementacja oparta o <code>Http</code> powinna wykonać błędne zapytanie i ponowić żądanie 5 razy.*",
+        "Zmień strategię ponawiania tak, by ponowienie odbywało się z sekundowym opóźnieniem.*",
+        "Dokonaj refaktoryzacji: uprość kod.*"
     ],
     "Routing": [
         "Skonfiguruj router z dwoma ścieżkami: listą produktów oraz formularzem zamówienia.",
         "Utwórz menu z dwoma pozycjami: listą produktów oraz formularzem zamówienia.",
-        "Dodaj własną klasę do aktywnego elementu menu w celu wyróżnienia go.",
-        "Dodaj konfigurację routera do podstrony z listą produktów tak, by po kliknięciu w nazwę produktu wyświetlić tylko ten jeden produkt.",
-        "Dokonaj refaktoryzacji: wydziel komponenty, uprość kod."
+        "Dodaj własną klasę do aktywnego elementu menu w celu wyróżnienia go.*",
+        "Dodaj konfigurację routera do podstrony z listą produktów tak, by po kliknięciu w nazwę produktu wyświetlić tylko ten jeden produkt.*",
+        "Dokonaj refaktoryzacji: wydziel komponenty, uprość kod.*"
     ],
     "Testowanie": [
-        "Przetestuj repozytorium produktów (implementację z produktami w kodzie)",
+        "Przetestuj repozytorium produktów (implementację z produktami w kodzie)*",
         "Przetestuj pipe'y do sortowania i filtrowania",
         "Przetestuj zachowanie wybranego komponentu."
     ],

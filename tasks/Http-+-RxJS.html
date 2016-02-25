@@ -18,11 +18,16 @@
           <h2>Http + RxJS</h2>
         </header>
         <ol>
-          <li>Utwórz pliki <code>.json</code> z danymi produktów. Utwórz nowy serwis repozytorium produktów korzystający z modułu <code>Http</code> do ściągnięcia danych z utworzonych plików. Przepnij ściąganie danych o produktach na nowy serwis.</li>
-          <li>Utwórz interfejs repozytorium produktów. Zarówno stare repozytorium (z zapisanymi na stałe informacjami) jak i nowe (korzystające z plików <code>.json</code>) powinny implementować ten interfejs. W komponentach, w których korzystasz z repozutoriów, zmień typ z konkretnej implementacji na interfejs. Kilkukrotnie zmień używaną implementację interfejsu by upewnić się, że można zmienić używaną implementację dokładnie jedną zmianą.</li>
-          <li>Dodaj do interfejsu metodę zwracającą produkty objęte promocją. Metoda ta w implementacji w pamięci powinna zwrócić pustą tablicę. Natomiast implementacja oparta o <code>Http</code> powinna ponowić żądanie 5 razy.</li>
-          <li>Zmień strategię ponawiania tak, by ponowienie odbywało się z sekundowym opóźnieniem.</li>
-          <li>Dokonaj refaktoryzacji: uprość kod.</li>
+          <li>Utwórz pliki <code>.json</code> z danymi produktów. Utwórz nowy serwis repozytorium produktów korzystający z modułu <code>Http</code> do ściągnięcia danych z utworzonych plików. Przepnij ściąganie danych o produktach na nowy serwis.
+          </li>
+          <li><span class="label label-warning">Dodatkowe</span>Utwórz interfejs repozytorium produktów. Zarówno stare repozytorium (z zapisanymi na stałe informacjami) jak i nowe (korzystające z plików <code>.json</code>) powinny implementować ten interfejs. W komponentach, w których korzystasz z repozutoriów, zmień typ z konkretnej implementacji na interfejs. Kilkukrotnie zmień używaną implementację interfejsu by upewnić się, że można zmienić używaną implementację dokładnie jedną zmianą.
+          </li>
+          <li><span class="label label-warning">Dodatkowe</span>Dodaj do interfejsu metodę zwracającą produkty objęte promocją. Metoda ta w implementacji w pamięci powinna zwrócić pustą tablicę. Natomiast implementacja oparta o <code>Http</code> powinna wykonać błędne zapytanie i ponowić żądanie 5 razy.
+          </li>
+          <li><span class="label label-warning">Dodatkowe</span>Zmień strategię ponawiania tak, by ponowienie odbywało się z sekundowym opóźnieniem.
+          </li>
+          <li><span class="label label-warning">Dodatkowe</span>Dokonaj refaktoryzacji: uprość kod.
+          </li>
         </ol>
       </section>
     </main>
