@@ -13,7 +13,7 @@
         "Dokonaj refaktoryzacji: uprość kod oraz zredukuj ilosć powtórzeń."
     ],
     "Angular 2 - pierwsze kroki": [
-        "Rozpocznij nowy projekt korzystając z podanego <a href=\"https://github.com/kapke/angular2-starter\">startera</a>",
+        "Rozpocznij nowy projekt korzystając z podanego <a href=\"https://github.com/wkwiatek/angular2-webpack2\">startera</a>",
         "Wyświetl jeden produkt.",
         "Wyświetl listę produktów.",
         "Przed listą produktów wyświetl kilka produktów promowanych.*"
