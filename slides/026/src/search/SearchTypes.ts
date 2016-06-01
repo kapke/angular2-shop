@@ -1,9 +1,11 @@
-export interface SortingDescriptor {
+interface SortingDescriptor {
     direction: number,
     property: string;
 }
 
-export interface SortingOption {
+interface SortingOption {
     property: string;
     name: string;
 }
+
+export {SortingDescriptor, SortingOption};

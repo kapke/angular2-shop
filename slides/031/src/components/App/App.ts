@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component, View} from '@angular/core';
 // It is easier to import that
 import {Product, PRODUCT_DIRECTIVES, PRODUCT_PIPES} from '../../product/product';
 import {SortingPanelComponent, SortingOption, SortingDescriptor} from "../../search/search";

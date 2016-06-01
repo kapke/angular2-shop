@@ -1,6 +1,5 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {FORM_PROVIDERS} from 'angular2/common';
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {bootstrap} from '@angular/platform-browser-dynamic';import {FORM_PROVIDERS} from '@angular/common';
+import {HTTP_PROVIDERS} from '@angular/http';
 
 import App from './components/App/App';
 import StaticJsonProductRepository from "./product/repositories/StaticJsonProductRepository";

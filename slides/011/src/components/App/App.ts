@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component, View} from '@angular/core';
 import ProductList from '../ProductList/ProductList';
 
 @Component({

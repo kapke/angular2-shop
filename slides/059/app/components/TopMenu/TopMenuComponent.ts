@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES} from 'angular2/common';
-import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES} from '@angular/common';
+import {ROUTER_DIRECTIVES, Router} from '@angular/router-deprecated';
 
 @Component({
     selector: 'top-menu',
@@ -9,7 +9,7 @@ import {ROUTER_DIRECTIVES, Router} from 'angular2/router';
     template: `
         <nav>
             <ul class="nav nav-tabs">
-                <li *ngFor="#item of items" [ngClass]="{active: isLinkActive(item.link)}">
+                <li *ngFor="let item of items" [ngClass]="{active: isLinkActive(item.link)}">
                     <a [routerLink]="[item.link]">{{ item.title }}</a>
                 </li>
             </ul>

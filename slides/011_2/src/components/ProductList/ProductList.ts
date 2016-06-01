@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES} from 'angular2/common';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES} from '@angular/common';
 import Product from "../Product/Product";
 
 @Component({
@@ -8,7 +8,7 @@ import Product from "../Product/Product";
     inputs: ['products'],
     template: `
         <ul>
-            <li *ngFor="#product of products">
+            <li *ngFor="let product of products">
                 <s-product [product]="product"></s-product>
             </li>
         </ul>

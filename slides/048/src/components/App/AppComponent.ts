@@ -1,5 +1,5 @@
-import {Component, View, Inject} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, View, Inject} from '@angular/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import OrderFormComponent from '../OrderForm/OrderFormComponent';
 import ProductsComponent from "../Products/ProductsComponent";
 

@@ -1,5 +1,4 @@
-import {bootstrap} from 'angular2/bootstrap';
-
+import {bootstrap} from '@angular/platform-browser-dynamic';
 import {ProductRepository} from './product/product';
 
 import App from './components/App/App';

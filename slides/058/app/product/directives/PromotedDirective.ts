@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Renderer} from 'angular2/core';
+import {Directive, ElementRef, Renderer} from '@angular/core';
 
 //3/ As components are directives with view, we can use exactly the same properties
 @Directive({

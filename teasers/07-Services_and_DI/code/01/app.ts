@@ -1,12 +1,12 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component, Pipe, Injectable} from 'angular2/core';
-import {COMMON_DIRECTIVES} from "angular2/common";
+import {bootstrap} from "@angular/platform-browser-dynamic";
+import {Component, Injectable} from "@angular/core";
+import {COMMON_DIRECTIVES} from "@angular/common";
 import {Todo} from "./Todo";
 
 //As using decorator is the only way to force TypeScript to emit metadata, Angular2 has special decorator for services
 @Injectable()
 //8/ When ignoring decorator service is simple class with no dependencies from Angular2
-class TodoRepository {
+export class TodoRepository {
     public getTodos (): Object[] {
         return [
             {title: 'my first todo', done: false},
@@ -15,15 +15,14 @@ class TodoRepository {
     }
 }
 
-
 @Component({
     selector: 'my-app',
-    directives: [Todo],
+    directives: [Todo, COMMON_DIRECTIVES],
     template: `
-        <my-todo *ngFor="#todo of todos" [todo]="todo"></my-todo>
+        <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
     `
 })
-class App {
+export class App {
     public todos: Array<Object> = [];
 
     //To inject service we use type hinting

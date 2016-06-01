@@ -1,5 +1,4 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {FORM_PROVIDERS} from 'angular2/common';
+import {bootstrap} from '@angular/platform-browser-dynamic';import {FORM_PROVIDERS} from '@angular/common';
 
 import {ProductRepository} from './product/product';
 

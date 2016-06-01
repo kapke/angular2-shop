@@ -1,7 +1,7 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES, FORM_PROVIDERS} from "angular2/common";
-import {HTTP_PROVIDERS, Http} from 'angular2/http';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES, FORM_PROVIDERS} from "@angular/common";
+import {HTTP_PROVIDERS, Http} from '@angular/http';
 import {Todo} from "./Todo";
 
 import "rxjs/add/operator/map";
@@ -13,7 +13,7 @@ import "rxjs/add/operator/retry";
     template: `
         <div>
             <my-todo *ngFor="#todo of todos" [todo]="todo"></my-todo>
-            <div *ngFor="#msg of messages">{{ msg }}</div>
+            <div *ngFor="let msg of messages">{{ msg }}</div>
         </div>
     `
 })

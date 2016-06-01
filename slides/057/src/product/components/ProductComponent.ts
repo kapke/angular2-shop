@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES} from 'angular2/common';
-import {ROUTER_DIRECTIVES} from "angular2/router";
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES} from '@angular/common';
+import {ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 import Product from '../entities/Product';
 import ExchangePipe from "../../exchange-rates/ExchangePipe";
 
@@ -18,7 +18,7 @@ import ExchangePipe from "../../exchange-rates/ExchangePipe";
             <div class="panel-body">
                 <p class="price">Price: {{ product.price | exchange:'USD':'PLN' | currency:'PLN':true }}</p>
                 <div class="btn-group">
-                    <span *ngFor="#tag of product.tags" class="btn btn-default">{{ tag }}</span>
+                    <span *ngFor="let tag of product.tags" class="btn btn-default">{{ tag }}</span>
                 </div>
             </div>
         </div>

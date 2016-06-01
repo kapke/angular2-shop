@@ -1,5 +1,5 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
 import {Todo} from "./Todo";
 
 @Component({
@@ -7,7 +7,7 @@ import {Todo} from "./Todo";
     directives: [Todo],
     //3/ To pass data we use square brackets
     template: `
-        <my-todo *ngFor="#todo of todos" [todo]="todo"></my-todo>
+        <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
     `
 })
 class App {

@@ -1,6 +1,6 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component, Pipe, Injectable} from 'angular2/core';
-import {COMMON_DIRECTIVES, FORM_PROVIDERS, FormBuilder, ControlGroup, FORM_DIRECTIVES} from "angular2/common";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component, Pipe, Injectable} from '@angular/core';
+import {COMMON_DIRECTIVES, FORM_PROVIDERS, FormBuilder, ControlGroup, FORM_DIRECTIVES} from "@angular/common";
 import {Todo} from "./Todo";
 
 @Component({
@@ -16,7 +16,7 @@ import {Todo} from "./Todo";
                 </label>
                 <button [disabled]="!todoForm.valid" (click)="addTodo()">Add</button>
             </form>
-            <my-todo *ngFor="#todo of todos" [todo]="todo"></my-todo>
+            <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
         </div>
     `
 })

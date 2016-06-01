@@ -1,6 +1,6 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES} from "angular2/common";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES} from "@angular/common";
 
 @Component({
     selector: 'my-app',

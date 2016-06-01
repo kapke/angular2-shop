@@ -1,5 +1,5 @@
-import {Component, EventEmitter} from 'angular2/core';
-import {COMMON_DIRECTIVES} from 'angular2/common';
+import {Component, EventEmitter} from '@angular/core';
+import {COMMON_DIRECTIVES} from '@angular/common';
 
 @Component({
     selector: 'sorting-button',

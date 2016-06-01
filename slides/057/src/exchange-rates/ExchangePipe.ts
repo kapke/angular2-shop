@@ -1,4 +1,4 @@
-import {Pipe} from 'angular2/core';
+import {Pipe} from '@angular/core';
 import ExchangeService from "./ExchangeService";
 
 //4/ As we want to use observables, we need to mark pipe as not `pure`
@@ -14,7 +14,7 @@ export default class ExchangePipe {
     }
 
     //5/ Finally we can implement our transform method
-    transform (value: number, [from, to]: [string, string]): number {
+    transform (value: number, from: string, to: string): number {
         this.updateSubscription(from, to, value);
 
         return this.currentValue;

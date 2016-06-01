@@ -1,5 +1,5 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
 
 //6/ 3. But we need to remember that we need to mark this class as component and describe it
 @Component({

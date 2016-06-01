@@ -1,6 +1,6 @@
-import {Component, Inject} from 'angular2/core';
-import {RouteParams} from "angular2/router";
-import {COMMON_DIRECTIVES} from 'angular2/common';
+import {Component, Inject} from '@angular/core';
+import {RouteParams} from "@angular/router-deprecated";
+import {COMMON_DIRECTIVES} from '@angular/common';
 import ProductComponent from "./ProductComponent";
 import {ProductRepository} from "../repositories/ProductRepository";
 import Product from "../entities/Product";

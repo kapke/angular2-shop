@@ -1,11 +1,11 @@
-import {Pipe} from 'angular2/core';
+import {Pipe} from '@angular/core';
 import Product from "../entities/Product";
 
 @Pipe({
     name: 'productSort'
 })
 export default class ProductSort {
-    transform (items, [sortingDescriptor]) {
+    transform (items, sortingDescriptor) {
         return items.sort(this.compareProducts.bind(null, sortingDescriptor));
     }
 

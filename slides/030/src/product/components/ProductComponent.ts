@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES} from 'angular2/common';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES} from '@angular/common';
 import Product from './../entities/Product';
 
 @Component({
@@ -11,7 +11,7 @@ import Product from './../entities/Product';
             <header>{{ product.name }}</header>
             <span class="price">{{ product.price | currency:'USD':true }}</span>
             <div>
-                <span *ngFor="#tag of product.tags">{{ tag }}</span>
+                <span *ngFor="let tag of product.tags">{{ tag }}</span>
             </div>
         </div>
     `

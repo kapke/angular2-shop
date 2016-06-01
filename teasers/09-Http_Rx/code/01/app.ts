@@ -1,7 +1,7 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES, FORM_PROVIDERS} from "angular2/common";
-import {HTTP_PROVIDERS, Http} from 'angular2/http';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES, FORM_PROVIDERS} from "@angular/common";
+import {HTTP_PROVIDERS, Http} from '@angular/http';
 import {Todo} from "./Todo";
 
 // 4. Depending on configuration we will need to import every Rx.js operator to use it
@@ -12,7 +12,7 @@ import "rxjs/add/operator/map";
     directives: [Todo],
     template: `
         <div>
-            <my-todo *ngFor="#todo of todos" [todo]="todo"></my-todo>
+            <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
         </div>
     `
 })

@@ -1,6 +1,6 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES, Control} from "angular2/common";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES, Control} from "@angular/common";
 
 @Component({
     selector: 'my-app',
@@ -10,7 +10,7 @@ import {COMMON_DIRECTIVES, Control} from "angular2/common";
         <div>
             <input type="text" [ngFormControl]="myInput">
             <ul>
-                <li *ngFor="#value of values">{{ value }}</li>
+                <li *ngFor="let value of values">{{ value }}</li>
             </ul>
         </div>
     `

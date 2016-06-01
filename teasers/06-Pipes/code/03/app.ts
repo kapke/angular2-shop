@@ -1,6 +1,6 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component, Pipe} from 'angular2/core';
-import {COMMON_DIRECTIVES} from "angular2/common";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component, Pipe} from '@angular/core';
+import {COMMON_DIRECTIVES} from "@angular/common";
 
 //4/ To create a stateful pipe, mark it as _not pure_
 @Pipe({

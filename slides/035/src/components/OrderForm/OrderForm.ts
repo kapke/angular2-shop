@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {FormBuilder, ControlGroup, COMMON_DIRECTIVES, Validators} from 'angular2/common';
+import {Component} from '@angular/core';
+import {FormBuilder, ControlGroup, COMMON_DIRECTIVES, Validators} from '@angular/common';
 
 @Component({
     selector: 'order-form',

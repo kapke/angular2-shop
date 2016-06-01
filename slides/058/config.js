@@ -4,7 +4,7 @@
 
     //map tells the System loader where to look for things
     var  map = {
-        'app':                        'app.ts',
+        'app':                        'app',
 
         '@angular':                   'https://npmcdn.com/@angular', // sufficient if we didn't pin the version
         'angular2-in-memory-web-api': 'https://npmcdn.com/angular2-in-memory-web-api', // get latest
@@ -15,7 +15,8 @@
 
     //packages tells the System loader how to load when no filename and/or no extension
     var packages = {
-        // 'app':                        { main: 'app.ts',  defaultExtension: 'ts' },
+        'spec':                       { main: 'spec.ts', defaultExtension: 'ts' },
+        'app':                        { main: 'app.ts',  defaultExtension: 'ts' },
         'rxjs':                       { defaultExtension: 'js' },
         'angular2-in-memory-web-api': { defaultExtension: 'js' },
     };

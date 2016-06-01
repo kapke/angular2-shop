@@ -1,6 +1,6 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
-import {COMMON_DIRECTIVES} from "angular2/common";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
+import {COMMON_DIRECTIVES} from "@angular/common";
 import {Timer} from './Timer';
 
 @Component({
@@ -11,7 +11,7 @@ import {Timer} from './Timer';
         <div>
             <my-timer (tick)="onTick($event)"></my-timer>
             <ul>
-                <li *ngFor="#tick of ticks">{{ tick.toLocaleTimeString() }}</li>
+                <li *ngFor="let tick of ticks">{{ tick.toLocaleTimeString() }}</li>
             </ul>
         </div>
     `

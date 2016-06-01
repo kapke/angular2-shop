@@ -1,4 +1,4 @@
-import {Pipe} from 'angular2/core';
+import {Pipe} from '@angular/core';
 import Product from "../entities/Product";
 
 @Pipe({
@@ -10,7 +10,7 @@ export default class ProductFilterPipe {
     }
 
     private filterProducts (filterText: string, product: Product) {
-        if(!filterText.length) {
+        if(!filterText || !filterText.length) {
             return true;
         } else {
             return product.toString().toLocaleLowerCase().indexOf(filterText.toLocaleLowerCase()) != -1;

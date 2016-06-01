@@ -1,5 +1,5 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component, Directive, ElementRef, Renderer} from 'angular2/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component, Directive, ElementRef, Renderer} from '@angular/core';
 
 //3/ As component is a directive with view, we can use the same options in annotation
 @Directive({

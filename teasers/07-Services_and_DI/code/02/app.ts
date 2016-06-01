@@ -1,6 +1,6 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component, Pipe, Inject, provide} from 'angular2/core';
-import {COMMON_DIRECTIVES} from "angular2/common";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component, Pipe, Inject, provide} from '@angular/core';
+import {COMMON_DIRECTIVES} from "@angular/common";
 import {Todo as TodoComponent} from "./Todo";
 import {TodoRepository, InMemoryTodoRepository, Todo} from './TodoRepository';
 
@@ -8,7 +8,7 @@ import {TodoRepository, InMemoryTodoRepository, Todo} from './TodoRepository';
     selector: 'my-app',
     directives: [TodoComponent],
     template: `
-        <my-todo *ngFor="#todo of todos" [todo]="todo"></my-todo>
+        <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
     `
 })
 class App {

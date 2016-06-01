@@ -1,5 +1,5 @@
-import {Component, EventEmitter} from 'angular2/core';
-import {COMMON_DIRECTIVES} from 'angular2/common';
+import {Component, EventEmitter} from '@angular/core';
+import {COMMON_DIRECTIVES} from '@angular/common';
 import SortingButton from './SortingButton';
 import {SortingDescriptor, SortingOption} from "./SortTypes";
 
@@ -11,7 +11,7 @@ import {SortingDescriptor, SortingOption} from "./SortTypes";
     outputs: ['sortingChange'],
     directives: [COMMON_DIRECTIVES, SortingButton],
     template: `
-        <sorting-button *ngFor="#option of options"
+        <sorting-button *ngFor="let option of options"
                         [descriptor]="descriptor"
                         [property]="option.property"
                         (sortingChange)="onSortingChange(option)">{{ option.name }}</sorting-button>

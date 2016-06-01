@@ -1,6 +1,6 @@
-import {bootstrap} from 'angular2/bootstrap';
-import {Component} from 'angular2/core';
-import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {Component} from '@angular/core';
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig} from "@angular/router-deprecated";
 
 //11/ 2. Then we will create 2 dumb components
 @Component({

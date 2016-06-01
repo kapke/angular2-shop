@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component, View} from '@angular/core';
 
 //4/ 2. But it needs to be properly described in order to make Angular aware of it
 @Component({
