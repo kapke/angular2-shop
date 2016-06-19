@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 
 import {ProductListComponent} from "./productList.component";
+import {PromotedProductListComponent} from "./promotedProductList.component";
 
 
 @Component({
     selector: 's-app',
-    directives: [ProductListComponent],
+    directives: [ProductListComponent, PromotedProductListComponent],
     template: `
         <main>
-            <s-product-list [products]="promotedProducts"></s-product-list>
+            <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
             <hr />
             <s-product-list [products]="products"></s-product-list>
         </main>

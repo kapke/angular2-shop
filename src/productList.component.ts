@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {ProductComponent} from "./product.component";
 
+
 @Component({
     selector: 's-product-list',
     directives: [ProductComponent],

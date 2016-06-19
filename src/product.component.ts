@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
     selector: 's-product',
     template: `
@@ -11,8 +12,8 @@ import { Component, Input } from '@angular/core';
     styles: [`
         :host {
             border: 1px solid black;
-            margin: 1em;
-            padding: 1em;
+            margin: 1rem;
+            padding: 1rem;
             flex-grow: 0;
             flex-basis: 15em;
         }
