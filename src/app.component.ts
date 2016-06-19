@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 
+import {ProductComponent} from "./product.component";
+
+
 @Component({
     selector: 's-app',
+    directives: [ProductComponent],
     template: `
         <main>
             <div class="products promoted">
-                <div *ngFor="let product of promotedProducts" class="product">
-                    <header>{{ product.name }}</header>
-                    <span>Price: {{ '$'+product.price }}</span>
-                </div>
+                <s-product *ngFor="let product of promotedProducts" [product]="product"></s-product>
             </div>
             <hr />
             <div class="products">
-                <div *ngFor="let product of products" class="product">
-                    <header>{{ product.name }}</header>
-                    <span>Price: {{ '$'+product.price }}</span>
-                </div>
+                <s-product *ngFor="let product of products" [product]="product"></s-product>
             </div>
         </main>
     `,
@@ -27,13 +25,6 @@ import { Component } from '@angular/core';
         .products {
             display: flex;
             flex-wrap: wrap;
-        }
-        .product {
-            border: 1px solid black;
-            margin: 1em;
-            padding: 1em;
-            flex-grow: 0;
-            flex-basis: 15em;
         }
         `
     ]
