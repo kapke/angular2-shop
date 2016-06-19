@@ -3,14 +3,28 @@ import { Component } from '@angular/core';
 @Component({
     selector: 's-app',
     template: `
-        <div *ngFor="let product of products" class="product">
-            <header>{{ product.name }}</header>
-            <span>Price: \${{ product.price }}</span>
-        </div>
+        <main>
+            <div class="products promoted">
+                <div *ngFor="let product of promotedProducts" class="product">
+                    <header>{{ product.name }}</header>
+                    <span>Price: {{ '$'+product.price }}</span>
+                </div>
+            </div>
+            <hr />
+            <div class="products">
+                <div *ngFor="let product of products" class="product">
+                    <header>{{ product.name }}</header>
+                    <span>Price: {{ '$'+product.price }}</span>
+                </div>
+            </div>
+        </main>
     `,
     styles: [
         `
         :host {
+            font-family: sans-serif;
+        }
+        .products {
             display: flex;
             flex-wrap: wrap;
         }
@@ -19,12 +33,17 @@ import { Component } from '@angular/core';
             margin: 1em;
             padding: 1em;
             flex-grow: 0;
-            flex-basis: 10em;
+            flex-basis: 15em;
         }
         `
     ]
 })
 export class AppComponent {
+    public promotedProducts: Array<{name: string, price: number}> = [
+        {name: 'Dell XPS 13', price: 1500},
+        {name: 'Dell XPS 15', price: 1750},
+        {name: 'Lenovo Thinkpad X260', price: 1800}
+    ];
     public products: Array<{name: string, price: number}> = [
         {name: 'Lenovo Thinkpad T460', price: 1000},
         {name: 'Lenovo Thinkpad T460p', price: 1200},
