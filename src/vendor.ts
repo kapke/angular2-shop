@@ -12,7 +12,7 @@ import 'reflect-metadata';
 require('zone.js/dist/zone');
 
 if (WEBPACK_ENV !== 'production') {
-  require('zone.js/dist/long-stack-trace-zone');
+    require('zone.js/dist/long-stack-trace-zone');
 }
 
 // Angular 2 Deps

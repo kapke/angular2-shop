@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 
 
 if (WEBPACK_ENV === 'production') {
-  enableProdMode();
+    enableProdMode();
 }
 
 bootstrap(AppComponent);
