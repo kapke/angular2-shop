@@ -1,33 +1,23 @@
 import { Component } from '@angular/core';
 
-import {ProductComponent} from "./product.component";
+import {ProductListComponent} from "./productList.component";
 
 
 @Component({
     selector: 's-app',
-    directives: [ProductComponent],
+    directives: [ProductListComponent],
     template: `
         <main>
-            <div class="products promoted">
-                <s-product *ngFor="let product of promotedProducts" [product]="product"></s-product>
-            </div>
+            <s-product-list [products]="promotedProducts"></s-product-list>
             <hr />
-            <div class="products">
-                <s-product *ngFor="let product of products" [product]="product"></s-product>
-            </div>
+            <s-product-list [products]="products"></s-product-list>
         </main>
     `,
-    styles: [
-        `
+    styles: [`
         :host {
             font-family: sans-serif;
         }
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        `
-    ]
+    `]
 })
 export class AppComponent {
     public promotedProducts: Array<{name: string, price: number}> = [
