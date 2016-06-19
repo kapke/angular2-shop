@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {ProductComponent} from "./product.component";
+import {ProductComponent} from "./ProductComponent";
+import {Product} from "./Product";
 
 
 @Component({
@@ -16,5 +17,5 @@ import {ProductComponent} from "./product.component";
     `]
 })
 export class ProductListComponent {
-    @Input() public products: Array<{name: string, price: number}> = [];
+    @Input() public products: Product[] = [];
 }

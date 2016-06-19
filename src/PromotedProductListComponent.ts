@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {ProductListComponent} from "./productList.component";
+import {ProductListComponent} from "./ProductListComponent";
+import {Product} from "./Product";
 
 
 @Component({
@@ -18,5 +19,5 @@ import {ProductListComponent} from "./productList.component";
     `]
 })
 export class PromotedProductListComponent {
-    @Input() public products: Array<{name: string, price: number}> = []
+    @Input() public products: Product[] = [];
 }

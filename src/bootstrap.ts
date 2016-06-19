@@ -1,7 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './AppComponent';
 
 
 if (WEBPACK_ENV === 'production') {

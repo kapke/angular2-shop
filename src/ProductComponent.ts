@@ -1,12 +1,17 @@
 import { Component, Input } from '@angular/core';
 
+import {Product} from "./Product";
+import {TagsComponent} from "./TagsComponent";
+
 
 @Component({
     selector: 's-product',
+    directives: [TagsComponent],
     template: `
         <div>
             <header>{{ product.name }}</header>
             <span>Price: {{ '$'+product.price }}</span>
+            <s-tags [tags]="product.tags"></s-tags>
         </div>
     `,
     styles: [`
@@ -20,5 +25,5 @@ import { Component, Input } from '@angular/core';
     `]
 })
 export class ProductComponent {
-    @Input() public product: {name: string, price: number};
+    @Input() public product: Product;
 }
