@@ -11,7 +11,11 @@ import {Product} from "./Product";
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
-            <div>Sort: <button class="sorting-button" [ngClass]="{ascending: sortingOrder > 0, descending: sortingOrder < 0}" (click)="changeSortingOrder()">Price</button></div>
+            <div>
+                Sort: 
+                <button class="sorting-button" [ngClass]="{active: sortingProperty == 'price', ascending: sortingOrder > 0, descending: sortingOrder < 0}" (click)="changeSortingOrder('price')">Price</button>
+                <button class="sorting-button" [ngClass]="{active: sortingProperty == 'name', ascending: sortingOrder > 0, descending: sortingOrder < 0}" (click)="changeSortingOrder('name')">Name</button>
+            </div>
             <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
             <hr />
             <s-product-list [products]="products"></s-product-list>
@@ -24,10 +28,10 @@ import {Product} from "./Product";
         .sorting-button {
             width: 5rem;
         }
-        .sorting-button.ascending::after {
+        .sorting-button.active.ascending::after {
             content: '▲';
         }
-        .sorting-button.descending::after {
+        .sorting-button.active.descending::after {
             content: '▼';
         }
     `]
@@ -36,10 +40,11 @@ export class AppComponent {
     public promotedProducts: Product[] = this.getPromotedProducts();
     public products: Product[] = this.getProducts();
     public sortingOrder: number = 0;
+    public sortingProperty: string = 'price';
     public filterText: string = '';
 
     public updateProducts () {
-        const comparator = Product.compare(this.sortingOrder);
+        const comparator = Product.getComparator(this.sortingProperty, this.sortingOrder);
 
         const filter = (product: Product): boolean => {
             return product.toString().toLocaleLowerCase().includes(this.filterText.toLocaleLowerCase());
@@ -55,8 +60,11 @@ export class AppComponent {
         this.updateProducts();
     }
 
-    public changeSortingOrder () {
-        if (this.sortingOrder <= 0) {
+    public changeSortingOrder (name) {
+        if (name != this.sortingProperty) {
+            this.sortingProperty = name;
+            this.sortingOrder = 1;
+        } else if (this.sortingOrder <= 0) {
             this.sortingOrder += 1;
         } else {
             this.sortingOrder = -1;
