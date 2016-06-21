@@ -11,7 +11,7 @@ import {Product} from "./Product";
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
-            <div>Sort: <button (click)="changeSortingOrder()">Price</button></div>
+            <div>Sort: <button class="sorting-button" [ngClass]="{ascending: sortingOrder > 0, descending: sortingOrder < 0}" (click)="changeSortingOrder()">Price</button></div>
             <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
             <hr />
             <s-product-list [products]="products"></s-product-list>
@@ -20,6 +20,15 @@ import {Product} from "./Product";
     styles: [`
         :host {
             font-family: sans-serif;
+        }
+        .sorting-button {
+            width: 5rem;
+        }
+        .sorting-button.ascending::after {
+            content: '▲';
+        }
+        .sorting-button.descending::after {
+            content: '▼';
         }
     `]
 })
