@@ -8,4 +8,10 @@ export class Product {
     public toString () {
         return [this.name, this.price].concat(this.tags).join(' ');
     }
+
+    public static compare (sortingOrder: number): (product1: Product, product2: Product)=>number {
+        return function (product1: Product, product2: Product): number {
+            return (product1.price - product2.price)*sortingOrder;
+        };
+    }
 }

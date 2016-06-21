@@ -10,7 +10,8 @@ import {Product} from "./Product";
     directives: [ProductListComponent, PromotedProductListComponent],
     template: `
         <main>
-            <label>Search: <input #filterInput type="text" (keyup)="filterProducts(filterInput.value)"></label>
+            <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
+            <div>Sort: <button (click)="changeSortingOrder()">Price</button></div>
             <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
             <hr />
             <s-product-list [products]="products"></s-product-list>
@@ -25,14 +26,34 @@ import {Product} from "./Product";
 export class AppComponent {
     public promotedProducts: Product[] = this.getPromotedProducts();
     public products: Product[] = this.getProducts();
+    public sortingOrder: number = 0;
+    public filterText: string = '';
 
-    public filterProducts (filterText) {
-        function filter (product: Product): boolean {
-            return product.toString().toLocaleLowerCase().includes(filterText.toLocaleLowerCase());
+    public updateProducts () {
+        const comparator = Product.compare(this.sortingOrder);
+
+        const filter = (product: Product): boolean => {
+            return product.toString().toLocaleLowerCase().includes(this.filterText.toLocaleLowerCase());
+        };
+
+        this.promotedProducts = this.getPromotedProducts().filter(filter).sort(comparator);
+        this.products = this.getProducts().filter(filter).sort(comparator);
+    }
+
+    public updateFilterText (filterText: string) {
+        this.filterText = filterText;
+
+        this.updateProducts();
+    }
+
+    public changeSortingOrder () {
+        if (this.sortingOrder <= 0) {
+            this.sortingOrder += 1;
+        } else {
+            this.sortingOrder = -1;
         }
 
-        this.promotedProducts = this.getPromotedProducts().filter(filter);
-        this.products = this.getProducts().filter(filter);
+        this.updateProducts();
     }
 
     getPromotedProducts (): Product[] {
