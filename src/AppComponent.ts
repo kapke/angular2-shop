@@ -28,7 +28,7 @@ export class AppComponent {
 
     public filterProducts (filterText) {
         function filter (product: Product): boolean {
-            return product.name.includes(filterText);
+            return product.toString().includes(filterText);
         }
 
         this.promotedProducts = this.getPromotedProducts().filter(filter);
