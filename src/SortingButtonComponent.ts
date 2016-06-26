@@ -37,7 +37,6 @@ export class SortingButtonComponent {
     }
 
     changeSortingOrder () {
-        console.log('change sorting order');
         this.sortingDescriptorChange.emit(this.sortingDescriptor.update(this.name));
     }
 }

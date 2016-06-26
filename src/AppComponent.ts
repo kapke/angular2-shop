@@ -2,16 +2,17 @@ import { Component } from '@angular/core';
 
 import {ProductListComponent} from "./ProductListComponent";
 import {PromotedProductListComponent} from "./PromotedProductListComponent";
-import {Product, ProductComparator} from "./Product";
+import {Product} from "./Product";
 import {SortingButtonComponent} from './SortingButtonComponent';
 import {SortingDescriptor} from "./SortingDescriptor";
 import {ProductFilterPipe} from "./ProductFilterPipe";
+import {ProductSortPipe} from "./ProductSortPipe";
 
 
 @Component({
     selector: 's-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent],
-    pipes: [ProductFilterPipe],
+    pipes: [ProductFilterPipe, ProductSortPipe],
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
@@ -20,9 +21,9 @@ import {ProductFilterPipe} from "./ProductFilterPipe";
                 <s-sorting-button [name]="'price'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Price</s-sorting-button>
                 <s-sorting-button [name]="'name'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Name</s-sorting-button>
             </div>
-            <s-promoted-product-list [products]="promotedProducts|sProductFilter:filterText"></s-promoted-product-list>
+            <s-promoted-product-list [products]="promotedProducts|sProductFilter:filterText|sProductSort:sortingDescriptor"></s-promoted-product-list>
             <hr />
-            <s-product-list [products]="products|sProductFilter:filterText"></s-product-list>
+            <s-product-list [products]="products|sProductFilter:filterText|sProductSort:sortingDescriptor"></s-product-list>
         </main>
     `,
     styles: [`
@@ -37,28 +38,12 @@ export class AppComponent {
     public sortingDescriptor: SortingDescriptor = SortingDescriptor.empty;
     public filterText: string = '';
 
-    public updateProducts () {
-        let comparator: ProductComparator;
-        try {
-            comparator = Product.getComparator(this.sortingDescriptor);
-        } catch (e) {
-            comparator = () => 0;
-        }
-
-        this.promotedProducts = this.getPromotedProducts().sort(comparator);
-        this.products = this.getProducts().sort(comparator);
-    }
-
     public updateFilterText (filterText: string) {
         this.filterText = filterText;
-
-        this.updateProducts();
     }
 
     public updateSortingDescriptor (sortingDescriptor: SortingDescriptor) {
         this.sortingDescriptor = sortingDescriptor;
-
-        this.updateProducts();
     }
 
     getPromotedProducts (): Product[] {
