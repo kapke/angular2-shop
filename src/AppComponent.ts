@@ -3,18 +3,20 @@ import { Component } from '@angular/core';
 import {ProductListComponent} from "./ProductListComponent";
 import {PromotedProductListComponent} from "./PromotedProductListComponent";
 import {Product} from "./Product";
+import {SortingButtonComponent} from './SortingButtonComponent';
+import {SortingDescriptor} from "./SortingDescriptor";
 
 
 @Component({
     selector: 's-app',
-    directives: [ProductListComponent, PromotedProductListComponent],
+    directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent],
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
             <div>
                 Sort: 
-                <button class="sorting-button" [ngClass]="{active: sortingProperty == 'price', ascending: sortingOrder > 0, descending: sortingOrder < 0}" (click)="changeSortingOrder('price')">Price</button>
-                <button class="sorting-button" [ngClass]="{active: sortingProperty == 'name', ascending: sortingOrder > 0, descending: sortingOrder < 0}" (click)="changeSortingOrder('name')">Name</button>
+                <s-sorting-button [name]="'price'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Price</s-sorting-button>
+                <s-sorting-button [name]="'name'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Name</s-sorting-button>
             </div>
             <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
             <hr />
@@ -25,26 +27,16 @@ import {Product} from "./Product";
         :host {
             font-family: sans-serif;
         }
-        .sorting-button {
-            width: 5rem;
-        }
-        .sorting-button.active.ascending::after {
-            content: '▲';
-        }
-        .sorting-button.active.descending::after {
-            content: '▼';
-        }
     `]
 })
 export class AppComponent {
     public promotedProducts: Product[] = this.getPromotedProducts();
     public products: Product[] = this.getProducts();
-    public sortingOrder: number = 0;
-    public sortingProperty: string = 'price';
+    public sortingDescriptor: SortingDescriptor = SortingDescriptor.empty;
     public filterText: string = '';
 
     public updateProducts () {
-        const comparator = Product.getComparator(this.sortingProperty, this.sortingOrder);
+        const comparator = Product.getComparator(this.sortingDescriptor);
 
         const filter = (product: Product): boolean => {
             return product.toString().toLocaleLowerCase().includes(this.filterText.toLocaleLowerCase());
@@ -60,15 +52,8 @@ export class AppComponent {
         this.updateProducts();
     }
 
-    public changeSortingOrder (name) {
-        if (name != this.sortingProperty) {
-            this.sortingProperty = name;
-            this.sortingOrder = 1;
-        } else if (this.sortingOrder <= 0) {
-            this.sortingOrder += 1;
-        } else {
-            this.sortingOrder = -1;
-        }
+    public updateSortingDescriptor (sortingDescriptor: SortingDescriptor) {
+        this.sortingDescriptor = sortingDescriptor;
 
         this.updateProducts();
     }

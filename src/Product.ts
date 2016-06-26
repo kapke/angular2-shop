@@ -1,3 +1,4 @@
+import {SortingDescriptor} from "./SortingDescriptor";
 export class Product {
     constructor(
         public name: string,
@@ -9,18 +10,18 @@ export class Product {
         return [this.name, this.price].concat(this.tags).join(' ');
     }
 
-    public static getComparator (sortingProperty: string, sortingOrder: number): (product1: Product, product2: Product)=>number {
-        switch (sortingProperty) {
+    public static getComparator (sortingDescriptor: SortingDescriptor): (product1: Product, product2: Product)=>number {
+        switch (sortingDescriptor.property) {
             case 'price':
                 return function (product1: Product, product2: Product): number {
-                    return (product1.price - product2.price)*sortingOrder;
+                    return (product1.price - product2.price)*sortingDescriptor.order;
                 };
             case 'name':
                 return function (product1: Product, product2: Product): number {
-                    return product1.name.localeCompare(product2.name)*sortingOrder;
+                    return product1.name.localeCompare(product2.name)*sortingDescriptor.order;
                 };
             default:
-                throw new Error(`Property ${sortingProperty} is not supported in comparisons`);
+                throw new Error(`Property ${sortingDescriptor.property} is not supported in comparisons`);
         }
     }
 }
