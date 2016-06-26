@@ -13,8 +13,7 @@ import {ProductRepository} from "./ProductRepository";
 @Component({
     selector: 's-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent],
-    pipes: [ProductFilterPipe, ProductSortPipe],
-    providers: [ProductRepository],
+    providers: [ProductRepository, ProductSortPipe, ProductFilterPipe],
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
@@ -23,9 +22,9 @@ import {ProductRepository} from "./ProductRepository";
                 <s-sorting-button [name]="'price'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Price</s-sorting-button>
                 <s-sorting-button [name]="'name'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Name</s-sorting-button>
             </div>
-            <s-promoted-product-list [products]="promotedProducts|sProductFilter:filterText|sProductSort:sortingDescriptor"></s-promoted-product-list>
+            <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
             <hr />
-            <s-product-list [products]="products|sProductFilter:filterText|sProductSort:sortingDescriptor"></s-product-list>
+            <s-product-list [products]="products"></s-product-list>
         </main>
     `,
     styles: [`
@@ -40,16 +39,24 @@ export class AppComponent {
     public sortingDescriptor: SortingDescriptor = SortingDescriptor.empty;
     public filterText: string = '';
 
-    constructor (productRepository: ProductRepository) {
-        this.promotedProducts = productRepository.findPromotedProducts();
-        this.products = productRepository.findProducts();
+    constructor (private productRepository: ProductRepository) {
+        this.updateProducts();
     }
 
     public updateFilterText (filterText: string) {
         this.filterText = filterText;
+
+        this.updateProducts();
     }
 
     public updateSortingDescriptor (sortingDescriptor: SortingDescriptor) {
         this.sortingDescriptor = sortingDescriptor;
+
+        this.updateProducts();
+    }
+
+    public updateProducts () {
+        this.promotedProducts = this.productRepository.findPromotedProducts(this.filterText, this.sortingDescriptor);
+        this.products = this.productRepository.findProducts(this.filterText, this.sortingDescriptor);
     }
 }
