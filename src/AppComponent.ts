@@ -2,14 +2,16 @@ import { Component } from '@angular/core';
 
 import {ProductListComponent} from "./ProductListComponent";
 import {PromotedProductListComponent} from "./PromotedProductListComponent";
-import {Product} from "./Product";
+import {Product, ProductComparator} from "./Product";
 import {SortingButtonComponent} from './SortingButtonComponent';
 import {SortingDescriptor} from "./SortingDescriptor";
+import {ProductFilterPipe} from "./ProductFilterPipe";
 
 
 @Component({
     selector: 's-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent],
+    pipes: [ProductFilterPipe],
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
@@ -18,9 +20,9 @@ import {SortingDescriptor} from "./SortingDescriptor";
                 <s-sorting-button [name]="'price'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Price</s-sorting-button>
                 <s-sorting-button [name]="'name'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Name</s-sorting-button>
             </div>
-            <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
+            <s-promoted-product-list [products]="promotedProducts|sProductFilter:filterText"></s-promoted-product-list>
             <hr />
-            <s-product-list [products]="products"></s-product-list>
+            <s-product-list [products]="products|sProductFilter:filterText"></s-product-list>
         </main>
     `,
     styles: [`
@@ -36,14 +38,15 @@ export class AppComponent {
     public filterText: string = '';
 
     public updateProducts () {
-        const comparator = Product.getComparator(this.sortingDescriptor);
+        let comparator: ProductComparator;
+        try {
+            comparator = Product.getComparator(this.sortingDescriptor);
+        } catch (e) {
+            comparator = () => 0;
+        }
 
-        const filter = (product: Product): boolean => {
-            return product.toString().toLocaleLowerCase().includes(this.filterText.toLocaleLowerCase());
-        };
-
-        this.promotedProducts = this.getPromotedProducts().filter(filter).sort(comparator);
-        this.products = this.getProducts().filter(filter).sort(comparator);
+        this.promotedProducts = this.getPromotedProducts().sort(comparator);
+        this.products = this.getProducts().sort(comparator);
     }
 
     public updateFilterText (filterText: string) {

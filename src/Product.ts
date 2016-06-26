@@ -1,4 +1,7 @@
 import {SortingDescriptor} from "./SortingDescriptor";
+
+export type ProductComparator = (product1: Product, product2: Product)=>number;
+
 export class Product {
     constructor(
         public name: string,
@@ -10,7 +13,7 @@ export class Product {
         return [this.name, this.price].concat(this.tags).join(' ');
     }
 
-    public static getComparator (sortingDescriptor: SortingDescriptor): (product1: Product, product2: Product)=>number {
+    public static getComparator (sortingDescriptor: SortingDescriptor): ProductComparator {
         switch (sortingDescriptor.property) {
             case 'price':
                 return function (product1: Product, product2: Product): number {
