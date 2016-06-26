@@ -10,7 +10,7 @@ import {TagsComponent} from "./TagsComponent";
     template: `
         <div>
             <header>{{ product.name }}</header>
-            <span>Price: {{ '$'+product.price }}</span>
+            <span>Price: {{ product.price|currency:'USD':true }}</span>
             <s-tags [tags]="product.tags"></s-tags>
         </div>
     `,
