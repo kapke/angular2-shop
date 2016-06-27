@@ -8,11 +8,12 @@ import {SortingDescriptor} from "./SortingDescriptor";
 import {ProductFilterPipe} from "./ProductFilterPipe";
 import {ProductSortPipe} from "./ProductSortPipe";
 import {ProductRepository} from "./ProductRepository";
+import {OrderFormComponent} from './OrderFormComponent';
 
 
 @Component({
     selector: 's-app',
-    directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent],
+    directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent, OrderFormComponent],
     providers: [ProductRepository, ProductSortPipe, ProductFilterPipe],
     template: `
         <main>
@@ -25,6 +26,8 @@ import {ProductRepository} from "./ProductRepository";
             <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
             <hr />
             <s-product-list [products]="products"></s-product-list>
+            <hr />
+            <s-order-form></s-order-form>
         </main>
     `,
     styles: [`
