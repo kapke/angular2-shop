@@ -4,18 +4,18 @@ import {Component} from '@angular/core';
 	selector: 's-order-form',
 	template: `
 		<form #form="ngForm" (ngSubmit)="sendForm(form.value)">
-			<label>Name: <input type="text" name="name" ngModel /></label>
-			<label>Surname: <input type="text" name="surname" ngModel /></label>
-			<label>E-mail: <input type="text" name="eMail" ngModel /></label>
+			<label>Name: <input type="text" name="name" ngModel required /></label>
+			<label>Surname: <input type="text" name="surname" ngModel required /></label>
+			<label>E-mail: <input type="text" name="eMail" ngModel required /></label>
 			<fieldset ngModelGroup="address">
 				<header>Address</header>
-				<label>Street: <input type="text" name="street" ngModel /></label>
-				<label>ZIP/Postal code: <input type="text" name="postalCode" ngModel /></label>
-				<label>City: <input type="text" name="city" ngModel /></label>
+				<label>Street: <input type="text" name="street" ngModel required /></label>
+				<label>ZIP/Postal code: <input type="text" name="postalCode" ngModel required /></label>
+				<label>City: <input type="text" name="city" ngModel required /></label>
 			</fieldset>
-			<label>Product name: <input type="text" name="product" ngModel /></label>
-			<label>Count: <input type="text" name="count" ngModel /></label>
-			<button type="submit">Submit</button>
+			<label>Product name: <input type="text" name="product" ngModel required /></label>
+			<label>Count: <input type="text" name="count" ngModel required /></label>
+			<button type="submit" [disabled]="!form.valid">Submit</button>
 		</form>
 	`,
 	styles: [`
