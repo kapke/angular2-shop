@@ -1,21 +1,23 @@
 import {Component} from '@angular/core';
+import {REACTIVE_FORM_DIRECTIVES, FormBuilder, Validators, FormGroup, FormControl} from "@angular/forms";
 
 @Component({
 	selector: 's-order-form',
+	directives: [REACTIVE_FORM_DIRECTIVES],
 	template: `
-		<form #form="ngForm" (ngSubmit)="sendForm(form.value)">
-			<label>Name: <input type="text" name="name" ngModel required /></label>
-			<label>Surname: <input type="text" name="surname" ngModel required /></label>
-			<label>E-mail: <input type="text" name="eMail" ngModel required /></label>
-			<fieldset ngModelGroup="address">
+		<form [formGroup]="formModel" (ngSubmit)="sendForm()">
+			<label>Name: <input type="text" formControlName="name" /></label>
+			<label>Surname: <input type="text" formControlName="surname" /></label>
+			<label>E-mail: <input type="text" formControlName="eMail" /></label>
+			<fieldset formGroupName="address">
 				<header>Address</header>
-				<label>Street: <input type="text" name="street" ngModel required /></label>
-				<label>ZIP/Postal code: <input type="text" name="postalCode" ngModel required /></label>
-				<label>City: <input type="text" name="city" ngModel required /></label>
+				<label>Street: <input type="text" formControlName="street" /></label>
+				<label>ZIP/Postal code: <input type="text" formControlName="postalCode" /></label>
+				<label>City: <input type="text" formControlName="city" /></label>
 			</fieldset>
-			<label>Product name: <input type="text" name="product" ngModel required /></label>
-			<label>Count: <input type="text" name="count" ngModel required /></label>
-			<button type="submit" [disabled]="!form.valid">Submit</button>
+			<label>Product name: <input type="text" formControlName="product" /></label>
+			<label>Count: <input type="number" formControlName="count" min="1" /></label>
+			<button type="submit" [disabled]="!formModel.valid">Submit</button>
 		</form>
 	`,
 	styles: [`
@@ -37,7 +39,34 @@ import {Component} from '@angular/core';
 	`]
 })
 export class OrderFormComponent {
-	sendForm (value: any) {
-		console.log(value);
+	public formModel: FormGroup;
+
+	constructor (formBuilder: FormBuilder) {
+		this.formModel = formBuilder.group({
+			name: ['', Validators.required],
+			surname: ['', Validators.required],
+			eMail: ['', Validators.required],
+			address: formBuilder.group({
+				street: ['', Validators.required],
+				postalCode: ['', Validators.required],
+				city: ['', Validators.required]
+			}),
+			product: ['', Validators.required],
+			count: [1, Validators.compose([Validators.required, this.checkProductCount])]
+		});
+	}
+
+	sendForm () {
+		console.log(this.formModel.value);
+	}
+
+	checkProductCount (formControl: FormControl):{} {
+		const value = formControl.value;
+
+		if (Number.isInteger(value) && value > 0) {
+			return null;
+		} else {
+			return {productCount: true};
+		}
 	}
 }
