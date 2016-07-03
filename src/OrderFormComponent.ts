@@ -45,7 +45,7 @@ export class OrderFormComponent {
 		this.formModel = formBuilder.group({
 			name: ['', Validators.required],
 			surname: ['', Validators.required],
-			eMail: ['', Validators.required],
+			eMail: ['', Validators.compose([Validators.required, this.checkEmail])],
 			address: formBuilder.group({
 				street: ['', Validators.required],
 				postalCode: ['', Validators.required],
@@ -67,6 +67,17 @@ export class OrderFormComponent {
 			return null;
 		} else {
 			return {productCount: true};
+		}
+	}
+
+	checkEmail (formControl: FormControl):{} {
+		const value = formControl.value;
+		const mailRegexp = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/;
+
+		if (mailRegexp.test(value)) {
+			return null;
+		} else {
+			return {mail: true};
 		}
 	}
 }
