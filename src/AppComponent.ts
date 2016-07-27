@@ -7,14 +7,16 @@ import {SortingButtonComponent} from './SortingButtonComponent';
 import {SortingDescriptor} from "./SortingDescriptor";
 import {ProductFilterPipe} from "./ProductFilterPipe";
 import {ProductSortPipe} from "./ProductSortPipe";
-import {ProductRepository} from "./ProductRepository";
+import {InMemoryProductRepository} from "./InMemoryProductRepository";
 import {OrderFormComponent} from './OrderFormComponent';
+import {HttpProductRepository} from "./HttpProductRepository";
+import {Observable} from "rxjs/Rx";
 
 
 @Component({
     selector: 's-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent, OrderFormComponent],
-    providers: [ProductRepository, ProductSortPipe, ProductFilterPipe],
+    providers: [InMemoryProductRepository, HttpProductRepository, ProductSortPipe, ProductFilterPipe],
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
@@ -23,9 +25,9 @@ import {OrderFormComponent} from './OrderFormComponent';
                 <s-sorting-button [name]="'price'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Price</s-sorting-button>
                 <s-sorting-button [name]="'name'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Name</s-sorting-button>
             </div>
-            <s-promoted-product-list [products]="promotedProducts"></s-promoted-product-list>
+            <s-promoted-product-list [products]="promotedProducts | async"></s-promoted-product-list>
             <hr />
-            <s-product-list [products]="products"></s-product-list>
+            <s-product-list [products]="products | async"></s-product-list>
             <hr />
             <s-order-form></s-order-form>
         </main>
@@ -37,12 +39,12 @@ import {OrderFormComponent} from './OrderFormComponent';
     `]
 })
 export class AppComponent {
-    public promotedProducts: Product[] = [];
-    public products: Product[] = [];
+    public promotedProducts: Observable<Product[]>;
+    public products: Observable<Product[]>;
     public sortingDescriptor: SortingDescriptor = SortingDescriptor.empty;
     public filterText: string = '';
 
-    constructor (private productRepository: ProductRepository) {
+    constructor (private productRepository: HttpProductRepository) {
         this.updateProducts();
     }
 

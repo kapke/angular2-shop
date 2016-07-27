@@ -8,7 +8,7 @@ import {ProductSortPipe} from "./ProductSortPipe";
 
 
 @Injectable()
-export class ProductRepository {
+export class InMemoryProductRepository {
     constructor(private productFilterPipe: ProductFilterPipe, private productSortPipe: ProductSortPipe) {}
 
     public findPromotedProducts (filterText: string, sortingDescriptor: SortingDescriptor): Product[] {

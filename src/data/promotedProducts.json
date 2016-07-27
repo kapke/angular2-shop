@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Dell XPS 13",
+        "price": 1500,
+        "tags": [
+            "super",
+            "new"
+        ]
+    },
+    {
+        "name": "Dell XPS 15",
+        "price": 1750,
+        "tags": [
+            "new",
+            "efficient"
+        ]
+    },
+    {
+        "name": "Lenovo Thinkpad X260",
+        "price": 180,
+        "tags": [
+            "carbon"
+        ]
+    }
+]
