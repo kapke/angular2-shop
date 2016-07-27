@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {Observable} from "rxjs/Rx";
 
 import {ProductListComponent} from "./ProductListComponent";
 import {PromotedProductListComponent} from "./PromotedProductListComponent";
@@ -7,16 +8,14 @@ import {SortingButtonComponent} from './SortingButtonComponent';
 import {SortingDescriptor} from "./SortingDescriptor";
 import {ProductFilterPipe} from "./ProductFilterPipe";
 import {ProductSortPipe} from "./ProductSortPipe";
-import {InMemoryProductRepository} from "./InMemoryProductRepository";
 import {OrderFormComponent} from './OrderFormComponent';
+import {ProductRepository, ProductRepositoryToken} from "./ProductRepository";
 import {HttpProductRepository} from "./HttpProductRepository";
-import {Observable} from "rxjs/Rx";
-
 
 @Component({
     selector: 's-app',
     directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent, OrderFormComponent],
-    providers: [InMemoryProductRepository, HttpProductRepository, ProductSortPipe, ProductFilterPipe],
+    providers: [ProductSortPipe, ProductFilterPipe, {provide: ProductRepositoryToken, useClass: HttpProductRepository}],
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
@@ -44,7 +43,7 @@ export class AppComponent {
     public sortingDescriptor: SortingDescriptor = SortingDescriptor.empty;
     public filterText: string = '';
 
-    constructor (private productRepository: HttpProductRepository) {
+    constructor (@Inject(ProductRepositoryToken) private productRepository: ProductRepository) {
         this.updateProducts();
     }
 

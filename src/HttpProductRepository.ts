@@ -7,6 +7,7 @@ import {Product} from "./Product";
 import {SortingDescriptor} from "./SortingDescriptor";
 import {ProductFilterPipe} from "./ProductFilterPipe";
 import {ProductSortPipe} from "./ProductSortPipe";
+import {ProductRepository} from "./ProductRepository";
 
 
 interface ProductDescription {
@@ -16,7 +17,7 @@ interface ProductDescription {
 }
 
 @Injectable()
-export class HttpProductRepository {
+export class HttpProductRepository implements ProductRepository {
     constructor (private http: Http, private productFilterPipe: ProductFilterPipe, private productSortPipe: ProductSortPipe) {}
 
     public findPromotedProducts (filterText: string, sortingDescriptor: SortingDescriptor) : Observable<Product[]> {
