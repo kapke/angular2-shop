@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 
 import {Product} from "./Product";
@@ -34,7 +34,17 @@ export class HttpProductRepository implements ProductRepository {
 
     private makeProductsRequest (filename: string, filterText: string, sortingDescriptor: SortingDescriptor) : Observable<Product[]> {
         return this.http.get(`data/${filename}.json`)
-            .retry(5)
+            .retryWhen((errors) => {
+                return errors
+                    .delay(1000)
+                    .scan((count: number, err: Response) => {
+                        if (count >= 5) {
+                            throw err;
+                        } else {
+                            return count + 1;
+                        }
+                    }, 0);
+            })
             .map(res => res.json())
             .map((products: ProductDescription[]) => {
                 return products.map(p => new Product(p.name, p.price, p.tags));

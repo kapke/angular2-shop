@@ -7,6 +7,9 @@ import {HTTP_PROVIDERS} from "@angular/http";
 
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/retry";
+import "rxjs/add/operator/retryWhen";
+import "rxjs/add/operator/scan";
+import "rxjs/add/operator/delay";
 
 
 if (WEBPACK_ENV === 'production') {
