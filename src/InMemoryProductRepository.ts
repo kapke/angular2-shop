@@ -38,6 +38,10 @@ export class InMemoryProductRepository implements ProductRepository {
         ];
     }
 
+    public findAdvertisedProducts (filterText: string, sortingDescriptor: SortingDescriptor): Observable<Product[]> {
+        return Observable.from([[]]);
+    }
+
     public findPromotedProducts (filterText: string, sortingDescriptor: SortingDescriptor): Observable<Product[]> {
         return Observable.from([this.applyFilterAndSorting(this.promotedProducts, filterText, sortingDescriptor)]);
     }

@@ -6,6 +6,7 @@ import { AppComponent } from './AppComponent';
 import {HTTP_PROVIDERS} from "@angular/http";
 
 import "rxjs/add/operator/map";
+import "rxjs/add/operator/retry";
 
 
 if (WEBPACK_ENV === 'production') {

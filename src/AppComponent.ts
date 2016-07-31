@@ -24,6 +24,7 @@ import {HttpProductRepository} from "./HttpProductRepository";
                 <s-sorting-button [name]="'price'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Price</s-sorting-button>
                 <s-sorting-button [name]="'name'" [sortingDescriptor]="sortingDescriptor" (sortingDescriptorChange)="updateSortingDescriptor($event)">Name</s-sorting-button>
             </div>
+            <s-product-list [products]="advertisedProducts | async"></s-product-list>
             <s-promoted-product-list [products]="promotedProducts | async"></s-promoted-product-list>
             <hr />
             <s-product-list [products]="products | async"></s-product-list>
@@ -40,6 +41,7 @@ import {HttpProductRepository} from "./HttpProductRepository";
 export class AppComponent {
     public promotedProducts: Observable<Product[]>;
     public products: Observable<Product[]>;
+    public advertisedProducts: Observable<Product[]>;
     public sortingDescriptor: SortingDescriptor = SortingDescriptor.empty;
     public filterText: string = '';
 
@@ -62,5 +64,6 @@ export class AppComponent {
     public updateProducts () {
         this.promotedProducts = this.productRepository.findPromotedProducts(this.filterText, this.sortingDescriptor);
         this.products = this.productRepository.findProducts(this.filterText, this.sortingDescriptor);
+        this.advertisedProducts = this.productRepository.findAdvertisedProducts(this.filterText, this.sortingDescriptor);
     }
 }

@@ -20,6 +20,10 @@ interface ProductDescription {
 export class HttpProductRepository implements ProductRepository {
     constructor (private http: Http, private productFilterPipe: ProductFilterPipe, private productSortPipe: ProductSortPipe) {}
 
+    public findAdvertisedProducts (filterText: string, sortingDescriptor: SortingDescriptor): Observable<Product[]> {
+        return this.makeProductsRequest('advertisedProducts', filterText, sortingDescriptor);
+    }
+
     public findPromotedProducts (filterText: string, sortingDescriptor: SortingDescriptor) : Observable<Product[]> {
         return this.makeProductsRequest('promotedProducts', filterText, sortingDescriptor);
     }
@@ -30,6 +34,7 @@ export class HttpProductRepository implements ProductRepository {
 
     private makeProductsRequest (filename: string, filterText: string, sortingDescriptor: SortingDescriptor) : Observable<Product[]> {
         return this.http.get(`data/${filename}.json`)
+            .retry(5)
             .map(res => res.json())
             .map((products: ProductDescription[]) => {
                 return products.map(p => new Product(p.name, p.price, p.tags));
