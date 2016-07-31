@@ -4,10 +4,10 @@ import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 
 import {Product} from "./Product";
-import {SortingDescriptor} from "./SortingDescriptor";
 import {ProductFilterPipe} from "./ProductFilterPipe";
 import {ProductSortPipe} from "./ProductSortPipe";
 import {ProductRepository} from "./ProductRepository";
+import {SortingDescriptor} from "../SortingDescriptor";
 
 
 interface ProductDescription {
@@ -49,9 +49,7 @@ export class HttpProductRepository implements ProductRepository {
             .map((products: ProductDescription[]) => {
                 return products.map(p => new Product(p.name, p.price, p.tags));
             })
-            .map((products) => {
-                return this.applyFilterAndSorting(products, filterText, sortingDescriptor);
-            });
+            .map((products) => this.applyFilterAndSorting(products, filterText, sortingDescriptor));
     }
 
     private applyFilterAndSorting (products: Product[], filterText: string, sortingDescriptor: SortingDescriptor) {

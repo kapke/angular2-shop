@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from "@angular/core";
 import {Product, ProductComparator} from "./Product";
-import {SortingDescriptor} from "./SortingDescriptor";
+import {SortingDescriptor} from "../SortingDescriptor";
 
 
 @Pipe({

@@ -3,7 +3,7 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Rx";
 
 import {Product} from "./Product";
-import {SortingDescriptor} from "./SortingDescriptor";
+import {SortingDescriptor} from "../SortingDescriptor";
 import {ProductFilterPipe} from "./ProductFilterPipe";
 import {ProductSortPipe} from "./ProductSortPipe";
 import {ProductRepository} from "./ProductRepository";

@@ -1,4 +1,5 @@
-import {SortingDescriptor} from "./SortingDescriptor";
+import {SortingDescriptor} from "../SortingDescriptor";
+
 
 export type ProductComparator = (product1: Product, product2: Product)=>number;
 

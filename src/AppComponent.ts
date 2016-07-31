@@ -1,21 +1,15 @@
 import {Component, Inject} from '@angular/core';
 import {Observable} from "rxjs/Rx";
 
-import {ProductListComponent} from "./ProductListComponent";
-import {PromotedProductListComponent} from "./PromotedProductListComponent";
-import {Product} from "./Product";
 import {SortingButtonComponent} from './SortingButtonComponent';
 import {SortingDescriptor} from "./SortingDescriptor";
-import {ProductFilterPipe} from "./ProductFilterPipe";
-import {ProductSortPipe} from "./ProductSortPipe";
 import {OrderFormComponent} from './OrderFormComponent';
-import {ProductRepository, ProductRepositoryToken} from "./ProductRepository";
-import {HttpProductRepository} from "./HttpProductRepository";
+import {PRODUCT_DIRECTIVES, PRODUCT_PROVIDERS, Product, ProductRepositoryToken, ProductRepository} from "./products";
 
 @Component({
     selector: 's-app',
-    directives: [ProductListComponent, PromotedProductListComponent, SortingButtonComponent, OrderFormComponent],
-    providers: [ProductSortPipe, ProductFilterPipe, {provide: ProductRepositoryToken, useClass: HttpProductRepository}],
+    directives: [PRODUCT_DIRECTIVES, SortingButtonComponent, OrderFormComponent],
+    providers: [PRODUCT_PROVIDERS],
     template: `
         <main>
             <label>Search: <input #filterInput type="text" (keyup)="updateFilterText(filterInput.value)"></label>
