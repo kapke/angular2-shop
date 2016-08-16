@@ -22,12 +22,7 @@ import {PRODUCT_DIRECTIVES, PRODUCT_PROVIDERS, Product, ProductRepositoryToken, 
             <hr />
             <s-product-list [products]="products | async"></s-product-list>
         </main>
-    `,
-    styles: [`
-        :host {
-            font-family: sans-serif;
-        }
-    `]
+    `
 })
 export class ProductsComponent {
     public promotedProducts: Observable<Product[]>;

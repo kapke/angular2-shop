@@ -8,7 +8,6 @@ import {AppComponent} from "./AppComponent";
 import {OrderFormComponent} from "./OrderFormComponent";
 import {ProductsComponent} from "./products/ProductsComponent";
 
-
 @NgModule({
     imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, routing],
     declarations: [AppComponent, OrderFormComponent, ProductsComponent],
