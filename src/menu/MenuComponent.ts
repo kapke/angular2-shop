@@ -6,12 +6,23 @@ import {MenuItem} from "./MenuItem";
 @Component({
     selector: 's-menu',
     template: `
-        <a *ngFor="let item of items" [routerLink]="item.link">{{ item.title }}</a>
+        <a *ngFor="let item of items" [routerLink]="item.link" routerLinkActive="active">{{ item.title }}</a>
     `,
     styles: [`
+        :host {
+            display: block;
+            margin-bottom: 2em;
+            border-bottom: 1px solid tomato;
+        }
         a {
-            margin: 1em;
+            transition: all 0.2s ease-out;
+            display: inline-block;
+            padding: 1em;
             text-decoration: none;
+        }
+        .active {
+            background-color: tomato;
+            color: white;
         }
     `]
 })

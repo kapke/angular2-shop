@@ -7,7 +7,6 @@ import {MenuItem, MenuComponent} from "./menu";
     directives: [MenuComponent],
     template: `
         <s-menu [items]="menuItems"></s-menu>
-        <hr />
         <router-outlet></router-outlet>
     `,
     styles: [`
