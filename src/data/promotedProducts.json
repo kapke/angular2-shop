@@ -1,5 +1,6 @@
 [
     {
+        "id": "13",
         "name": "Dell XPS 13",
         "price": 1500,
         "tags": [
@@ -8,6 +9,7 @@
         ]
     },
     {
+        "id": "14",
         "name": "Dell XPS 15",
         "price": 1750,
         "tags": [
@@ -16,6 +18,7 @@
         ]
     },
     {
+        "id": "15",
         "name": "Lenovo Thinkpad X260",
         "price": 180,
         "tags": [

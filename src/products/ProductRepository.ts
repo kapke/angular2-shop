@@ -8,6 +8,7 @@ interface ProductRepository {
     findPromotedProducts (filterText:string, sortingDescriptor:SortingDescriptor) : Observable<Product[]>;
     findAdvertisedProducts (filterText:string, sortingDescriptor:SortingDescriptor) : Observable<Product[]>;
     findProducts (filterText:string, sortingDescriptor:SortingDescriptor) : Observable<Product[]>;
+    findProductById (id: string) : Observable<Product>;
 }
 
 export {ProductRepository};

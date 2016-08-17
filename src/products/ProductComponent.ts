@@ -8,7 +8,7 @@ import {TagsComponent} from "./TagsComponent";
     selector: 's-product',
     directives: [TagsComponent],
     template: `
-        <div>
+        <div *ngIf="product">
             <header>{{ product.name }}</header>
             <span>Price: {{ product.price|currency:'USD':true }}</span>
             <s-tags [tags]="product.tags"></s-tags>

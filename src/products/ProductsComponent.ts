@@ -6,7 +6,7 @@ import {SortingDescriptor} from "../SortingDescriptor";
 import {PRODUCT_DIRECTIVES, PRODUCT_PROVIDERS, Product, ProductRepositoryToken, ProductRepository} from "../products";
 
 @Component({
-    selector: 's-app',
+    selector: 's-products',
     directives: [PRODUCT_DIRECTIVES, SortingButtonComponent],
     providers: [PRODUCT_PROVIDERS],
     template: `

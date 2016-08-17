@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "name": "Lenovo Thinkpad T460",
         "price": 1000,
         "tags": [
@@ -7,6 +8,7 @@
         ]
     },
     {
+        "id": "2",
         "name": "Lenovo Thinkpad T460p",
         "price": 1200,
         "tags": [
@@ -15,6 +17,7 @@
         ]
     },
     {
+        "id": "3",
         "name": "Lenovo Thinkpad T460s",
         "price": 1300,
         "tags": [
@@ -22,18 +25,22 @@
         ]
     },
     {
+        "id": "4",
         "name": "Lenovo Thinkpad T560",
         "price": 1050
     },
     {
+        "id": "5",
         "name": "Lenovo Thinkpad T560p",
         "price": 1250
     },
     {
+        "id": "6",
         "name": "Lenovo Thinkpad T560s",
         "price": 1350
     },
     {
+        "id": "7",
         "name": "Dell Latitude e5470",
         "price": 950,
         "tags": [
@@ -41,22 +48,27 @@
         ]
     },
     {
+        "id": "8",
         "name": "Dell Latitude e5570",
         "price": 1150
     },
     {
+        "id": "9",
         "name": "Dell Latitude e5770",
         "price": 1250
     },
     {
+        "id": "10",
         "name": "Dell Latitude e3470",
         "price": 750
     },
     {
+        "id": "11",
         "name": "Dell Latitude e3570",
         "price": 850
     },
     {
+        "id": "12",
         "name": "Dell Latitude e3770",
         "price": 90
     }
