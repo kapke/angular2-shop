@@ -1,39 +1,16 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component, Pipe, Injectable} from '@angular/core';
-import {COMMON_DIRECTIVES, FORM_PROVIDERS, FormBuilder, ControlGroup, Validators} from "@angular/common";
-import {Todo} from "./Todo";
-import {Validator} from "@angular/common";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
-@Component({
-    selector: 'my-app',
-    directives: [Todo],
-    //7/ 2. We need to remember to check form state before submitting it
-    template: `
-        <div>
-            <form [ngFormModel]="todoForm">
-                <label>
-                    Title: <input type="text" [ngControl]="'title'" />
-                </label>
-                <button [disabled]="!todoForm.valid" (click)="addTodo()">Add</button>
-            </form>
-            <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
-        </div>
-    `
+import { AppComponent } from './app.component';
+import { TodoComponent } from './todo.component';
+
+@NgModule({
+    imports: [BrowserModule, ReactiveFormsModule],
+    declarations: [AppComponent, TodoComponent],
+    bootstrap: [AppComponent]
 })
-class App {
-    public todos: Array<Object> = [];
-    public todoForm: ControlGroup;
+class AppModule {}
 
-    constructor (fb: FormBuilder) {
-        this.todoForm = fb.group({
-            // 1. Validation can be done using simple function passed as second argument. There are several built-in Angular
-            title: fb.control('', Validators.required)
-        });
-    }
-
-    addTodo () {
-        this.todos.push({title: this.todoForm.value.title, done: false});
-    }
-}
-
-bootstrap(App, [FORM_PROVIDERS]);
+platformBrowserDynamic().bootstrapModule(AppModule);

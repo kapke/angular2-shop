@@ -1,24 +1,18 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component, Pipe, Inject, provide} from '@angular/core';
-import {COMMON_DIRECTIVES} from "@angular/common";
-import {Todo as TodoComponent} from "./Todo";
-import {TodoRepository, InMemoryTodoRepository, Todo} from './TodoRepository';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-@Component({
-    selector: 'my-app',
-    directives: [TodoComponent],
-    template: `
-        <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
-    `
+import { AppComponent } from './app.component';
+import { TodoComponent } from './todo.component';
+import { InMemoryTodoRepository, TodoRepositoryToken } from "./TodoRepository";
+
+@NgModule({
+    imports: [BrowserModule],
+    declarations: [AppComponent, TodoComponent],
+    //Using this syntax we can register different types of providers
+    providers: [{provide: TodoRepositoryToken, useClass: InMemoryTodoRepository}],
+    bootstrap: [AppComponent]
 })
-class App {
-    public todos: Todo[] = [];
+class AppModule {}
 
-    // 2. But then we need to use @Inject() decorator on constructor argument
-    constructor (@Inject('TodoRepository') todoRepository: TodoRepository) {
-        this.todos = todoRepository.getTodos();
-    }
-}
-
-// 1. For configuration values, interface typings, etc. we can use provide function
-bootstrap(App, [provide('TodoRepository', {useClass: InMemoryTodoRepository})]);
+platformBrowserDynamic().bootstrapModule(AppModule);

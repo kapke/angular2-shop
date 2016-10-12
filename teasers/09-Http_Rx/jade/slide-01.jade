@@ -7,8 +7,8 @@ block layout
     - var index = '01';
     .xp-column
         .xp-row: xp-editor
-            +includeFile(index, 'app.ts', true)
-            +includeFile('', 'Todo.ts')
+            +includeFile(index, 'app.component.ts', true)
+            +includeFile('', 'todo.component.ts')
             +includeFile('', 'index.html')
             +includeFile('', 'config.js')
         .xp-row: xp-editor
@@ -16,6 +16,5 @@ block layout
     .xp-column
         .xp-row
             +previewTs
-    +invisibleEditor('', [
-        'node_modules/angular2/bootstrap.js'
-    ])
+        .xp-row: xp-editor
+            +includeFile(index, 'app.ts', true)

@@ -1,3 +1,6 @@
+import {OpaqueToken} from "@angular/core";
+
+
 export interface Todo {
     done: boolean;
     title: string;
@@ -16,3 +19,5 @@ export class InMemoryTodoRepository implements TodoRepository{
         ];
     }
 }
+
+export const TodoRepositoryToken = new OpaqueToken('TodoRepository');

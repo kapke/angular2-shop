@@ -7,13 +7,11 @@ block layout
     - var index = '02';
     .xp-column
         .xp-row: xp-editor
-            +includeFile(index, 'app.ts', true)
+            +includeFile(index, 'app.component.ts', true)
+            +includeFile(index, 'app.ts')
             +includeFile('', 'index.html')
             +includeFile('', 'config.js')
         .xp-row: xp-editor
-            +includeFile(index, 'Timer.ts', true)
+            +includeFile(index, 'timer.component.ts', true)
     .xp-column
         +previewTs
-    +invisibleEditor('', [
-        'node_modules/angular2/bootstrap.js'
-    ])

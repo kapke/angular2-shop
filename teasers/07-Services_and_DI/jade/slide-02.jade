@@ -10,14 +10,13 @@ block layout
                 .xp-row: xp-editor
                     +includeFile(index, 'TodoRepository.ts', true)
                 .xp-row: xp-editor
-                    +includeFile(index, 'app.ts', true)
-                    +includeFile('', 'Todo.ts')
+                    +includeFile(index, 'app.component.ts', true)
+                    +includeFile('', 'todo.component.ts')
                     +includeFile('', 'index.html')
                     +includeFile('', 'config.js')
             .xp-column
                 .xp-row
                     +previewTs
+                .xp-row: xp-editor
+                    +includeFile(index, 'app.ts', true)
         .xp-row.comments There are no dependencies, so @Injectable is optional
-    +invisibleEditor('', [
-        'node_modules/angular2/bootstrap.js'
-    ])

@@ -1,29 +1,15 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component, Pipe} from '@angular/core';
-import {COMMON_DIRECTIVES} from "@angular/common";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-//3/ 2. And mark it as a pipe
-@Pipe({
-    name: 'tomorrow'
+import {AppComponent, TomorrowPipe} from './app.component';
+
+@NgModule({
+    imports: [BrowserModule],
+    //To be able to use our pipe in components we need to declare it in module
+    declarations: [AppComponent, TomorrowPipe],
+    bootstrap: [AppComponent]
 })
-//5/ 1. If we want to create own pipe, we need to create a class with `transform` method
-class TomorrowPipe {
-    transform(value: Date): Date {
-        return new Date(value.getTime() + 86400000);
-    }
-}
+class AppModule {}
 
-@Component({
-    selector: 'my-app',
-    //To use it, we need to mark our wish
-    pipes: [TomorrowPipe],
-    //2/ And then we can use it under name we declared
-    template: `
-        <div>Tomorrow is {{ now | tomorrow | date:'fullDate' }}</div>
-    `
-})
-class App {
-    public now = new Date();
-}
-
-bootstrap(App);
+platformBrowserDynamic().bootstrapModule(AppModule);

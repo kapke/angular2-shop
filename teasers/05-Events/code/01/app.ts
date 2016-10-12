@@ -1,27 +1,14 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component} from '@angular/core';
-import {COMMON_DIRECTIVES} from "@angular/common";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-@Component({
-    selector: 'my-app',
-    directives: [COMMON_DIRECTIVES],
-    //3/ To handle event we use event name in curly braces
-    template: `
-        <div>
-            <button #button (click)="onClick(button)">Click me!</button>
-            <ul>
-                <li *ngFor="let click of clicks">{{ click }}</li>
-            </ul>
-        </div>
-    `
+import { AppComponent } from './app.component';
+
+@NgModule({
+    imports: [BrowserModule],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
 })
-class App {
-    public clicks: Array<string> = [];
+class AppModule {}
 
-    //3/ We need to create a method in component class, notify that button is DOM element
-    public onClick (button) {
-        this.clicks.push(`clicked ${button.textContent}`);
-    }
-}
-
-bootstrap(App);
+platformBrowserDynamic().bootstrapModule(AppModule);

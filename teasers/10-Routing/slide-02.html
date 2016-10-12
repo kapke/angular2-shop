@@ -3,16 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Nested routing</title>
+    <title>Routing with parameters</title>
     <script src="http://xpla.org/static/js/slide_loader.3.0.0.js"></script>
   </head>
   <body class="xp-slide">
     <div class="xp-column">
-      <xp-editor>
-        <script id="app.ts" src="code/02/app.ts" type="application/octetstream" highlight="highlight"></script>
-        <script id="index.html" src="code/./index.html" type="application/octetstream"></script>
-        <script id="config.js" src="code/./config.js" type="application/octetstream"></script>
-      </xp-editor>
+      <div class="xp-row">
+        <xp-editor>
+          <script id="app.ts" src="code/02/app.ts" type="application/octetstream" highlight="highlight"></script>
+          <script id="empty.component.ts" src="code/02/empty.component.ts" type="application/octetstream"></script>
+          <script id="index.html" src="code/./index.html" type="application/octetstream"></script>
+          <script id="config.js" src="code/./config.js" type="application/octetstream"></script>
+        </xp-editor>
+      </div>
+      <div class="xp-row">
+        <xp-editor>
+          <script id="todo.component.ts" src="code/02/todo.component.ts" type="application/octetstream" highlight="highlight"></script>
+        </xp-editor>
+      </div>
     </div>
     <div class="xp-column">
       <div class="xp-row">
@@ -20,13 +28,10 @@
       </div>
       <div class="xp-row">
         <xp-editor>
-          <script id="Todo.ts" src="code/02/Todo.ts" type="application/octetstream" highlight="highlight"></script>
+          <script id="app.components.ts" src="code/02/app.components.ts" type="application/octetstream" highlight="highlight"></script>
         </xp-editor>
       </div>
     </div>
-    <xp-editor style="display:none">
-      <script id="node_modules/angular2/bootstrap.js" src="code/./node_modules/angular2/bootstrap.js" type="application/octetstream"></script>
-    </xp-editor>
     <xp-annotations></xp-annotations>
   </body>
 </html>
