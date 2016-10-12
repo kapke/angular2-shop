@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+
 
 @Component({
     selector: 'my-todo',
-    inputs: ['todo'],
     template: `
         <div>
             <input type="checkbox" [checked]="todo.done" />
@@ -10,6 +10,7 @@ import {Component} from '@angular/core';
         </div>
     `
 })
-export class Todo {
-    public todo;
+export class TodoComponent {
+    // To receive data we use Input annotation
+    @Input() public todo;
 }

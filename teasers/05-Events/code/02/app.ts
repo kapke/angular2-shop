@@ -1,27 +1,15 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component} from '@angular/core';
-import {COMMON_DIRECTIVES} from "@angular/common";
-import {Timer} from './Timer';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-@Component({
-    selector: 'my-app',
-    directives: [COMMON_DIRECTIVES, Timer],
-    //3/ Usage of custom events looks the same as native ones. Data coming with event are available as `$event` variable
-    template: `
-        <div>
-            <my-timer (tick)="onTick($event)"></my-timer>
-            <ul>
-                <li *ngFor="let tick of ticks">{{ tick.toLocaleTimeString() }}</li>
-            </ul>
-        </div>
-    `
+import { AppComponent } from './app.component';
+import { TimerComponent } from "./timer.component";
+
+@NgModule({
+    imports: [BrowserModule],
+    declarations: [AppComponent, TimerComponent],
+    bootstrap: [AppComponent]
 })
-class App {
-    public ticks: Array<Date> = [];
+class AppModule {}
 
-    public onTick (tick: Date) {
-        this.ticks.push(tick);
-    }
-}
-
-bootstrap(App);
+platformBrowserDynamic().bootstrapModule(AppModule);

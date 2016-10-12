@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
     selector: 'my-todo',
+    //To receive data we need to mark property as an `input`
     inputs: ['todo'],
     template: `
         <div>
@@ -10,6 +11,7 @@ import {Component} from '@angular/core';
         </div>
     `
 })
-export class Todo {
+export class TodoComponent {
+    // We can also use @Input() annotation instead of config in @Component()
     public todo;
 }

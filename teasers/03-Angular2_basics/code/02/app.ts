@@ -1,22 +1,14 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component} from '@angular/core';
-import {COMMON_DIRECTIVES} from '@angular/common';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-@Component({
-    selector: 'my-app',
-    //Any directive we want to use in our component should appear in this array
-    directives: [COMMON_DIRECTIVES],
-    //3/ When we do that, we can use it
-    template: `
-        <div *ngFor="let item of items">{{ item }}</div>
-    `
+import { AppComponent } from './app.component';
+
+@NgModule({
+    imports: [BrowserModule],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
 })
-class App {
-    public items = [
-        'first',
-        'second',
-        'third'
-    ];
-}
+class AppModule {}
 
-bootstrap(App);
+platformBrowserDynamic().bootstrapModule(AppModule);

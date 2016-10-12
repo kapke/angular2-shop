@@ -5,11 +5,14 @@ block title
 
 block layout
     - var index = '01';
-    .xp-column: xp-editor
-        +includeFile(index, 'app.ts', true)
-        +includeFile('', 'index.html')
-        +includeFile('', 'config.js')
-    .xp-column: +previewTs
-    +invisibleEditor('', [
-        'node_modules/angular2/bootstrap.js'
-    ])
+    .xp-column
+        .xp-row: xp-editor
+            +includeFile('', 'index.html', true)
+        .xp-row: xp-editor
+            +includeFile(index, 'app.ts', true)
+            +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewTs
+        .xp-row: xp-editor
+            +includeFile(index, 'app.components.ts', true)

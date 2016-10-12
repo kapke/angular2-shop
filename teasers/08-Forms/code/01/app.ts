@@ -1,41 +1,17 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component, Pipe, Injectable} from '@angular/core';
-import {COMMON_DIRECTIVES, FORM_PROVIDERS, FormBuilder, ControlGroup, FORM_DIRECTIVES} from "@angular/common";
-import {Todo} from "./Todo";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
-@Component({
-    selector: 'my-app',
-    // 4. We will make use of several form-connected directives in template
-    directives: [Todo, FORM_DIRECTIVES],
-    //11/ 5. Wiring form model with template is done using `ngFormModel` and `ngControl`
-    template: `
-        <div>
-            <form [ngFormModel]="todoForm">
-                <label>
-                    Title: <input type="text" [ngControl]="'title'" />
-                </label>
-                <button [disabled]="!todoForm.valid" (click)="addTodo()">Add</button>
-            </form>
-            <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
-        </div>
-    `
+import { AppComponent } from './app.component';
+import { TodoComponent } from './todo.component';
+
+@NgModule({
+    //To use forms in that way we need to add ReactiveFormsModule as a dependency
+    imports: [BrowserModule, ReactiveFormsModule],
+    declarations: [AppComponent, TodoComponent],
+    bootstrap: [AppComponent]
 })
-class App {
-    public todos: Array<Object> = [];
-    // 3. Form is group of controls
-    public todoForm: ControlGroup;
+class AppModule {}
 
-    //5/ 2. Then we will build our form model
-    constructor (fb: FormBuilder) {
-        this.todoForm = fb.group({
-            title: fb.control('')
-        });
-    }
-
-    addTodo () {
-        this.todos.push({title: this.todoForm.value.title, done: false});
-    }
-}
-
-// 1. First of all - we need to use FORM_PROVIDERS
-bootstrap(App, [FORM_PROVIDERS]);
+platformBrowserDynamic().bootstrapModule(AppModule);

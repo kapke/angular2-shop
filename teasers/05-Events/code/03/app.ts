@@ -1,29 +1,16 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component} from '@angular/core';
-import {COMMON_DIRECTIVES, Control} from "@angular/common";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
-@Component({
-    selector: 'my-app',
-    directives: [COMMON_DIRECTIVES],
-    //3/ If we bind to input using ngFormControl directive...
-    template: `
-        <div>
-            <input type="text" [ngFormControl]="myInput">
-            <ul>
-                <li *ngFor="let value of values">{{ value }}</li>
-            </ul>
-        </div>
-    `
+import { AppComponent } from './app.component';
+
+@NgModule({
+    //Notice that we needed to declare ReactiveFormsModule as a dependency
+    imports: [BrowserModule, ReactiveFormsModule],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent]
 })
-class App {
-    public values: Array<string> = [];
-    //And create a control instance...
-    public myInput = new Control();
+class AppModule {}
 
-    constructor () {
-        //Then we have access to an observable emitting new event every time value changes
-        this.myInput.valueChanges.subscribe(value => this.values.push(value));
-    }
-}
-
-bootstrap(App);
+platformBrowserDynamic().bootstrapModule(AppModule);

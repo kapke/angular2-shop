@@ -1,20 +1,16 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component} from '@angular/core';
-import {Todo} from "./Todo";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-@Component({
-    selector: 'my-app',
-    directives: [Todo],
-    //3/ To pass data we use square brackets
-    template: `
-        <my-todo *ngFor="let todo of todos" [todo]="todo"></my-todo>
-    `
+import { AppComponent } from './app.component';
+import { TodoComponent } from "./todo.component";
+
+@NgModule({
+    imports: [BrowserModule],
+    // To make component available in other components we need to declare it
+    declarations: [AppComponent, TodoComponent],
+    bootstrap: [AppComponent]
 })
-class App {
-    public todos: Array<Object> = [
-        {title: 'my first todo', done: false},
-        {title: 'my second todo', done: true}
-    ];
-}
+class AppModule {}
 
-bootstrap(App);
+platformBrowserDynamic().bootstrapModule(AppModule);

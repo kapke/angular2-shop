@@ -9,12 +9,12 @@ block layout
         .xp-row: xp-editor
             +includeFile(index, 'app.ts', true)
         .xp-row: xp-editor
-            +includeFile(index, 'Todo.ts', true)
-            +includeFile('', 'index.html')
-            +includeFile('', 'config.js')
+            +includeFile(index, 'app.component.ts', true)
+
     .xp-column
         .xp-row
             +previewTs
-    +invisibleEditor('', [
-        'node_modules/angular2/bootstrap.js'
-    ])
+        .xp-row: xp-editor
+            +includeFile(index, 'todo.component.ts', true)
+            +includeFile('', 'index.html')
+            +includeFile('', 'config.js')
