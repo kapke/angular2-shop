@@ -1,77 +1,76 @@
 {
     "Vanilla JS": [
-        "Za pomocą czystego JS i operacji na DOM wyświetl kafelek z pojedynczym produktem.",
-        "Wyświetl listę produktów korzystając z kodu przygotowanego w poprzednim zadaniu.",
-        "Przed listą produktów wyświetl kilka produktów promowanych.",
-        "Dokonaj refaktoryzacji: uprość kod oraz zredukuj ilosć powtórzeń."
+        "Using Vanilla JS and raw DOM operations display single product tile",
+        "Display list of products using code from previous task",
+        "Above list of products display list of several promoted products",
+        "Refactor your code: simplify it and reduce repetitions"
     ],
-    "Podstawy TypeScript": [
-        "Przygotuj konfigurację TypeScript. Zmień rozszerzenie skryptów z <code>.js</code> na<code>.ts</code> by sprawdzić czy kod kompiluje się poprawnie.",
-        "Zmień kod tak, by korzystać z klas i systemu modułów.",
-        "Dodaj przycisk do ukrywania produktów promowanych.",
-        "Zadeklaruj typy wszędzie, gdzie jest to możliwe",
-        "Dokonaj refaktoryzacji: uprość kod oraz zredukuj ilosć powtórzeń."
+    "TypeScript basics": [
+        "Prepare TypeScript configuration. Change extension of your <code>.js</code> files into <code>.ts</code> to check whether code compiles properly",
+        "Adjust your code to use classes and modules",
+        "Add button for hiding promoted products",
+        "Declare type declarations everywhere it's needed",
+        "Refactor your code: simplify it and reduce repetitions"
     ],
-    "Angular 2 - pierwsze kroki": [
-        "Rozpocznij nowy projekt korzystając z podanego <a href=\"https://github.com/wkwiatek/angular2-webpack2\">startera</a>",
-        "Wyświetl jeden produkt.",
-        "Wyświetl listę produktów.",
-        "Przed listą produktów wyświetl kilka produktów promowanych.*"
+    "Angular 2 basics": [
+        "Start new Angular2 project using given <a href=\"https://github.com/wkwiatek/angular2-webpack2\">starter</a>",
+        "Display single product tile",
+        "Display list of products",
+        "Above list of products display list of several promoted products.*"
     ],
-    "Komponenty": [
-        "Utwórz komponent pojedynczego produktu.",
-        "Utwórz komponent listy produktów.",
-        "Utwórz komponent listy produktów promowanych.*",
-        "Do produktu dodaj tagi.*",
-        "Dokonaj refaktoryzacji: uprość kod, zwiększ jego czytelność. Dodaj deklaracje typów w niezbędnych miejscach.*"
+    "Components": [
+        "Create a component for single product tile",
+        "Create a component for a list of products",
+        "Create a component for a list of promoted products*",
+        "Add tags to product and display them*",
+        "Refactor code: simplify it, improve it's readability. Add type declarations in needed places*"
     ],
-    "Zdarzenia": [
-        "Dodaj filtrowanie produktów po nazwie. ",
-        "Zmień mechanizm filtrowania w taki spobób, by brane były pod uwagę wszystkie właściwości produktu",
-        "Zmień mechanizm filtrowania w taki sposób, by był niewrażliwy na wielkość liter.",
-        "Dodaj sortowanie produktów po cenie za pomocą przycisku. Pierwsze kliknięcie - sortowanie rosnąco, drugie kliknięcie - sortowanie malejąco, trzecie kliknięcie - brak sortowania.*",
-        "Dodaj na przycisk wskaźnik kierunku sortowania*",
-        "Dodaj sortowanie po nazwie. W momencie kiedy użytkownik włącza sortowanie po nazwie, sortowanie po cenie powinno się stać nieaktywne i odwrotnie.*",
-        "Dokonaj refaktoryzacji: wydziel komponenty, uprość kod i usuń powtórzenia.*"
+    "Events": [
+        "Add products filtering basing on their name",
+        "Change filtering to use all of product properties",
+        "Make filtering case insensitive",
+        "Add a button for sorting by price. Each click on button should toggle sorting direction*",
+        "For button created in previous task add indicator of sorting direction*",
+        "Add sorting by name on separate button. Enabling sorting by name should disable sorting by price*",
+        "Refactor code: extract components, simplify it and remove repetitions*"
     ],
-    "Pipe'y": [
-        "Użyj pipe'a <code>currency</code> do wyświetlenia ceny wraz z walutą",
-        "Przenieś filtrowanie do pipe'a*",
-        "Przenieś sortowanie do pipe'a*",
-        "Dokonaj refaktoryzacji*"
+    "Pipes": [
+        "Use <code>currency</code> pipe for displaying product's price",
+        "Move filtering into custom pipe*",
+        "Move sorting into custom pipe*",
+        "Refactor code*"
     ],
-    "Serwisy i wstrzykiwanie zależności": [
-        "Przenieś informacje o produktach do repozytorium produktów.",
-        "Zarejestruj repozytorium w kontenerze i wstrzyknij je do głównego komponentu aplikacji."
+    "Services and dependency injection": [
+        "Move all products data into products repository",
+        "Register the repository in dependency injection container and inject it into main app component"
     ],
-    "Formularze": [
-        "Utwórz prosty formularz zamówienia (imię, nazwisko, e-mail, adres, nazwa produktu, liczba produktów). Na zdarzenie <code>submit</code> zaloguj dane do konsoli.",
-        "Dodaj do formularza walidację - każde pole jest wymagane.",
-        "Dodaj walidację liczby produktów - powinna to być liczba całkowita większa od zera.*",
-        "Dodaj prostą walidację adresu e-mail.*",
-        "Dokonaj refaktoryzacji: uprość kod, wydziel komponenty*"
+    "Forms": [
+        "Create simple order form (name, surname, e-mail, address, product/product name, products count). On <code>submit</code> event log order data into console",
+        "Add validation to form - every field should be required",
+        "Add validation for products count - it should be natural number greater than 0*",
+        "Add custom validation for e-mail address*",
+        "Refactor your code: simplify it and extract components*"
     ],
     "Http + RxJS": [
-        "Utwórz pliki <code>.json</code> z danymi produktów. Utwórz nowy serwis repozytorium produktów korzystający z modułu <code>Http</code> do ściągnięcia danych z utworzonych plików. Przepnij ściąganie danych o produktach na nowy serwis.",
-        "Utwórz interfejs repozytorium produktów. Zarówno stare repozytorium (z zapisanymi na stałe informacjami) jak i nowe (korzystające z plików <code>.json</code>) powinny implementować ten interfejs. W komponentach, w których korzystasz z repozutoriów, zmień typ z konkretnej implementacji na interfejs. Kilkukrotnie zmień używaną implementację interfejsu by upewnić się, że można zmienić używaną implementację dokładnie jedną zmianą.*",
-        "Dodaj do interfejsu metodę zwracającą produkty objęte promocją. Metoda ta w implementacji w pamięci powinna zwrócić pustą tablicę. Natomiast implementacja oparta o <code>Http</code> powinna wykonać błędne zapytanie i ponowić żądanie 5 razy.*",
-        "Zmień strategię ponawiania tak, by ponowienie odbywało się z sekundowym opóźnieniem.*",
-        "Dokonaj refaktoryzacji: uprość kod.*"
+        "Create <code>.json</code> files containing data about products. Create second repository service using <code>Http</code> module to provide products data from JSON files.",
+        "Create an interface for products repository. Both implementations should implement it properly. Check whether it's possible to switch between them by making exactly one change in providers declaration",
+        "Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one.*",
+        "Change retrying strategy to add 1 second delay between tries.*",
+        "Refactor code: make sure that every action is performed in proper place.*"
     ],
     "Routing": [
-        "Skonfiguruj router z dwoma ścieżkami: listą produktów oraz formularzem zamówienia.",
-        "Utwórz menu z dwoma pozycjami: listą produktów oraz formularzem zamówienia.",
-        "Dodaj własną klasę do aktywnego elementu menu w celu wyróżnienia go.*",
-        "Dodaj konfigurację routera do podstrony z listą produktów tak, by po kliknięciu w nazwę produktu wyświetlić tylko ten jeden produkt.*",
-        "Dokonaj refaktoryzacji: wydziel komponenty, uprość kod.*"
+        "Configure router with 2 routes: products list and order form",
+        "Create a menu",
+        "Distinguish active menu item by applying specific styles.*",
+        "Add route for single product. Make product tile a link to product details.*"
     ],
-    "Testowanie": [
-        "Przetestuj repozytorium produktów (implementację z produktami w kodzie)*",
-        "Przetestuj pipe'y do sortowania i filtrowania",
-        "Przetestuj zachowanie wybranego komponentu."
+    "Testing": [
+        "Test products repository (in-memory implmentation)",
+        "Test pipes for sorting and filtering.*",
+        "Test component of your choose.*"
     ],
-    "Dyrektywy": [
-        "Utwórz dyrektywę dodającą klasę do elementu. Sprawdź, czy możesz zmienić zawartość elementu lub zmienić jego zachowanie."
+    "Directives": [
+        "Create a directive adding specific styles to promoted product. Check whether it's possible to control component's behaviour."
     ],
-    "Koszyk": "Dodaj funkcjonalność koszyka: kliknięcie w odpowiedni przycisk/ikonę przy produkcie powinno dodać go do koszyka. Formularz zamówienia powinien wyświetlić produkty w koszyku i podliczyć ich wartość. Do menu dodaj odpowiednią zakładkę pozwalającą podejrzeć zawartość koszyka."
+    "Cart": "Add cart function. Click on specific button should add product to cart. Order form should collect data from cart. User should be able to see cart content."
 }

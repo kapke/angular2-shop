@@ -8,16 +8,19 @@ doctype html
 html
     head
         meta(charset='UTF-8')
-        title Zadania
+        title Tasks
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+        link(type='text/css', rel='stylesheet', media='all', href='http://xpla.org/static/css/deck.3.0.0.css')
+
         style.
             body {
                 padding-bottom: 2em;
             }
+
     body
         main.container
             h1
-                a(href="index.html") Zadania
+                a(href="index.html") Tasks
             block tasks
                 ol
                     each module in modules
