@@ -5,7 +5,7 @@
   "main": "builder/buildTasks.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node --harmony_destructuring builder/buildTasks.js"
+    "build": "node builder/buildTasks.js"
   },
   "author": "",
   "license": "ISC",
