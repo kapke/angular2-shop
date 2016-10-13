@@ -2,31 +2,33 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Zadania</title>
+    <title>Tasks</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="http://xpla.org/static/css/deck.3.0.0.css">
     <style>
       body {
           padding-bottom: 2em;
       }
+      
     </style>
   </head>
   <body>
     <main class="container">
-      <h1><a href="index.html">Zadania</a></h1>
+      <h1><a href="index.html">Tasks</a></h1>
       <section>
         <header>
           <h2>Http + RxJS</h2>
         </header>
         <ol>
-          <li>Utwórz pliki <code>.json</code> z danymi produktów. Utwórz nowy serwis repozytorium produktów korzystający z modułu <code>Http</code> do ściągnięcia danych z utworzonych plików. Przepnij ściąganie danych o produktach na nowy serwis.
+          <li>Create <code>.json</code> files containing data about products. Create second repository service using <code>Http</code> module to provide products data from JSON files.
           </li>
-          <li><span class="label label-warning">Dodatkowe</span>Utwórz interfejs repozytorium produktów. Zarówno stare repozytorium (z zapisanymi na stałe informacjami) jak i nowe (korzystające z plików <code>.json</code>) powinny implementować ten interfejs. W komponentach, w których korzystasz z repozutoriów, zmień typ z konkretnej implementacji na interfejs. Kilkukrotnie zmień używaną implementację interfejsu by upewnić się, że można zmienić używaną implementację dokładnie jedną zmianą.
+          <li>Create an interface for products repository. Both implementations should implement it properly. Check whether it's possible to switch between them by making exactly one change in providers declaration
           </li>
-          <li><span class="label label-warning">Dodatkowe</span>Dodaj do interfejsu metodę zwracającą produkty objęte promocją. Metoda ta w implementacji w pamięci powinna zwrócić pustą tablicę. Natomiast implementacja oparta o <code>Http</code> powinna wykonać błędne zapytanie i ponowić żądanie 5 razy.
+          <li><span class="label label-warning">Additional</span>Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one.
           </li>
-          <li><span class="label label-warning">Dodatkowe</span>Zmień strategię ponawiania tak, by ponowienie odbywało się z sekundowym opóźnieniem.
+          <li><span class="label label-warning">Additional</span>Change retrying strategy to add 1 second delay between tries.
           </li>
-          <li><span class="label label-warning">Dodatkowe</span>Dokonaj refaktoryzacji: uprość kod.
+          <li><span class="label label-warning">Additional</span>Refactor code: make sure that every action is performed in proper place.
           </li>
         </ol>
       </section>
