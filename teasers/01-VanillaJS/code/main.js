@@ -1,8 +1,9 @@
+//24/ Without framework we need to manually operate on DOM, which isn't the easiest solution we can imagine
 (function () {
     function TodoComponent (todo) {
         this.todo = todo;
     }
-    //14/ We need to manually operate on DOM, which isn't the easiest solution we can imagine
+    //14/ We have to manually create DOM elements
     TodoComponent.prototype.getDOMElement = function () {
         var div = document.createElement('div'),
             checkbox = document.createElement('input'),
@@ -18,7 +19,7 @@
         return div;
     };
 
-    //2/ Then we can append it into page
+    //2/ And then we can append them into page
     var todoComp = new TodoComponent({done: true, title: 'My first component'});
     document.body.appendChild(todoComp.getDOMElement());
 })();

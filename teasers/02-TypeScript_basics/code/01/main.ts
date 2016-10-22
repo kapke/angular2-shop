@@ -1,3 +1,4 @@
+//24/ This file looks exactly the same as in Vanilla JS
 (function () {
     function TodoComponent (todo) {
         this.todo = todo;

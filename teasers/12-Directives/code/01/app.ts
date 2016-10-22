@@ -1,28 +1,16 @@
-import {bootstrap} from '@angular/platform-browser-dynamic';
-import {Component, Directive, ElementRef, Renderer} from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-//3/ As component is a directive with view, we can use the same options in annotation
-@Directive({
-    selector: '[super]'
+import {AppComponent, SuperDirective} from './app.component';
+
+
+@NgModule({
+    imports: [BrowserModule],
+    //We declare directives in module in exactly the same way as components
+    declarations: [AppComponent, SuperDirective],
+    bootstrap: [AppComponent]
 })
-class SuperDirective {
-    // elementRef gives us access to element which directive is mount to
-    constructor(elementRef: ElementRef, renderer: Renderer) {
-        renderer.setElementStyle(elementRef.nativeElement, 'color', 'red');
-    }
-}
+class AppModule {}
 
-@Component({
-    selector: 'my-app',
-    directives: [SuperDirective],
-    //3/ Usage is simple - there should appear an element matching directive selector
-    template: `
-        <div>
-            <div super>That is super!</div>
-            <div>That is not</div>
-        </div>
-    `
-})
-class App {}
-
-bootstrap(App);
+platformBrowserDynamic().bootstrapModule(AppModule);

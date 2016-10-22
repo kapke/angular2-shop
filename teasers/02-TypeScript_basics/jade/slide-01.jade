@@ -7,10 +7,12 @@ block layout
     - var index = '01';
     .xp-column
         .xp-row: xp-editor
-            +includeFile(index, 'tsconfig.json')
+            +includeFile(index, 'tsconfig.json', true)
         .xp-row: xp-editor
-            +includeFile('', 'index.html')
-            +includeFile(index, 'main.ts')
+            +includeFile('', 'index.html', true)
+            +includeFile('', 'config.js', true)
     .xp-column
         .xp-row
-            +previewTs
+            +previewFakeTs
+        .xp-row: xp-editor
+            +includeFile(index, 'main.ts', true)

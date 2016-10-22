@@ -65,7 +65,7 @@
         "Add route for single product. Make product tile a link to product details.*"
     ],
     "Testing": [
-        "Test products repository (in-memory implmentation)",
+        "Test products repository (in-memory implementation)",
         "Test pipes for sorting and filtering.*",
         "Test component of your choose.*"
     ],

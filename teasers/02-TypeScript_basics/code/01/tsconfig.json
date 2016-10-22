@@ -1,9 +1,11 @@
 {
+    //5/ We'll compile into ES5 with System.JS modules and sourcemaps
     "compilerOptions": {
         "target": "es5",
         "module": "system",
         "sourceMap": true
     },
+    //3/ And we only compile main.ts file
     "files": [
         "main.ts"
     ]

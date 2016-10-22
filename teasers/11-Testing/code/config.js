@@ -36,6 +36,7 @@
     // only because we're pinning the version with `ngVer`.
     ngPackageNames.forEach(function(pkgName) {
         map['@angular/'+pkgName] = 'https://npmcdn.com/@angular/' + pkgName + ngVer;
+        map['@angular/'+pkgName+'/testing'] = 'https://npmcdn.com/@angular/' + pkgName + ngVer + '/bundles/' + pkgName + '-testing.umd.js';
     });
 
     // Add package entries for angular packages

@@ -1,4 +1,0 @@
-[
-    {"title": "My first todo fetched by Http", "done": false},
-    {"title": "My second todo fetched by Http", "done": true}
-]

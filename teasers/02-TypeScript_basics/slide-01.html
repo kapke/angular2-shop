@@ -10,19 +10,24 @@
     <div class="xp-column">
       <div class="xp-row">
         <xp-editor>
-          <script id="tsconfig.json" src="code/01/tsconfig.json" type="application/octetstream"></script>
+          <script id="tsconfig.json" src="code/01/tsconfig.json" type="application/octetstream" highlight="highlight"></script>
         </xp-editor>
       </div>
       <div class="xp-row">
         <xp-editor>
-          <script id="index.html" src="code/./index.html" type="application/octetstream"></script>
-          <script id="main.ts" src="code/01/main.ts" type="application/octetstream"></script>
+          <script id="index.html" src="code/./index.html" type="application/octetstream" highlight="highlight"></script>
+          <script id="config.js" src="code/./config.js" type="application/octetstream" highlight="highlight"></script>
         </xp-editor>
       </div>
     </div>
     <div class="xp-column">
       <div class="xp-row">
         <xp-preview runner="html"></xp-preview>
+      </div>
+      <div class="xp-row">
+        <xp-editor>
+          <script id="main.ts" src="code/01/main.ts" type="application/octetstream" highlight="highlight"></script>
+        </xp-editor>
       </div>
     </div>
     <xp-annotations></xp-annotations>

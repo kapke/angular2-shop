@@ -1,17 +1,16 @@
 extends ../../template/slide
 
 block title
-    | Custom pipe
+    | Component spec
 
 block layout
     - var index = '02';
     .xp-column
         .xp-row: xp-editor
-            +includeFile(index, 'app.component.ts', true)
+            +includeFile(index, 'App.ts')
             +includeFile('', 'index.html')
             +includeFile('', 'config.js')
         .xp-row: xp-editor
-            +includeFile(index, 'app.ts', true)
+            +includeFile(index, 'spec.ts', true)
     .xp-column
-        .xp-row
-            +previewFakeTs
+        +previewFakeTs

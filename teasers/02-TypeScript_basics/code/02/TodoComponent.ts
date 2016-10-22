@@ -3,11 +3,11 @@ export class TodoComponent {
     //Look at `private` keyword - it declares and auto-assigns `todo` member
     constructor (private todo) {}
 
-    //14/ This method looks the same as in previous example
+    //14/ This method looks almost the same as in previous example
     getDOMElement () {
-        var div = document.createElement('div'),
-            checkbox = document.createElement('input'),
-            title = document.createElement('span');
+        const  div = document.createElement('div'),
+               checkbox = document.createElement('input'),
+               title = document.createElement('span');
 
         checkbox.type = 'checkbox';
         checkbox.checked = this.todo.done;
