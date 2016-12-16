@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ControlGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
     selector: 'my-app',
@@ -19,7 +19,7 @@ import { ControlGroup, FormBuilder } from "@angular/forms";
 export class AppComponent {
     public todos: Array<Object> = [];
     // 1. Form is group of controls
-    public todoForm: ControlGroup;
+    public todoForm: FormGroup;
 
     //5/ 2. So we build it in constructor
     constructor (fb: FormBuilder) {
