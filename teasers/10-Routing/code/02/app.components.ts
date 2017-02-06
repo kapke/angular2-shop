@@ -3,22 +3,16 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'my-app',
-    //6/ As routerLink doesn't support parameters in sensible way we use click action...
+    //6/ We can just put an array describing route we want to go to
     template: `
         <div>
             <nav>
-                <a (click)="goTo(0)">Todo #0</a>
-                <a (click)="goTo(1)">Todo #1</a>
+                <a [routerLink]="['/todos', 0]">Todo #0</a>
+                <a [routerLink]="['/todos', 1]">Todo #1</a>
             </nav>
             <router-outlet></router-outlet>
         </div>
     `
 })
 export class AppComponent {
-    //5/ ...and router directly
-    constructor (private router: Router) {}
-
-    goTo (index: number) {
-        this.router.navigate(['todos', index]);
-    }
 }
