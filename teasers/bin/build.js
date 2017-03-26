@@ -1,8 +1,8 @@
-var jade = require('jade'),
+var pug = require('pug'),
     fs = require('fs'),
     path = require('path');
 
-const buildIndex = jade.compileFile('template/index.jade', {pretty: true});
+const buildIndex = pug.compileFile('template/index.jade', {pretty: true});
 
 
 function buildDirectory (directory) {
@@ -32,7 +32,7 @@ function buildDirectory (directory) {
             };
         })
         .map(slide => {
-            slide.html = jade.renderFile(slide.templatePath, {pretty: true});
+            slide.html = pug.renderFile(slide.templatePath, {pretty: true});
 
             return slide;
         })
@@ -55,7 +55,7 @@ function getDirectories (base) {
 
 function buildTeasersIndex (teasers) {
     teasers = teasers.map(teaser => teaser.split('/').pop());
-    const html = jade.renderFile('template/teasersIndex.jade', {teasers, pretty: true});
+    const html = pug.renderFile('template/teasersIndex.jade', {teasers, pretty: true});
     fs.writeFileSync('index.html', html);
 }
 
