@@ -1,4 +1,4 @@
-import {OpaqueToken} from "@angular/core";
+import {InjectionToken} from "@angular/core";
 
 
 export interface Todo {
@@ -20,4 +20,4 @@ export class InMemoryTodoRepository implements TodoRepository{
     }
 }
 
-export const TodoRepositoryToken = new OpaqueToken('TodoRepository');
+export const TodoRepositoryToken = new InjectionToken('TodoRepository');

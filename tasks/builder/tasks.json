@@ -13,7 +13,7 @@
         "Refactor your code: simplify it and reduce repetitions"
     ],
     "Angular 2 basics": [
-        "Start new Angular2 project using given <a href=\"https://github.com/wkwiatek/angular2-webpack2\">starter</a>",
+        "Start new Angular2 project using <a href='https://github.com/angular/angular-cli' target=_blank>ng-cli</a>",
         "Display single product tile",
         "Display list of products",
         "Above list of products display list of several promoted products.*"

@@ -7,6 +7,7 @@ import {Component, Directive, ElementRef, Renderer} from '@angular/core';
 export class SuperDirective {
     // elementRef gives us access to element which directive is mount to
     constructor(elementRef: ElementRef, renderer: Renderer) {
+        // Notice usage of Renderer class. There is also Renderer2 class with slightly different interface but it's an experimental API
         renderer.setElementStyle(elementRef.nativeElement, 'color', 'red');
     }
 }

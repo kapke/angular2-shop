@@ -1,0 +1,15 @@
+extends ../../template/slide
+
+block title
+    | As in NgFor
+
+block layout
+    - var index = '04';
+    .xp-column: xp-editor
+        +includeFile(index, 'app.component.ts', true)
+        +includeFile(index, 'app.ts')
+        +includeFile('', 'index.html')
+        +includeFile('', 'config.js')
+    .xp-column
+        .xp-row
+            +previewFakeTs
