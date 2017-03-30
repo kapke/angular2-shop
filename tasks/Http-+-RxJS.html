@@ -20,9 +20,9 @@
           <h2>Http + RxJS</h2>
         </header>
         <ol>
-          <li>Create <code>.json</code> files containing data about products. Create second repository service using <code>Http</code> module to provide products data from JSON files.
+          <li>Create second repository service using <code>Http</code> module to provide products data from server. To obtain data you can use following URL: <code>https://shining-torch-4509.firebaseio.com/products.json</code>. You can also create <code>.json</code> files containing data about products - webpack will serve them correctly.
           </li>
-          <li>Create an interface for products repository. Both implementations should implement it properly. Check whether it's possible to switch between them by making exactly one change in providers declaration
+          <li>Create an interface for products repository. All implementations should implement it properly. Check whether it's possible to switch between them by making exactly one change in providers declaration
           </li>
           <li><span class="label label-warning">Additional</span>Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one.
           </li>
