@@ -14,19 +14,23 @@
   </head>
   <body>
     <main class="container">
-      <h1><a href="index.html">Tasks</a></h1>
+      <h1><a href="javascript:history.back()">Back</a></h1>
       <section>
         <header>
           <h2>Forms</h2>
         </header>
         <ol>
-          <li>Create simple order form (name, surname, e-mail, address, product/product name, products count). On <code>submit</code> event log order data into console
+          <li>Create simple product form (name, price, description, image url). On <code>submit</code> event log new product data into console
           </li>
           <li>Add validation to form - every field should be required
           </li>
-          <li><span class="label label-warning">Additional</span>Add validation for products count - it should be natural number greater than 0
+          <li><span class="label label-warning">Additional</span>Add validation for price - it should be number greater than 0
           </li>
-          <li><span class="label label-warning">Additional</span>Add custom validation for e-mail address
+          <li><span class="label label-warning">Additional</span>Add custom validation for image url
+          </li>
+          <li><span class="label label-warning">Additional</span>Add saving new product in product repository.
+          </li>
+          <li><span class="label label-warning">Additional</span>Add ability to remove a product.
           </li>
           <li><span class="label label-warning">Additional</span>Refactor your code: simplify it and extract components
           </li>

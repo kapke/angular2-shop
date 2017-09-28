@@ -14,7 +14,7 @@
   </head>
   <body>
     <main class="container">
-      <h1><a href="index.html">Tasks</a></h1>
+      <h1><a href="javascript:history.back()">Back</a></h1>
       <section>
         <header>
           <h2>Http + RxJS</h2>
@@ -22,11 +22,13 @@
         <ol>
           <li>Create second repository service using <code>Http</code> module to provide products data from server. To obtain data you can use following URL: <code>https://shining-torch-4509.firebaseio.com/products.json</code>. You can also create <code>.json</code> files containing data about products - webpack will serve them correctly.
           </li>
-          <li>Create an interface for products repository. All implementations should implement it properly. Check whether it's possible to switch between them by making exactly one change in providers declaration
+          <li><span class="label label-warning">Additional</span>Create an interface for products repository. All implementations should implement it properly.
           </li>
-          <li><span class="label label-warning">Additional</span>Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one.
+          <li><span class="label label-warning">Additional</span>Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one or disabling network access in developer tools.
           </li>
-          <li><span class="label label-warning">Additional</span>Change retrying strategy to add 1 second delay between tries.
+          <li><span class="label label-warning">Additional</span>Add ability to remove a product.
+          </li>
+          <li><span class="label label-warning">Additional</span>Change retrying strategy to add 1 second delay between tries so app will wait 1 second, then 2, then 3, etc.
           </li>
           <li><span class="label label-warning">Additional</span>Refactor code: make sure that every action is performed in proper place.
           </li>

@@ -45,17 +45,20 @@
         "Register the repository in dependency injection container and inject it into main app component"
     ],
     "Forms": [
-        "Create simple order form (name, surname, e-mail, address, product/product name, products count). On <code>submit</code> event log order data into console",
+        "Create simple product form (name, price, description, image url). On <code>submit</code> event log new product data into console",
         "Add validation to form - every field should be required",
-        "Add validation for products count - it should be natural number greater than 0*",
-        "Add custom validation for e-mail address*",
+        "Add validation for price - it should be number greater than 0*",
+        "Add custom validation for image url*",
+        "Add saving new product in product repository.*",
+        "Add ability to remove a product.*",
         "Refactor your code: simplify it and extract components*"
     ],
     "Http + RxJS": [
         "Create second repository service using <code>Http</code> module to provide products data from server. To obtain data you can use following URL: <code>https://shining-torch-4509.firebaseio.com/products.json</code>. You can also create <code>.json</code> files containing data about products - webpack will serve them correctly.",
-        "Create an interface for products repository. All implementations should implement it properly. Check whether it's possible to switch between them by making exactly one change in providers declaration",
-        "Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one.*",
-        "Change retrying strategy to add 1 second delay between tries.*",
+        "Create an interface for products repository. All implementations should implement it properly.*",
+        "Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one or disabling network access in developer tools.*",
+        "Add ability to remove a product.*",
+        "Change retrying strategy to add 1 second delay between tries so app will wait 1 second, then 2, then 3, etc.*",
         "Refactor code: make sure that every action is performed in proper place.*"
     ],
     "Routing": [
@@ -72,5 +75,13 @@
     "Directives": [
         "Create a directive adding specific styles to promoted product. Check whether it's possible to control component's behaviour."
     ],
-    "Cart": "Add cart function. Click on specific button should add product to cart. Order form should collect data from cart. User should be able to see cart content."
+    "Cart": "Add cart function. Click on specific button should add product to cart. Order form should collect data from cart. User should be able to see cart content.",
+    "Clicker": [
+        "Add ability to obtain cookies(or whatever you want) by clicks",
+        "Add producers: buying a producer makes cookies produced automatically every second. Of course buying a producer is possible only if player has enough cookies",
+        "Make producer price increasing",
+        "Add system of achievements: specific cookie counts, specific producer counts, specific events or even event sequentions like clicking 10 cookies in a second",
+        "Add automatic save system based on localStorage",
+        "Add ability to restore save using some kind of authentication (this will require simple backend or usage of service like firebase)"
+    ]
 }
