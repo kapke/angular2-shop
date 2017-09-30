@@ -54,7 +54,7 @@
         "Refactor your code: simplify it and extract components*"
     ],
     "Http + RxJS": [
-        "Create second repository service using <code>Http</code> module to provide products data from server. To obtain data you can use following URL: <code>https://shining-torch-4509.firebaseio.com/products.json</code>. You can also create <code>.json</code> files containing data about products - webpack will serve them correctly.",
+        "Create second repository service using <code>Http</code> module to provide products data from server. To obtain data you can use following URL: <code>https://shining-torch-4509.firebaseio.com/products.json</code>. You can also create <code>.json</code> files containing data about products - webpack will serve them correctly. There is also an <a href=\"https://gist.github.com/kapke/aa0341f359a0d2c5f636b046993721ee\">Azure serverless backend</a>",
         "Create an interface for products repository. All implementations should implement it properly.*",
         "Add retrying 5 times to Http&ndash;based implementation. Check if it works properly by changing data URI into invalid one or disabling network access in developer tools.*",
         "Add ability to remove a product.*",
